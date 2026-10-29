@@ -101,8 +101,91 @@ Durante o levantamento de requisitos com a academia **Base Forte Leste**, foram 
 
 **Pilar relacionado:** Acessibilidade.
 
-## 4. Público-alvo
+## 4. Público-Alvo
 
+O site da academia **Base Forte Leste** foi pensado para atender públicos diferentes, cada um com necessidades próprias. Além de informar, o site também funciona como uma **ferramenta de marketing digital**, ajudando a academia a atrair novos alunos, fortalecer sua imagem na comunidade e manter os alunos atuais engajados.
+
+### 4.1 Novos interessados em artes marciais
+
+**Quem são:** pessoas que ainda não treinam na academia e querem começar uma arte marcial, seja por saúde, condicionamento físico, defesa pessoal ou hobby. Muitos são iniciantes e não sabem qual modalidade escolher.
+
+**O que procuram:** quais modalidades existem, horários das turmas, como funciona a primeira aula e se precisam de experiência ou equipamento.
+
+**Como o site atende:**
+- Apresenta cada modalidade de forma simples, ajudando o iniciante a escolher
+- Mostra os horários das turmas de forma organizada
+- Divulga a **aula experimental** como porta de entrada, com pedido feito pelo botão do WhatsApp
+- Informa que **não é necessário ter experiência** para começar, pois as turmas recebem iniciantes
+- Informa que **alunos novos não precisam ter equipamentos** para participar das aulas
+
+**Objetivo de marketing:** transformar visitantes do site em alunos matriculados, removendo barreiras comuns para quem quer começar, como a falta de experiência ou de equipamento.
+
+### 4.2 Jovens e seus responsáveis
+
+**Quem são:** jovens menores de 18 anos da região e seus pais ou responsáveis, interessados nas aulas gratuitas aos sábados.
+
+**O que procuram:** como funciona o projeto social, quem pode participar, dias e horários, e como fazer a inscrição.
+
+**Como o site atende:**
+- Seção de **Ações Sociais** explicando o projeto de forma clara
+- Botão de acesso ao WhatsApp da academia, onde o responsável faz a inscrição do jovem
+- Linguagem simples, acessível tanto para o jovem quanto para a família
+
+**Objetivo de marketing:** ampliar o alcance do projeto social e aproximar a academia das famílias da comunidade.
+
+### 4.3 Famílias
+
+**Quem são:** grupos familiares que buscam uma atividade física para treinar juntos.
+
+**O que procuram:** opções de plano para mais de uma pessoa e modalidades que atendam diferentes idades.
+
+**Como o site atende:** divulga a existência do **plano Família**, válido a partir de duas pessoas, e apresenta as modalidades e turmas disponíveis. Os valores dos planos não serão exibidos no site; o interessado poderá consultá-los diretamente com a academia pelo WhatsApp.
+
+**Objetivo de marketing:** aumentar o número de matrículas por meio de planos em grupo.
+
+### 4.4 Alunos atuais
+
+**Quem são:** pessoas que já treinam na academia.
+
+**O que procuram:** horários atualizados, novidades, eventos e notícias da academia.
+
+**Como o site atende:**
+- Seção de **Turmas e Horários** sempre disponível
+- **Blog de Notícias** com eventos, graduações e novidades
+
+**Objetivo de marketing:** manter os alunos engajados, reforçar o sentimento de pertencimento e incentivar que indiquem a academia para outras pessoas.
+
+### 4.5 Pessoas com deficiência
+
+**Quem são:** pessoas com deficiência visual, baixa visão ou que navegam apenas pelo teclado, que muitas vezes encontram barreiras em sites comuns.
+
+**O que procuram:** conseguir acessar as mesmas informações que qualquer outro visitante, sem depender de ajuda.
+
+**Como o site atende:** botões de tamanho da fonte, modo alto contraste, textos alternativos nas imagens, estrutura HTML semântica e botão do WhatsApp com descrição para leitores de tela.
+
+**Objetivo de marketing:** mostrar que a academia é um espaço inclusivo, alcançando um público que muitas vezes é ignorado.
+
+### 4.6 Comunidade da região
+
+**Quem são:** moradores da zona Leste, região onde a academia está localizada, que ainda não conhecem a Base Forte Leste.
+
+**O que procuram:** conhecer a academia, sua história e o que ela oferece para a comunidade.
+
+**Como o site atende:** seções de **Sobre Nós**, **História** e **Ações Sociais**, mostrando a trajetória da academia e seu compromisso com a região.
+
+**Objetivo de marketing:** fortalecer a reputação da academia como referência local em artes marciais e projeto social.
+
+### 4.7 O Site como Ferramenta de Marketing
+
+Além de informar, o site contribui diretamente para a divulgação da academia:
+
+- **Credibilidade:** um site próprio transmite mais profissionalismo do que apenas perfis em redes sociais
+- **Integração com as redes:** o Instagram e o WhatsApp, já usados pela academia, passam a direcionar os visitantes para o site, onde as informações ficam completas e organizadas
+- **Disponibilidade:** o site funciona 24 horas, permitindo que um interessado conheça a academia a qualquer momento
+- **Captação de alunos:** o botão do WhatsApp leva o visitante direto ao contato com a academia, transformando o interesse em conversa real
+- **Menos barreiras de entrada:** informar que não é preciso ter equipamento nem experiência incentiva iniciantes a darem o primeiro passo
+- **Imagem positiva:** a divulgação das ações sociais e o cuidado com acessibilidade e sustentabilidade reforçam uma imagem de academia comprometida com a comunidade
+- **Economia:** reduz gastos com materiais impressos de divulgação
 ## 5. Objetivos
 
 ## 6. Funcionalidades principais
