@@ -195,7 +195,25 @@ Além de informar, o site contribui diretamente para a divulgação da academia:
 ## 8. Requisitos não funcionais
 
 ## 9. Estrutura de pastas
+```markdown
+BaseForteLeste/
+├── index.html              # páginas HTML na raiz
+├── sobre.html
+├── historia.html
+├── modalidades.html
+├── turmasehorarios.html
+├── blognews.html
+├── acoes.html
+├── formulario.html
+├── css/style.css
+├── js/script.js
+├── img/                    # imagens do site
+└── docs/readme.md          # este plano de contexto
+```
 
+Responsabilidades:<br>
+• **Interface**: HTML semântico e css em `style.css`. Sem estilo inline.<br>
+• **Comportamento**: JavaScript em arquivo próprio, progressivo (a página funciona sem ele, exceto o envio de informações do formulário que depende de sua validação).
 ## 10. Pendências
 
 ## 11. Critérios de sucesso
