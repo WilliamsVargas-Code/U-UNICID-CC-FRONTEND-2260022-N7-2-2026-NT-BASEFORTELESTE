@@ -19,19 +19,11 @@ Projeto Front-End Unicid 2-BaseForteLeste
 
 ## 2. Visão Geral
 
-O site da academia **Base Forte Leste** surge de uma necessidade real identificada no levantamento de requisitos: reunir em um único ambiente digital todas as informações que hoje estão espalhadas.
+Site da Academia Base Forte Leste, uma academia de artes marciais de Itaquera, na Zona Leste de São Paulo. Ela oferece Muay Thai, Kickboxing, Boxe, Jiu-Jitsu, Capoeira e No-Gi, dá aulas gratuitas aos sábados para jovens da comunidade e tem uma turma inclusiva para pessoas com deficiência. O tema dialoga com os ODS 3, 4, 10 e 12 (saúde, educação, redução das desigualdades e consumo responsável).
+As 10 páginas, o CSS e a barra de acessibilidade em JavaScript (tamanho da fonte e alto contraste, com a preferência salva no localStorage)  
+Os números do site (alunos atendidos, recicláveis arrecadados, resultados em eventos), os depoimentos e os dados de contato são fictícios, criados para fins acadêmicos.
 
-O site será desenvolvido exclusivamente com **HTML5, CSS3 e JavaScript**, sem uso de servidor ou banco de dados, e contará com as seguintes seções:
 
-- **Sobre Nós**
-- **História**
-- **Modalidades:** Muay Thai, Kickboxing, Boxe, Jiu-Jitsu e No-Gi
-- **Turmas e Horários**
-- **Blog de Notícias**
-- **Ações Sociais:** divulgação das aulas gratuitas aos sábados voltadas ao público juvenil
-- **Formulário de Interesse:** pedido de aula experimental ou inscrição na aula gratuita de sábado, enviado ao WhatsApp da academia
-
-O projeto se apoia em três pilares:
 
 ### 2.1 Impacto Social
 
