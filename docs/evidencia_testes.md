@@ -79,7 +79,7 @@ Registro dos testes do site da Academia Base Forte Leste. As capturas de tela fi
 | Aumentar e diminuir texto | Botões A− / A / A+ | ⏳ | |
 | WAVE (index, aula-experimental, contato) | https://wave.webaim.org/ | ⏳ | |
 | Lighthouse – index.html, desktop (07/11/2026, 17:41, via Live Server `127.0.0.1:5500`) | Chrome F12 → Lighthouse (Navigation) | ✅ Accessibility 100 · Best Practices 100 · SEO 100 | [print](evidencias/lighthouse-index-desktop.png) · [relatório HTML](evidencias/lighthouse-index-desktop.html) |
-| Lighthouse – index.html, celular | Chrome F12 → Lighthouse, Device: Mobile | ⏳ | |
+| Lighthouse – index.html, celular (07/11/2026, 17:58, via Live Server `127.0.0.1:5500`; rodapé do relatório: *Emulated Moto G Power*, *Slow 4G throttling*) | Chrome F12 → Lighthouse (Navigation), Device: Mobile | ✅ Accessibility 100 · Best Practices 100 · SEO 100 | [print das notas](evidencias/lighthouse-index-mobile.png) · [print do rodapé](evidencias/lighthouse-index-mobile-rodape.png) |
 
 ## 4. Responsividade
 
