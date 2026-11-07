@@ -25,11 +25,9 @@ Os números do site (alunos atendidos, recicláveis arrecadados, resultados em e
 
 
 
-### 2.1 Impacto Social
+## 3. Problema que o produto resolve
+As informações da academia (modalidades, horários, preços e ações sociais) ficam espalhadas entre WhatsApp, Instagram e panfletos de papel. Quem não passa na porta da academia não sabe das aulas gratuitas de sábado. Os pedidos de aula experimental chegam sem padrão, e o material impresso gera gasto, desperdício e não é acessível para pessoas cegas ou com baixa visão.
 
-O site amplia o alcance das aulas gratuitas de sábado, voltadas a jovens de **[Confirmar: idade mínima]** a 17 anos. Jovens da região e seus responsáveis poderão conhecer o projeto, consultar os horários **[Confirmar: horário das aulas]** e demonstrar interesse em participar pelo formulário, sem precisar ir até a academia. Assim, o esporte chega como ferramenta de disciplina, saúde e convivência para mais pessoas da comunidade.
-
-Como o público das aulas gratuitas é menor de idade, o formulário solicitará o nome e o telefone do responsável, além de uma autorização marcada por ele, respeitando o cuidado com dados de crianças e adolescentes previsto na LGPD (Lei Geral de Proteção de Dados).
 
 ### 2.2 Sustentabilidade
 
