@@ -25,9 +25,12 @@ Os números do site (alunos atendidos, recicláveis arrecadados, resultados em e
 
 
 
-## 3. Problema que o produto resolve
-As informações da academia (modalidades, horários, preços e ações sociais) ficam espalhadas entre WhatsApp, Instagram e panfletos de papel. Quem não passa na porta da academia não sabe das aulas gratuitas de sábado. Os pedidos de aula experimental chegam sem padrão, e o material impresso gera gasto, desperdício e não é acessível para pessoas cegas ou com baixa visão.
-
+## 4. Público-alvo
+- Moradores da Zona Leste que querem começar uma arte marcial, mesmo sem experiência ou equipamento.
+- Jovens de 10 a 17 anos e seus responsáveis, interessados nas aulas gratuitas de sábado.
+- Famílias que procuram uma atividade para fazer juntas.
+- Alunos atuais, que consultam horários e novidades.
+- Pessoas com deficiência: o site precisa ser usável pelo teclado, por leitores de tela e em alto contraste.
 
 ### 2.2 Sustentabilidade
 
