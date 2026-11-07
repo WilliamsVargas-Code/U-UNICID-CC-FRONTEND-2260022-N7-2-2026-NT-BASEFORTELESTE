@@ -32,11 +32,14 @@ Os números do site (alunos atendidos, recicláveis arrecadados, resultados em e
 - Alunos atuais, que consultam horários e novidades.
 - Pessoas com deficiência: o site precisa ser usável pelo teclado, por leitores de tela e em alto contraste.
 
-### 2.2 Sustentabilidade
+## 5. Objetivos
 
-- Substitui panfletos, cartazes e formulários impressos por um site público e um formulário digital, reduzindo o consumo de papel e de materiais gráficos.
-- O site será construído de forma leve, com imagens otimizadas e código enxuto, para carregar rápido, gastar menos dados móveis e consumir menos energia.
-- Por não utilizar servidor nem banco de dados, o site exige menos recursos para funcionar.
+- Reunir em um só lugar as modalidades, os horários, os professores e as ações sociais.
+- Facilitar o pedido de aula experimental e a inscrição nas aulas de sábado com formulários padronizados.
+- Ampliar o alcance do projeto social para jovens e famílias da região.
+- Substituir panfletos de papel por divulgação digital, com economia estimada de R$ 1.463,72 por ano (cálculo baseado em preços reais de impressão).
+- Mostrar o impacto social da academia, mesmo com números fictícios, de forma honesta e acessível.
+
 
 ### 2.3 Acessibilidade
 
