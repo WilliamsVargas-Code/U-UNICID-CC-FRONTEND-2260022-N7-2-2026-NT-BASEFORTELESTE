@@ -197,16 +197,18 @@ Além de informar, o site contribui diretamente para a divulgação da academia:
 ## 9. Estrutura de pastas
 ```markdown
 BaseForteLeste/
-├── index.html              # páginas HTML na raiz
-├── sobre.html
-├── historia.html
-├── modalidades.html
-├── turmasehorarios.html
-├── blognews.html
-├── acoes.html
-├── formulario.html
-├── css/style.css
-├── js/script.js
+├── index.html              # páginas inicial que o usuário acessará quando clicar no link
+├── contato.html            # usado para contatar a academia por whatsapp, email ou telefone
+├── orcamento_hospedagem.html  # orçamento para hospedar o site em hospedeiros diferentes, incluíndo um comparativo de hospedagem verde, comparativo de registro de domínio e uma estimativa de custo atual
+├── sobre.html                 # página que explicará brevemente sobre a academia e seus objetivos de projeto social
+├── historia.html              # página que retrata a história passada da academia
+├── modalidades.html           # página que listará as modalidades oferecidas pela academia
+├── turmasehorarios.html       # página que lista as diversas turmas em seus dias específicos e os horários em que as aulas ocorrem
+├── blognews.html              # página que irá mostrar noticias recentes em relação a academia
+├── acoes.html                 # página sobre ações socias que vai divulgar as aulas gratuitas que ocorrem aos sábados com foco no público juvenil
+├── formulario.html            # página de formulário onde o usuário irá preencher com os seus dados caso tenha interesse em fazer parte das aulas da academia
+├── css/style.css              # css estilizado para dar vida ao site
+├── js/script.js               # javascript para funções que o html e o css em si não conseguem atender
 ├── img/                    # imagens do site
 └── docs/readme.md          # este plano de contexto
 ```
