@@ -35,9 +35,9 @@ Esta seção documenta a evidência visual da evolução da interface do projeto
 
 **Depois (2ª Entrega / Versão Final):**
 *Portal completo, contendo textos reais, identidade visual refinada, menu com 10 páginas e barra superior de acessibilidade (tamanho de fonte e alto contraste).*
-> *(Substitua o caminho abaixo pela imagem do site final)*
+
 > 
-<img src="/docs/Print do Site final.jpeg" alt="Interface da segunda entrega">
+<img src="/docs/Print do Site final.png" alt="Interface da segunda entrega">
 
 * **Textos e Identidade:** O protótipo inicial utilizava marcações genéricas de preenchimento (`Lorem Ipsum`). Na versão final, todo o conteúdo foi substituído por textos reais, humanizados e institucionais voltados à academia e suas ações sociais.
 * **Navegação:** O menu inicial contava com poucas opções isoladas. O site final foi expandido para um sistema multi-páginas coeso, mantendo o mesmo cabeçalho, barra de acessibilidade e rodapé em todas as seções.
