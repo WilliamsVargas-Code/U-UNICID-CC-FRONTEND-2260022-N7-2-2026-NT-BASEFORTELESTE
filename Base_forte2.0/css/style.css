@@ -1,0 +1,2045 @@
+/* ==========================================================================
+   ACADEMIA BASE FORTE LESTE — FOLHA DE ESTILOS ÚNICA (style.css)
+   Projeto acadêmico de Front-End: HTML5 + CSS3 puro, sem frameworks.
+
+   IDEIA VISUAL
+   - O fundo azul com placas encaixadas imita o TATAME de EVA das academias.
+   - A linha preta com ponta vermelha embaixo dos títulos imita uma FAIXA
+     PRETA com ponteira (a ponta colorida onde ficam os graus).
+   - O cartaz amarelo da página inicial lembra os cartazes colados nos muros
+     da Zona Leste: o panfleto de papel virou conteúdo digital.
+
+   ESTRATÉGIA "MOBILE FIRST"
+   Os estilos principais são pensados para o celular. Depois, as
+   "media queries" (seção 22) ajustam o layout para telas maiores.
+
+   ÍNDICE
+    1. Variáveis (cores, fontes, medidas)
+    2. Reset e estilos base
+    3. Tipografia (títulos, textos e links)
+    4. Acessibilidade (pular conteúdo, foco, barra, alto contraste, fonte)
+    5. Layout (container, seções e grades)
+    6. Cabeçalho e menu fixo no topo
+    7. Botões
+    8. Banner da página inicial e cartaz
+    9. Topo das páginas internas
+   10. Componentes reutilizáveis (cartões, fichas, avisos, etiquetas)
+   11. Página inicial (destaque de sábado, atalhos, depoimentos, FAQ)
+   12. Quem Somos (linha do tempo, missão/visão/valores, eventos)
+   13. Modalidades e multimídia (vídeo e áudio)
+   14. Professores (perfis com figure e figcaption)
+   15. Blog e notícias (article)
+   16. Formulários
+   17. Tabelas
+   18. Ações sociais (frases e galeria)
+   19. Contato e mapa
+   20. Orçamento e hospedagem
+   21. Rodapé e botão flutuante do WhatsApp
+   22. Responsividade (media queries)
+   23. Preferência por menos movimento
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. VARIÁVEIS
+   Guardamos cores e medidas em um só lugar. Se a academia mudar uma cor,
+   basta trocar aqui e o site inteiro é atualizado.
+   ========================================================================== */
+:root {
+  /* Cores da marca (inspiradas no tatame e nas faixas das artes marciais) */
+  --azul-tatame: #1b4b8f;
+  --amarelo-faixa: #f5b800;
+  --preto-faixa: #1c1c1c;
+  --branco-kimono: #ffffff;
+  --vermelho-ponteira: #c62828;
+  --verde-reciclagem: #2e7d32;
+
+  /* Cores com função: o modo de alto contraste troca apenas estas */
+  --cor-fundo: #ffffff;
+  --cor-fundo-alternativo: #eef1f5;
+  --cor-texto: #1c1c1c;
+  --cor-texto-suave: #4a4f57;
+  --cor-link: #1b4b8f;
+  --cor-borda: #c9d0da;
+  --cor-borda-campo: #6b7380;
+  --cor-destaque-fundo: #fff4cc;
+  --cor-sucesso-fundo: #edf7ee;
+
+  /* Fontes: título condensado de cartaz + texto de alta legibilidade.
+     As fontes depois da vírgula são "plano B" caso a principal não carregue. */
+  --fonte-titulo: "League Gothic", "Bahnschrift Condensed", "Arial Narrow", sans-serif;
+  --fonte-texto: "Atkinson Hyperlegible", Verdana, Tahoma, sans-serif;
+
+  /* Medidas */
+  --largura-maxima: 1180px;
+  --raio: 6px;
+}
+
+
+/* ==========================================================================
+   2. RESET E ESTILOS BASE
+   ========================================================================== */
+
+/* box-sizing: border-box faz a largura incluir o padding e a borda */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* O atributo hidden sempre esconde o elemento */
+[hidden] {
+  display: none !important;
+}
+
+html {
+  font-size: 100%;          /* 1rem = 16px (respeita a configuração do navegador) */
+  scroll-padding-top: 8rem; /* links internos (#) não ficam escondidos atrás do menu fixo */
+}
+
+body {
+  margin: 0;
+  font-family: var(--fonte-texto);
+  font-size: 1.125rem;      /* 18px: texto confortável de ler */
+  line-height: 1.65;
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+}
+
+/* Imagens, vídeos e mapas nunca ficam maiores que o espaço disponível */
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+
+/* ==========================================================================
+   3. TIPOGRAFIA
+   ========================================================================== */
+h1,
+h2,
+h3,
+h4 {
+  margin: 0 0 0.75rem;
+  line-height: 1.15;
+}
+
+/* Títulos grandes usam a fonte condensada (League Gothic já é "negrito") */
+h1,
+h2 {
+  font-family: var(--fonte-titulo);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* clamp(mínimo, ideal, máximo): cresce com a tela, mas respeita os limites */
+h1 {
+  font-size: clamp(2.75rem, 2rem + 3.5vw, 4.75rem);
+  line-height: 0.98;
+}
+
+h2 {
+  font-size: clamp(2.25rem, 1.8rem + 2vw, 3.25rem);
+  line-height: 1;
+}
+
+h3 {
+  font-size: 1.375rem;
+  line-height: 1.3;
+}
+
+h4 {
+  font-size: 1.125rem;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+/* Linhas muito longas cansam a leitura: limitamos a ~70 caracteres */
+main p,
+main li {
+  max-width: 70ch;
+}
+
+ul,
+ol {
+  padding-left: 1.4rem;
+}
+
+/* ::marker pinta só o marcador da lista (a bolinha ou o número) */
+main li::marker {
+  color: var(--azul-tatame);
+}
+
+a {
+  color: var(--cor-link);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  text-decoration-thickness: 3px;
+}
+
+strong {
+  font-weight: 700;
+}
+
+/* Parágrafo de introdução, um pouco maior que o texto comum */
+.introducao {
+  font-size: 1.25rem;
+}
+
+/* Texto escondido na tela, mas lido por leitores de tela */
+.visualmente-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+
+/* ==========================================================================
+   4. ACESSIBILIDADE
+   ========================================================================== */
+
+/* 4.1 Link "Pular para o conteúdo": fica fora da tela e aparece ao usar Tab */
+.pular-conteudo {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 200;
+  padding: 0.75rem 1rem;
+  background-color: var(--amarelo-faixa);
+  color: var(--preto-faixa);
+  font-weight: 700;
+  border-radius: 0 0 var(--raio) var(--raio);
+}
+
+.pular-conteudo:focus {
+  top: 0;
+}
+
+/* 4.2 Foco visível: anel duplo (preto + amarelo) que aparece em qualquer fundo
+   quando a pessoa navega pelo teclado */
+:focus-visible {
+  outline: 3px solid var(--amarelo-faixa);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px var(--preto-faixa);
+}
+
+/* 4.3 Barra de acessibilidade (só aparece quando o JavaScript está ativo) */
+.barra-acessibilidade {
+  background-color: var(--cor-fundo-alternativo);
+  border-bottom: 1px solid var(--cor-borda);
+  font-size: 0.9375rem;
+}
+
+.barra-acessibilidade .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+}
+
+.barra-acessibilidade button {
+  min-width: 2.75rem;
+  padding: 0.25rem 0.65rem;
+  font: inherit;
+  font-weight: 700;
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  border: 2px solid var(--cor-texto);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* No celular, o texto "Acessibilidade:" some para os botões caberem em uma
+   linha (o leitor de tela continua anunciando o nome do grupo pelo aria-label) */
+.barra-titulo {
+  display: none;
+}
+
+/* aria-pressed="true" indica que o botão está ligado */
+.barra-acessibilidade button[aria-pressed="true"] {
+  color: var(--cor-fundo);
+  background-color: var(--cor-texto);
+}
+
+/* 4.4 Tamanhos de fonte (classes colocadas no <html> pelo script.js).
+   Como o site usa "rem", tudo cresce junto: textos, botões e espaços. */
+html.fonte-menor {
+  font-size: 93.75%;
+}
+
+html.fonte-grande {
+  font-size: 112.5%;
+}
+
+html.fonte-maior {
+  font-size: 125%;
+}
+
+/* 4.5 Modo alto contraste: basta redefinir as variáveis de cor */
+html.alto-contraste {
+  --azul-tatame: #000000;
+  --amarelo-faixa: #ffeb3b;
+  --verde-reciclagem: #000000;
+  --cor-fundo: #000000;
+  --cor-fundo-alternativo: #000000;
+  --cor-texto: #ffffff;
+  --cor-texto-suave: #ffffff;
+  --cor-link: #ffeb3b;
+  --cor-borda: #ffffff;
+  --cor-borda-campo: #ffffff;
+  --cor-destaque-fundo: #000000;
+  --cor-sucesso-fundo: #000000;
+}
+
+html.alto-contraste .banner,
+html.alto-contraste .topo-pagina {
+  background-image: none;
+  border-bottom: 2px solid #ffffff;
+}
+
+html.alto-contraste .secao h2::after {
+  background: #ffffff;
+}
+
+html.alto-contraste .etiqueta-inclusiva,
+html.alto-contraste .selo,
+html.alto-contraste .whatsapp-flutuante {
+  border: 2px solid #ffffff;
+}
+
+
+/* ==========================================================================
+   5. LAYOUT
+   ========================================================================== */
+
+/* Container: centraliza o conteúdo e limita a largura em telas grandes */
+.container {
+  max-width: var(--largura-maxima);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+/* Espaçamento vertical padrão das seções */
+.secao {
+  padding-top: clamp(3rem, 2rem + 4vw, 5rem);
+  padding-bottom: clamp(3rem, 2rem + 4vw, 5rem);
+}
+
+.secao-alternada {
+  background-color: var(--cor-fundo-alternativo);
+}
+
+.secao-azul {
+  background-color: var(--azul-tatame);
+  color: var(--branco-kimono);
+}
+
+.secao-azul a {
+  color: var(--branco-kimono);
+}
+
+/* Título de seção com a "faixa preta" embaixo (pseudo-elemento ::after).
+   Cada pedaço do gradiente é uma listra: preto, ponteira vermelha e 2 graus brancos. */
+.secao h2::after {
+  content: "";
+  display: block;
+  width: 7rem;
+  height: 0.6rem;
+  margin-top: 0.75rem;
+  border-radius: 2px;
+  background: linear-gradient(
+    to right,
+    var(--preto-faixa) 0 64%,
+    var(--vermelho-ponteira) 64% 72%,
+    var(--branco-kimono) 72% 77%,
+    var(--vermelho-ponteira) 77% 83%,
+    var(--branco-kimono) 83% 88%,
+    var(--vermelho-ponteira) 88% 100%
+  );
+}
+
+.secao h2 {
+  margin-bottom: 1.5rem;
+}
+
+/* Grade automática: cada coluna tem no mínimo 16rem.
+   Se não couber na tela, o item desce para a linha de baixo (sem media query). */
+.grade {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+}
+
+/* Duas colunas (no celular fica uma embaixo da outra; veja a seção 22) */
+.duas-colunas {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.ilustracao {
+  margin: 0;
+}
+
+.ilustracao img {
+  display: block;
+  width: 100%;
+  border: 2px solid var(--cor-borda);
+  border-radius: var(--raio);
+}
+
+.ilustracao figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9375rem;
+  color: var(--cor-texto-suave);
+}
+
+
+/* ==========================================================================
+   6. CABEÇALHO E MENU FIXO NO TOPO
+   position: sticky = o cabeçalho rola junto com a página até encostar no
+   topo da tela e, a partir daí, fica "grudado" ali.
+   ========================================================================== */
+.cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--cor-fundo);
+}
+
+.cabecalho-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--cor-texto);
+  text-decoration: none;
+}
+
+.logo img {
+  width: 2.75rem;
+  height: 2.75rem;
+}
+
+.logo-nome {
+  font-family: var(--fonte-titulo);
+  font-size: 1.9rem;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* Botão "Agendar aula experimental" do cabeçalho: escondido no celular.
+   Usamos DUAS classes no seletor (mais específico) para vencer a regra
+   .botao { display: inline-block } da seção 7. */
+.cabecalho-topo .cabecalho-acao {
+  display: none;
+}
+
+/* Menu: uma faixa preta com os 10 links */
+.menu {
+  background-color: var(--preto-faixa);
+}
+
+.menu-lista {
+  display: flex;
+  gap: 0.25rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style: none;
+  overflow-x: auto;        /* no celular, o menu rola para o lado */
+  scrollbar-width: thin;
+}
+
+.menu-lista a {
+  display: block;
+  padding: 0.8rem 0.7rem 0.65rem;
+  color: var(--branco-kimono);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;     /* o texto do link não quebra em duas linhas */
+  border-bottom: 4px solid transparent;
+}
+
+.menu-lista a:hover {
+  border-bottom-color: var(--branco-kimono);
+}
+
+/* aria-current="page" marca a página atual (para a tela e para leitores de tela) */
+.menu-lista a[aria-current="page"] {
+  color: #ffeb3b;
+  border-bottom-color: #ffeb3b;
+}
+
+/* O foco fica por dentro do link para não ser cortado pela rolagem do menu */
+.menu-lista a:focus-visible {
+  outline-offset: -5px;
+  box-shadow: none;
+}
+
+
+/* ==========================================================================
+   7. BOTÕES
+   ========================================================================== */
+.botao {
+  display: inline-block;
+  padding: 0.85rem 1.4rem;
+  font-family: inherit;    /* <button> não herda a fonte da página por padrão */
+  font-size: inherit;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: var(--raio);
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* Amarelo = ação principal (agendar, inscrever) */
+.botao-amarelo {
+  color: var(--preto-faixa);
+  background-color: var(--amarelo-faixa);
+  border-color: var(--preto-faixa);
+}
+
+.botao-amarelo:hover {
+  background-color: var(--branco-kimono);
+}
+
+.botao-azul {
+  color: var(--branco-kimono);
+  background-color: var(--azul-tatame);
+}
+
+.botao-azul:hover {
+  background-color: var(--preto-faixa);
+}
+
+/* Contorno branco: usado sobre fundos azuis */
+.botao-contorno {
+  color: var(--branco-kimono);
+  background-color: transparent;
+  border-color: var(--branco-kimono);
+}
+
+.botao-contorno:hover {
+  color: var(--preto-faixa);
+  background-color: var(--branco-kimono);
+}
+
+/* Grupo de botões lado a lado (quebra linha no celular) */
+.grupo-botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+
+/* ==========================================================================
+   8. BANNER DA PÁGINA INICIAL E CARTAZ
+   ========================================================================== */
+
+/* O fundo é uma imagem SVG pequena (160x160) que se repete: o tatame */
+.banner {
+  padding-top: 3.5rem;
+  padding-bottom: 4.5rem;
+  color: var(--branco-kimono);
+  background-color: var(--azul-tatame);
+  background-image: url("../img/textura-tatame.svg");
+  background-size: 160px 160px;
+}
+
+.banner-conteudo {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+
+.banner h1 {
+  max-width: 11ch;
+  font-size: clamp(3.25rem, 2rem + 6vw, 6.5rem);
+}
+
+.banner-descricao {
+  max-width: 36rem;
+  font-size: 1.25rem;
+}
+
+/* Cartaz amarelo "colado" no tatame, levemente inclinado (transform: rotate) */
+.cartaz {
+  position: relative;
+  max-width: 26rem;
+  padding: 2.25rem 1.75rem 1.75rem;
+  color: var(--preto-faixa);
+  background-color: var(--amarelo-faixa);
+  transform: rotate(-2deg);
+}
+
+/* As duas "fitas adesivas" do cartaz são pseudo-elementos (não existem no HTML) */
+.cartaz::before,
+.cartaz::after {
+  content: "";
+  position: absolute;
+  top: -12px;
+  width: 88px;
+  height: 26px;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.cartaz::before {
+  left: 18px;
+  transform: rotate(-7deg);
+}
+
+.cartaz::after {
+  right: 18px;
+  transform: rotate(6deg);
+}
+
+.cartaz-quando {
+  margin-bottom: 0.25rem;
+  font-weight: 700;
+}
+
+.cartaz h2 {
+  margin-bottom: 1rem;
+  font-size: clamp(3rem, 2.4rem + 3vw, 4.5rem);
+  line-height: 0.9;
+}
+
+.cartaz a {
+  color: var(--preto-faixa);
+  font-weight: 700;
+}
+
+
+/* ==========================================================================
+   9. TOPO DAS PÁGINAS INTERNAS (mesmo tatame do banner, mais baixo)
+   ========================================================================== */
+.topo-pagina {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  color: var(--branco-kimono);
+  background-color: var(--azul-tatame);
+  background-image: url("../img/textura-tatame.svg");
+  background-size: 160px 160px;
+}
+
+.topo-pagina p {
+  max-width: 60ch;
+  margin-bottom: 0;
+  font-size: 1.25rem;
+}
+
+.topo-pagina a {
+  color: var(--branco-kimono);
+}
+
+
+/* ==========================================================================
+   10. COMPONENTES REUTILIZÁVEIS
+   ========================================================================== */
+
+/* Cartão simples com borda (sem sombra) */
+.cartao {
+  padding: 1.5rem;
+  background-color: var(--cor-fundo);
+  border: 2px solid var(--cor-borda);
+  border-radius: var(--raio);
+}
+
+.cartao h3 {
+  margin-bottom: 0.5rem;
+}
+
+.cartao p:last-child {
+  margin-bottom: 0;
+}
+
+/* Ficha: lista de definição <dl> (termo <dt> + descrição <dd>) */
+.ficha {
+  display: grid;
+  gap: 0.35rem 1.25rem;
+  margin: 0;
+}
+
+.ficha dt {
+  font-weight: 700;
+}
+
+.ficha dd {
+  margin: 0 0 0.75rem;
+}
+
+/* Aviso informativo com faixa azul na lateral */
+.aviso {
+  max-width: 70ch;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 1rem 1.25rem;
+  background-color: var(--cor-fundo-alternativo);
+  border-left: 6px solid var(--azul-tatame);
+}
+
+.aviso p:last-child {
+  margin-bottom: 0;
+}
+
+/* Etiquetas pequenas usadas nas tabelas e no blog */
+.etiqueta {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1.5;
+  white-space: nowrap;
+  border-radius: 4px;
+}
+
+.etiqueta-gratuita {
+  color: var(--preto-faixa);
+  background-color: var(--amarelo-faixa);
+}
+
+.etiqueta-inclusiva {
+  color: var(--branco-kimono);
+  background-color: var(--verde-reciclagem);
+}
+
+.etiqueta-categoria {
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo-alternativo);
+  border: 1px solid var(--cor-borda);
+}
+
+/* Selo verde (ex.: "Capacitação em ensino inclusivo") */
+.selo {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--branco-kimono);
+  background-color: var(--verde-reciclagem);
+  border-radius: 999px;
+}
+
+/* Caixa de destaque verde (sustentabilidade) */
+.destaque-verde {
+  max-width: 70ch;
+  padding: 1.25rem 1.5rem;
+  background-color: var(--cor-sucesso-fundo);
+  border-left: 8px solid var(--verde-reciclagem);
+}
+
+.destaque-verde p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ==========================================================================
+   11. PÁGINA INICIAL
+   ========================================================================== */
+
+/* 11.1 Destaque das aulas gratuitas de sábado (sombra "dura" amarela) */
+.destaque-sabado {
+  display: grid;
+  gap: 2rem;
+  padding: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+  background-color: var(--cor-fundo);
+  border: 4px solid var(--cor-texto);
+  border-radius: var(--raio);
+  box-shadow: 10px 10px 0 var(--amarelo-faixa);
+}
+
+.destaque-sabado .ficha dt {
+  color: var(--azul-tatame);
+}
+
+html.alto-contraste .destaque-sabado .ficha dt {
+  color: #ffeb3b;
+}
+
+/* 11.2 Atalhos para as modalidades */
+.grade-atalhos {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.atalho {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: 100%;
+  padding: 1.5rem;
+  color: var(--cor-texto);
+  text-decoration: none;
+  background-color: var(--cor-fundo);
+  border: 2px solid var(--cor-borda);
+  border-radius: var(--raio);
+}
+
+.atalho:hover {
+  background-color: var(--cor-destaque-fundo);
+  border-color: var(--azul-tatame);
+}
+
+.atalho img {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.atalho-nome {
+  font-family: var(--fonte-titulo);
+  font-size: 2.1rem;
+  line-height: 1;
+  color: var(--azul-tatame);
+}
+
+html.alto-contraste .atalho-nome {
+  color: #ffeb3b;
+}
+
+/* 11.3 Depoimentos: <figure> + <blockquote> + <figcaption> */
+.grade-depoimentos {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+}
+
+.depoimento {
+  margin: 0;
+}
+
+.depoimento blockquote {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+/* Aspas grandes desenhadas pelo CSS (\201C é o código da aspa “) */
+.depoimento blockquote::before {
+  content: "\201C";
+  display: block;
+  height: 2.5rem;
+  font-family: var(--fonte-titulo);
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--amarelo-faixa);
+}
+
+.depoimento figcaption {
+  margin-top: 1rem;
+  font-weight: 700;
+}
+
+/* 11.4 Perguntas frequentes com <details> e <summary> (abre e fecha sem JavaScript) */
+.faq {
+  max-width: 52rem;
+}
+
+.faq details {
+  border-top: 2px solid var(--cor-borda);
+}
+
+.faq details:last-child {
+  border-bottom: 2px solid var(--cor-borda);
+}
+
+.faq summary {
+  position: relative;
+  padding: 1.1rem 3rem 1.1rem 0;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;        /* remove a setinha padrão */
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;           /* remove a setinha padrão no Safari */
+}
+
+/* Sinal de + quando fechado e de − quando aberto */
+.faq summary::after {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  transform: translateY(-50%);
+  font-family: var(--fonte-titulo);
+  font-size: 2.25rem;
+  line-height: 1;
+  color: var(--azul-tatame);
+}
+
+.faq details[open] summary::after {
+  content: "\2212";
+}
+
+html.alto-contraste .faq summary::after {
+  color: #ffeb3b;
+}
+
+.faq details p {
+  padding-bottom: 1.25rem;
+}
+
+/* 11.5 Chamada final centralizada */
+.chamada-final {
+  text-align: center;
+}
+
+.chamada-final h2::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chamada-final p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chamada-final .grupo-botoes {
+  justify-content: center;
+}
+
+
+/* ==========================================================================
+   12. QUEM SOMOS
+   ========================================================================== */
+
+/* 12.1 Linha do tempo: lista ordenada com uma linha azul à esquerda */
+.linha-do-tempo {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-left: 4px solid var(--azul-tatame);
+}
+
+.linha-do-tempo li {
+  position: relative;
+  padding: 0 0 2rem 2rem;
+}
+
+/* Bolinha amarela em cada ano */
+.linha-do-tempo li::before {
+  content: "";
+  position: absolute;
+  top: 0.35rem;
+  left: -12px;
+  width: 20px;
+  height: 20px;
+  background-color: var(--amarelo-faixa);
+  border: 4px solid var(--azul-tatame);
+  border-radius: 50%;
+}
+
+.linha-do-tempo time {
+  display: block;
+  font-family: var(--fonte-titulo);
+  font-size: 2.25rem;
+  line-height: 1;
+  color: var(--azul-tatame);
+}
+
+html.alto-contraste .linha-do-tempo time {
+  color: #ffeb3b;
+}
+
+/* 12.2 Missão, visão e valores: cada cartão tem uma borda superior de cor diferente */
+.cartao-missao {
+  border-top: 8px solid var(--azul-tatame);
+}
+
+.cartao-visao {
+  border-top: 8px solid var(--amarelo-faixa);
+}
+
+.cartao-valores {
+  border-top: 8px solid var(--verde-reciclagem);
+}
+
+/* 12.3 Eventos e campeonatos */
+.lista-eventos {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lista-eventos li {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.lista-eventos time {
+  font-family: var(--fonte-titulo);
+  font-size: 1.9rem;
+  line-height: 1.1;
+  color: var(--azul-tatame);
+}
+
+html.alto-contraste .lista-eventos time {
+  color: #ffeb3b;
+}
+
+.lista-eventos p {
+  margin: 0;
+}
+
+
+/* ==========================================================================
+   13. MODALIDADES E MULTIMÍDIA
+   ========================================================================== */
+
+/* 13.1 Sumário com links para cada modalidade (âncoras #) */
+.sumario ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.sumario a {
+  display: inline-block;
+  padding: 0.45rem 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid var(--cor-link);
+  border-radius: 999px;
+}
+
+.sumario a:hover {
+  color: var(--branco-kimono);
+  background-color: var(--azul-tatame);
+}
+
+/* 13.2 Cada modalidade é um <article> */
+.modalidade {
+  padding-top: 2.5rem;
+  padding-bottom: 1rem;
+  border-top: 2px solid var(--cor-borda);
+}
+
+.modalidade-cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.modalidade-cabecalho img {
+  width: 4rem;
+  height: 4rem;
+}
+
+.modalidade h3 {
+  margin: 0;
+  font-family: var(--fonte-titulo);
+  font-size: 2.75rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.modalidade-grade {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.modalidade h4 {
+  margin-bottom: 0.5rem;
+}
+
+/* 13.3 Vídeo e áudio */
+.grade-midia {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.midia {
+  margin: 0;
+}
+
+.midia video {
+  display: block;
+  width: 100%;
+  height: auto;
+  background-color: #000000;
+  border-radius: var(--raio);
+}
+
+.midia audio {
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.midia figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.9375rem;
+  color: var(--cor-texto-suave);
+}
+
+/* Transcrição do áudio (acessibilidade para pessoas surdas) */
+.transcricao {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--cor-fundo);
+  border: 2px solid var(--cor-borda);
+  border-radius: var(--raio);
+}
+
+.transcricao summary {
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.transcricao p {
+  margin: 0.75rem 0 0;
+}
+
+
+/* ==========================================================================
+   14. PROFESSORES
+   ========================================================================== */
+.grade-perfis {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+}
+
+.perfil {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: var(--cor-fundo);
+  border: 2px solid var(--cor-borda);
+  border-radius: var(--raio);
+}
+
+.perfil-foto {
+  margin: 0;
+}
+
+.perfil-foto img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;    /* foto quadrada */
+  object-fit: cover;
+}
+
+.perfil-foto figcaption {
+  padding: 0.6rem 1.5rem;
+  font-size: 0.875rem;
+  color: var(--cor-texto-suave);
+  background-color: var(--cor-fundo-alternativo);
+}
+
+.perfil-conteudo {
+  padding: 1.25rem 1.5rem 1.5rem;
+}
+
+.perfil h3 {
+  margin-bottom: 0.25rem;
+  font-family: var(--fonte-titulo);
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.perfil-cargo {
+  font-weight: 700;
+  color: var(--cor-link);
+}
+
+.perfil ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+/* Em cartões estreitos, a ficha fica empilhada (termo em cima, descrição embaixo).
+   Duas classes no seletor = mais específico que a regra .ficha da seção 22. */
+.perfil .ficha,
+.cartao-valores .ficha {
+  grid-template-columns: 1fr;
+}
+
+.perfil .ficha dd,
+.cartao-valores .ficha dd {
+  margin-bottom: 0.75rem;
+}
+
+
+/* ==========================================================================
+   15. BLOG E NOTÍCIAS
+   ========================================================================== */
+
+/* 15.1 Notícia principal (texto completo) */
+.noticia-principal {
+  max-width: 46rem;
+}
+
+.noticia-principal header {
+  margin-bottom: 1.5rem;
+}
+
+.noticia-principal h2 {
+  font-size: clamp(2.5rem, 2rem + 2.5vw, 3.75rem);
+}
+
+.noticia-meta {
+  margin-bottom: 0;
+  font-size: 0.9375rem;
+  color: var(--cor-texto-suave);
+}
+
+.noticia-principal figure {
+  margin: 0 0 2rem;
+}
+
+.noticia-principal figure img {
+  display: block;
+  width: 100%;
+  border-radius: var(--raio);
+}
+
+.noticia-principal figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9375rem;
+  color: var(--cor-texto-suave);
+}
+
+.noticia-principal h3 {
+  margin-top: 2rem;
+}
+
+/* Citação em destaque dentro do texto */
+.citacao {
+  margin: 2rem 0;
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  border-left: 6px solid var(--amarelo-faixa);
+}
+
+.citacao p {
+  margin-bottom: 0.5rem;
+}
+
+.citacao footer {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.fontes {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  font-size: 0.9375rem;
+  border-top: 2px solid var(--cor-borda);
+}
+
+.fontes li {
+  margin-bottom: 0.5rem;
+  overflow-wrap: anywhere;   /* links longos quebram em vez de vazar da tela */
+}
+
+/* 15.2 Demais publicações */
+.grade-artigos {
+  display: grid;
+  gap: 2.5rem 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+}
+
+.artigo {
+  padding-top: 1rem;
+  border-top: 6px solid var(--azul-tatame);
+}
+
+.artigo h3 {
+  margin-top: 0.75rem;
+}
+
+.artigo details summary {
+  font-weight: 700;
+  color: var(--cor-link);
+  cursor: pointer;
+}
+
+.artigo details p:first-of-type {
+  margin-top: 1rem;
+}
+
+
+/* ==========================================================================
+   16. FORMULÁRIOS
+   ========================================================================== */
+
+/* 16.1 Os dois caminhos da página de aula experimental */
+.caminhos {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.caminho {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 2rem;
+  border: 3px solid var(--azul-tatame);
+  border-radius: var(--raio);
+}
+
+.caminho h3 {
+  font-family: var(--fonte-titulo);
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.caminho ul {
+  margin: 0 0 0.5rem;
+}
+
+.caminho .botao {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.caminho-sabado {
+  color: var(--preto-faixa);
+  background-color: var(--amarelo-faixa);
+  border-color: var(--preto-faixa);
+}
+
+.caminho-sabado li::marker {
+  color: var(--preto-faixa);
+}
+
+/* 16.2 Estrutura do formulário */
+.formulario {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 46rem;
+}
+
+.formulario fieldset {
+  display: grid;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 1.25rem 1.5rem 1.5rem;
+  border: 2px solid var(--cor-borda);
+  border-radius: var(--raio);
+}
+
+.formulario legend {
+  padding: 0 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+/* Fieldset dentro de fieldset (grupos de opções): sem borda */
+.formulario fieldset fieldset {
+  padding: 0;
+  border: 0;
+}
+
+.formulario fieldset fieldset legend {
+  padding: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+}
+
+/* Cada campo = rótulo + entrada (+ dica) */
+.campo {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.campo label {
+  font-weight: 700;
+}
+
+/* Asterisco vermelho dos campos obrigatórios */
+.obrigatorio {
+  color: var(--vermelho-ponteira);
+}
+
+html.alto-contraste .obrigatorio {
+  color: #ffeb3b;
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  font: inherit;
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  border: 2px solid var(--cor-borda-campo);
+  border-radius: 4px;
+}
+
+.formulario textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+/* :user-invalid = campo inválido DEPOIS que a pessoa interagiu com ele
+   (assim o formulário não começa todo vermelho) */
+.formulario input:user-invalid,
+.formulario select:user-invalid,
+.formulario textarea:user-invalid {
+  border-color: var(--vermelho-ponteira);
+  border-width: 3px;
+}
+
+/* Texto de ajuda abaixo do campo */
+.dica {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: var(--cor-texto-suave);
+}
+
+/* Opções (radio) lado a lado */
+.opcoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.75rem;
+}
+
+.opcao {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* accent-color pinta o radio e o checkbox com a cor da marca */
+.formulario .opcao input,
+.formulario .campo-checkbox input {
+  width: 1.3rem;
+  height: 1.3rem;
+  margin: 0;
+  accent-color: var(--azul-tatame);
+}
+
+.campo-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.formulario .campo-checkbox input {
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.formulario .botao {
+  justify-self: start;
+}
+
+/* 16.3 Mensagem de confirmação: escondida até virar o "alvo" da URL (#id).
+   Ao enviar o formulário, o endereço termina com #confirmacao-... e o
+   seletor :target faz a mensagem aparecer, sem JavaScript. */
+.mensagem-sucesso {
+  display: none;
+  max-width: 46rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: var(--cor-sucesso-fundo);
+  border: 3px solid var(--verde-reciclagem);
+  border-radius: var(--raio);
+}
+
+.mensagem-sucesso:target {
+  display: block;
+}
+
+html.alto-contraste .mensagem-sucesso {
+  border-color: #ffffff;
+}
+
+
+/* ==========================================================================
+   17. TABELAS
+   ========================================================================== */
+
+/* Caixa que permite rolar a tabela para o lado no celular */
+.tabela-rolagem {
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+  border: 2px solid var(--cor-borda);
+  border-radius: var(--raio);
+}
+
+table {
+  width: 100%;
+  min-width: 38rem;
+  border-collapse: collapse;  /* junta as bordas das células */
+  background-color: var(--cor-fundo);
+}
+
+caption {
+  padding: 1rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+thead th {
+  color: var(--branco-kimono);
+  background-color: var(--azul-tatame);
+  white-space: nowrap;
+}
+
+/* Linhas "zebradas": as linhas pares ganham fundo cinza */
+tbody tr:nth-child(even) {
+  background-color: var(--cor-fundo-alternativo);
+}
+
+tfoot td {
+  font-size: 0.9375rem;
+  color: var(--cor-texto-suave);
+}
+
+/* Números alinhados à direita ficam mais fáceis de comparar */
+.numero {
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Na grade de horários, o texto das células não quebra (ex.: "18h30 às 19h30").
+   No celular, a tabela simplesmente rola para o lado. */
+.tabela-horarios td {
+  white-space: nowrap;
+}
+
+.legenda-tabela {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+
+/* ==========================================================================
+   18. AÇÕES SOCIAIS
+   ========================================================================== */
+
+/* 18.1 Frases motivacionais em letras de cartaz */
+.frases {
+  display: grid;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.frases li {
+  max-width: 28ch;
+  padding-left: 1.25rem;
+  font-family: var(--fonte-titulo);
+  font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
+  line-height: 1.05;
+  border-left: 8px solid var(--amarelo-faixa);
+}
+
+/* 18.2 Galeria de fotos */
+.galeria {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+}
+
+.galeria figure {
+  margin: 0;
+  overflow: hidden;
+  background-color: var(--cor-fundo);
+  border: 2px solid var(--cor-borda);
+  border-radius: var(--raio);
+}
+
+.galeria img {
+  display: block;
+  width: 100%;
+}
+
+.galeria figcaption {
+  padding: 0.75rem 1rem 1rem;
+  font-size: 0.9375rem;
+}
+
+/* Linha da fonte (crédito) de cada imagem */
+.fonte-imagem {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.8125rem;
+  color: var(--cor-texto-suave);
+}
+
+
+/* ==========================================================================
+   19. CONTATO E MAPA
+   ========================================================================== */
+.grade-contato {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+}
+
+.grade-contato h3 {
+  font-size: 1.125rem;
+}
+
+.grade-contato address {
+  font-style: normal;     /* <address> vem em itálico por padrão */
+}
+
+/* E-mails longos podem quebrar em qualquer ponto para não vazar do cartão */
+.grade-contato a {
+  overflow-wrap: anywhere;
+}
+
+/* Números de telefone ficam sempre inteiros, sem quebrar no hífen */
+.sem-quebra {
+  white-space: nowrap;
+}
+
+/* O mapa (iframe) ocupa toda a largura da coluna */
+.mapa {
+  display: block;
+  width: 100%;
+  height: 24rem;
+  border: 2px solid var(--cor-borda);
+  border-radius: var(--raio);
+}
+
+
+/* ==========================================================================
+   20. ORÇAMENTO E HOSPEDAGEM
+   ========================================================================== */
+.passos li {
+  margin-bottom: 0.75rem;
+}
+
+.passos li::marker {
+  font-weight: 700;
+}
+
+/* Resumo do orçamento anual */
+.resumo-orcamento {
+  max-width: 32rem;
+  padding: 1.5rem;
+  background-color: var(--cor-fundo);
+  border: 4px solid var(--cor-texto);
+  border-radius: var(--raio);
+}
+
+.resumo-orcamento .ficha {
+  grid-template-columns: 1fr auto;
+}
+
+.resumo-orcamento .ficha dd {
+  margin: 0;
+  text-align: right;
+}
+
+.total {
+  margin: 1rem 0 0;
+  padding-top: 1rem;
+  font-family: var(--fonte-titulo);
+  font-size: 2.75rem;
+  line-height: 1;
+  color: var(--azul-tatame);
+  border-top: 2px solid var(--cor-borda);
+}
+
+html.alto-contraste .total {
+  color: #ffeb3b;
+}
+
+
+/* ==========================================================================
+   21. RODAPÉ E BOTÃO FLUTUANTE DO WHATSAPP
+   ========================================================================== */
+.rodape {
+  color: #e8eaee;
+  background-color: var(--preto-faixa);
+}
+
+.rodape-grade {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.rodape-titulo {
+  margin-bottom: 0.75rem;
+  font-family: var(--fonte-titulo);
+  font-size: 1.9rem;
+  font-weight: 400;
+  color: #ffeb3b;
+}
+
+.rodape a {
+  color: var(--branco-kimono);
+}
+
+.rodape address {
+  font-style: normal;
+}
+
+.rodape ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rodape li {
+  margin-bottom: 0.4rem;
+}
+
+.rodape p {
+  margin-bottom: 0.6rem;
+}
+
+.rodape-creditos {
+  padding-top: 1.5rem;
+  padding-bottom: 5rem;    /* espaço para o botão flutuante não cobrir o texto */
+  font-size: 0.9375rem;
+  color: #c9ced6;
+  border-top: 1px solid #3a3f47;
+}
+
+/* Botão flutuante: position: fixed = preso no canto da TELA (não da página) */
+.whatsapp-flutuante {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 90;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.1rem;
+  font-weight: 700;
+  color: var(--branco-kimono);
+  text-decoration: none;
+  background-color: var(--verde-reciclagem);
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+/* Balãozinho de conversa desenhado só com CSS */
+.whatsapp-flutuante::before {
+  content: "";
+  width: 1.1rem;
+  height: 1.1rem;
+  border: 3px solid currentColor;
+  border-radius: 50% 50% 50% 0;
+}
+
+.whatsapp-flutuante:hover {
+  background-color: var(--preto-faixa);
+}
+
+.rodape .whatsapp-flutuante {
+  color: var(--branco-kimono);
+}
+
+
+/* ==========================================================================
+   22. RESPONSIVIDADE (MEDIA QUERIES)
+   "min-width" = a regra vale a partir dessa largura de tela.
+   ========================================================================== */
+
+/* Celulares maiores e tablets pequenos (a partir de 640px) */
+@media (min-width: 640px) {
+  .cabecalho-topo .cabecalho-acao {
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .barra-titulo {
+    display: inline;
+  }
+
+  .ficha {
+    grid-template-columns: max-content 1fr;
+  }
+
+  .ficha dd {
+    margin-bottom: 0.35rem;
+  }
+}
+
+/* Tablets (a partir de 768px) */
+@media (min-width: 768px) {
+  .caminhos {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .rodape-creditos {
+    padding-bottom: 1.5rem;
+  }
+}
+
+/* Notebooks e computadores (a partir de 960px) */
+@media (min-width: 960px) {
+  .banner-conteudo {
+    grid-template-columns: 1.35fr 1fr;
+  }
+
+  .duas-colunas {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .duas-colunas-centro {
+    align-items: center;
+  }
+
+  .destaque-sabado {
+    grid-template-columns: 1.1fr 1fr;
+    align-items: start;
+  }
+
+  .modalidade-grade {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grade-midia {
+    grid-template-columns: 3fr 2fr;
+    align-items: start;
+  }
+
+  /* No computador o menu não rola: se faltar espaço, os links descem
+     para uma segunda linha (flex-wrap) em vez de ficarem escondidos */
+  .menu-lista {
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+}
+
+
+/* ==========================================================================
+   22.1 MENU HAMBÚRGUER E SIDEBAR RESPONSIVA (< 768px)
+   ========================================================================== */
+
+/* Por padrão (telas >= 768px), esconde os controles exclusivos do mobile */
+.botao-hamburguer,
+.menu-cabecalho-mobile,
+.menu-overlay {
+  display: none;
+}
+
+/* Em telas menores que 768px: esconde a barra padrão e ativa a Sidebar */
+@media (max-width: 767.98px) {
+  /* Botão das 3 barrinhas */
+  .botao-hamburguer {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0.5rem;
+    background-color: var(--preto-faixa);
+    border: 2px solid var(--preto-faixa);
+    border-radius: var(--raio);
+    cursor: pointer;
+    z-index: 1002;
+  }
+
+  .hamburguer-linha {
+    display: block;
+    width: 22px;
+    height: 3px;
+    background-color: var(--branco-kimono);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  /* Animação das 3 barrinhas virando um "X" quando aberto */
+  .botao-hamburguer.aberto .hamburguer-linha:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .botao-hamburguer.aberto .hamburguer-linha:nth-child(2) {
+    opacity: 0;
+  }
+  .botao-hamburguer.aberto .hamburguer-linha:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Aba lateral (Sidebar) deslizando da esquerda */
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: min(82vw, 300px);
+    height: 100vh;
+    background-color: var(--preto-faixa);
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.45);
+    transform: translateX(-100%);
+    visibility: hidden;
+    transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    z-index: 1001;
+    overflow-y: auto;
+  }
+
+  /* Classe alternada pelo JS para abrir a sidebar */
+  .menu.aberto {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  /* Cabeçalho interno da Sidebar com a logo da academia */
+  .menu-cabecalho-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid #3a3f47;
+  }
+
+  .menu-cabecalho-mobile .logo {
+    color: var(--branco-kimono);
+  }
+
+  .menu-cabecalho-mobile .logo-nome {
+    font-size: 1.5rem;
+  }
+
+  .botao-fechar-menu {
+    background: transparent;
+    border: 2px solid var(--branco-kimono);
+    border-radius: var(--raio);
+    color: var(--branco-kimono);
+    font-size: 1.5rem;
+    line-height: 1;
+    width: 2.25rem;
+    height: 2.25rem;
+    cursor: pointer;
+  }
+
+  /* Lista de links empilhada na vertical dentro da sidebar */
+  .menu-lista {
+    flex-direction: column;
+    padding: 0.75rem 1.25rem 2rem;
+    overflow-x: visible;
+  }
+
+  .menu-lista a {
+    padding: 0.85rem 0.5rem;
+    font-size: 1.05rem;
+    border-bottom: 1px solid #2e3238;
+  }
+
+  /* Fundo escuro semi-transparente atrás da sidebar */
+  .menu-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .menu-overlay.aberto {
+    opacity: 1;
+  }
+}
+
+/* ==========================================================================
+   22.2 MENSAGEM DE SUCESSO DO FORMULÁRIO (ATIVAÇÃO VIA JS)
+   ========================================================================== */
+.mensagem-sucesso.visivel {
+  display: block;
+  background-color: var(--cor-sucesso-fundo);
+  border: 3px solid var(--verde-reciclagem);
+  animation: surgirSuave 0.35s ease;
+}
+
+@keyframes surgirSuave {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ==========================================================================
+   23. PREFERÊNCIA POR MENOS MOVIMENTO
+   Algumas pessoas configuram o sistema para reduzir animações (labirintite,
+   enxaqueca, TDAH...). Respeitamos essa escolha.
+   ========================================================================== */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;  /* rolagem suave nos links internos */
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conheça os professores da Academia Base Forte Leste: experiência, especialidades, capacitação para o ensino inclusivo e premiações.">
+  <title>Professores | Academia Base Forte Leste</title>
+
+  <link rel="icon" href="img/logo-emblema.svg" type="image/svg+xml">
+
+  <!-- Fontes do Google (títulos e textos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;family=League+Gothic&amp;display=swap">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo principal</a>
+
+  <!-- Barra de acessibilidade (aparece só com JavaScript ativo) -->
+  <div class="barra-acessibilidade" hidden>
+    <div class="container" role="group" aria-label="Recursos de acessibilidade">
+      <span class="barra-titulo">Acessibilidade:</span>
+      <button type="button" data-acao="diminuir" aria-label="Diminuir o tamanho do texto">A−</button>
+      <button type="button" data-acao="normal" aria-label="Voltar ao tamanho normal do texto">A</button>
+      <button type="button" data-acao="aumentar" aria-label="Aumentar o tamanho do texto">A+</button>
+      <button type="button" data-acao="contraste" aria-pressed="false">Alto contraste</button>
+    </div>
+  </div>
+
+  <!-- ==================== CABEÇALHO ==================== -->
+  <header class="cabecalho">
+    <div class="container cabecalho-topo">
+      <a class="logo" href="index.html">
+        <img src="img/logo-emblema.svg" alt="" width="44" height="44">
+        <span class="logo-nome">Base Forte Leste</span>
+      </a>
+      <a class="botao botao-amarelo cabecalho-acao" href="aula-experimental.html">Agendar aula experimental</a>
+      <button type="button"
+              class="botao-hamburguer"
+              id="btn-hamburguer"
+              aria-label="Abrir menu de navegação"
+              aria-expanded="false"
+              aria-controls="menu-principal">
+        <span class="hamburguer-linha"></span>
+        <span class="hamburguer-linha"></span>
+        <span class="hamburguer-linha"></span>
+      </button>
+    </div>
+    <nav class="menu" id="menu-principal" aria-label="Menu principal">
+      <div class="menu-cabecalho-mobile">
+        <a class="logo" href="index.html">
+          <img src="img/logo-emblema.svg" alt="" width="38" height="38">
+          <span class="logo-nome">Base Forte Leste</span>
+        </a>
+        <button type="button" class="botao-fechar-menu" id="btn-fechar-menu" aria-label="Fechar menu">
+          &times;
+        </button>
+      </div>
+      <ul class="container menu-lista">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Quem somos</a></li>
+        <li><a href="modalidades.html">Modalidades</a></li>
+        <li><a href="professor.html" aria-current="page">Professores</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="aula-experimental.html">Aula experimental</a></li>
+        <li><a href="acoes-sociais.html">Ações sociais</a></li>
+        <li><a href="turmas-horarios.html">Turmas e horários</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="orcamento_hospedagem.html">Orçamento</a></li>
+      </ul>
+    </nav>
+    <div class="menu-overlay" id="menu-overlay" hidden></div>
+  </header>
+
+  <!-- ==================== CONTEÚDO PRINCIPAL ==================== -->
+  <main id="conteudo">
+
+    <!-- ===== TOPO DA PÁGINA ===== -->
+    <section class="topo-pagina" aria-labelledby="titulo-pagina">
+      <div class="container">
+        <h1 id="titulo-pagina">Professores</h1>
+        <p>Quem ensina na Base Forte Leste tem experiência no tatame e preparo para receber todo mundo, inclusive pessoas com deficiência.</p>
+      </div>
+    </section>
+
+    <!-- ===== CORPO DOCENTE ===== -->
+    <!-- ATENÇÃO, EQUIPE: as imagens são ilustrações e os dados de experiência e premiações
+         são exemplos do projeto acadêmico. Confirme com cada professor antes da entrega
+         e, se tiverem autorização, troque pelas fotos reais (mesmo nome de arquivo). -->
+    <section class="secao" aria-labelledby="titulo-docentes">
+      <div class="container">
+        <h2 id="titulo-docentes">Corpo docente</h2>
+        <p class="introducao">Cinco professores, seis modalidades e uma regra em comum: ninguém fica para trás no treino.</p>
+
+        <div class="grade-perfis">
+
+          <!-- ===== PERFIL 1 ===== -->
+          <!-- Cada perfil é um <article>; a foto fica em <figure> e a legenda (com a fonte) em <figcaption> -->
+          <article class="perfil" aria-labelledby="nome-adalberto">
+            <figure class="perfil-foto">
+              <img src="img/professor-adalberto.svg" alt="Ilustração do professor Adalberto, sorridente, de barba e com a faixa de cabeça do Muay Thai" width="400" height="400">
+              <figcaption>Professor Adalberto. Fonte: ilustração da equipe do projeto.</figcaption>
+            </figure>
+            <div class="perfil-conteudo">
+              <h3 id="nome-adalberto">Adalberto</h3>
+              <p class="perfil-cargo">Fundador e professor de Muay Thai</p>
+              <span class="selo">Ensino inclusivo</span>
+              <dl class="ficha">
+                <dt>Experiência</dt>
+                <dd>Fundou a academia e é o professor de todas as turmas de Muay Thai, incluindo a aula gratuita de sábado.</dd>
+                <dt>Especialidades</dt>
+                <dd>
+                  <ul>
+                    <li>Muay Thai para iniciantes</li>
+                    <li>Clinch e condicionamento</li>
+                    <li>Preparação de atletas amadores</li>
+                  </ul>
+                </dd>
+                <dt>Premiações</dt>
+                <dd>
+                  <ul>
+                    <li>Medalhista em torneios amadores de Muay Thai em São Paulo</li>
+                    <li>Homenagem da comunidade de Itaquera pelo trabalho social (2023)</li>
+                  </ul>
+                </dd>
+              </dl>
+            </div>
+          </article>
+
+          <!-- ===== PERFIL 2 ===== -->
+          <article class="perfil" aria-labelledby="nome-juliana">
+            <figure class="perfil-foto">
+              <img src="img/professora-juliana.svg" alt="Ilustração da professora Juliana, de cabelo preso em rabo de cavalo e regata vermelha" width="400" height="400">
+              <figcaption>Professora Juliana Ferreira. Fonte: ilustração da equipe do projeto.</figcaption>
+            </figure>
+            <div class="perfil-conteudo">
+              <h3 id="nome-juliana">Juliana Ferreira</h3>
+              <p class="perfil-cargo">Professora de Boxe</p>
+              <span class="selo">Ensino inclusivo</span>
+              <dl class="ficha">
+                <dt>Experiência</dt>
+                <dd>Ex-atleta de boxe amador, dá aulas há nove anos.</dd>
+                <dt>Especialidades</dt>
+                <dd>
+                  <ul>
+                    <li>Boxe para iniciantes</li>
+                    <li>Esquiva e contra-ataque</li>
+                    <li>Treino funcional</li>
+                  </ul>
+                </dd>
+                <dt>Premiações</dt>
+                <dd>
+                  <ul>
+                    <li>Prata no campeonato paulista amador de boxe (2016)</li>
+                    <li>Bronze em torneio regional feminino (2015)</li>
+                  </ul>
+                </dd>
+              </dl>
+            </div>
+          </article>
+
+          <!-- ===== PERFIL 3 ===== -->
+          <article class="perfil" aria-labelledby="nome-thiago">
+            <figure class="perfil-foto">
+              <img src="img/professor-thiago.svg" alt="Ilustração do professor Thiago, de cabelo castanho e kimono branco" width="400" height="400">
+              <figcaption>Professor Thiago Nascimento. Fonte: ilustração da equipe do projeto.</figcaption>
+            </figure>
+            <div class="perfil-conteudo">
+              <h3 id="nome-thiago">Thiago Nascimento</h3>
+              <p class="perfil-cargo">Professor de Jiu-Jitsu e No-Gi</p>
+              <span class="selo">Ensino inclusivo</span>
+              <dl class="ficha">
+                <dt>Experiência</dt>
+                <dd>Faixa preta de Jiu-Jitsu (2º grau), treina há 15 anos.</dd>
+                <dt>Especialidades</dt>
+                <dd>
+                  <ul>
+                    <li>Jiu-Jitsu com kimono</li>
+                    <li>No-Gi e luta agarrada</li>
+                    <li>Defesa pessoal</li>
+                  </ul>
+                </dd>
+                <dt>Premiações</dt>
+                <dd>
+                  <ul>
+                    <li>Campeão de open regional de Jiu-Jitsu (2021)</li>
+                    <li>Bronze em campeonato estadual de No-Gi (2023)</li>
+                  </ul>
+                </dd>
+              </dl>
+            </div>
+          </article>
+
+          <!-- ===== PERFIL 4 ===== -->
+          <article class="perfil" aria-labelledby="nome-edson">
+            <figure class="perfil-foto">
+              <img src="img/professor-edson.svg" alt="Ilustração do contramestre Edson, de cabelo black power e abadá branco" width="400" height="400">
+              <figcaption>Contramestre Edson Moreira, o Gunga. Fonte: ilustração da equipe do projeto.</figcaption>
+            </figure>
+            <div class="perfil-conteudo">
+              <h3 id="nome-edson">Edson Moreira</h3>
+              <p class="perfil-cargo">Contramestre de Capoeira, apelidado de Gunga</p>
+              <span class="selo">Ensino inclusivo</span>
+              <dl class="ficha">
+                <dt>Experiência</dt>
+                <dd>Joga capoeira há 22 anos e coordena a turma infantojuvenil.</dd>
+                <dt>Especialidades</dt>
+                <dd>
+                  <ul>
+                    <li>Capoeira Angola e Regional</li>
+                    <li>Berimbau, pandeiro e atabaque</li>
+                    <li>Capoeira para crianças</li>
+                  </ul>
+                </dd>
+                <dt>Premiações</dt>
+                <dd>
+                  <ul>
+                    <li>Prêmio de projeto cultural em escola pública da Zona Leste (2022)</li>
+                    <li>Organizador do Festival de Capoeira da comunidade</li>
+                  </ul>
+                </dd>
+              </dl>
+            </div>
+          </article>
+
+          <!-- ===== PERFIL 5 ===== -->
+          <article class="perfil" aria-labelledby="nome-larissa">
+            <figure class="perfil-foto">
+              <img src="img/professora-larissa.svg" alt="Ilustração da professora Larissa, de cabelo preso em coque e camiseta azul" width="400" height="400">
+              <figcaption>Professora Larissa Duarte. Fonte: ilustração da equipe do projeto.</figcaption>
+            </figure>
+            <div class="perfil-conteudo">
+              <h3 id="nome-larissa">Larissa Duarte</h3>
+              <p class="perfil-cargo">Professora de Kickboxing e coordenadora de inclusão</p>
+              <span class="selo">Especialista em inclusão</span>
+              <dl class="ficha">
+                <dt>Experiência</dt>
+                <dd>Formada em Educação Física, com especialização em atividade física adaptada. Comanda a turma inclusiva de Boxe adaptado.</dd>
+                <dt>Especialidades</dt>
+                <dd>
+                  <ul>
+                    <li>Kickboxing</li>
+                    <li>Boxe adaptado para cadeirantes</li>
+                    <li>Noções de Libras</li>
+                  </ul>
+                </dd>
+                <dt>Premiações</dt>
+                <dd>
+                  <ul>
+                    <li>Ouro em campeonato regional de Kickboxing (2018)</li>
+                    <li>Prêmio de boas práticas em esporte inclusivo (2024)</li>
+                  </ul>
+                </dd>
+              </dl>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FORMAÇÃO CONTINUADA ===== -->
+    <section class="secao secao-alternada" aria-labelledby="titulo-formacao">
+      <div class="container">
+        <h2 id="titulo-formacao">Formação que vai além da luta</h2>
+        <p class="introducao">Todos os professores fazem, pelo menos uma vez por ano, estas capacitações:</p>
+        <div class="grade">
+          <div class="cartao">
+            <h3>Primeiros socorros</h3>
+            <p>Para agir rápido e com segurança em qualquer imprevisto no treino.</p>
+          </div>
+          <div class="cartao">
+            <h3>Atividade física adaptada</h3>
+            <p>Como adaptar exercícios para pessoas com deficiência física, visual, auditiva ou intelectual.</p>
+          </div>
+          <div class="cartao">
+            <h3>Noções de Libras</h3>
+            <p>Para se comunicar com alunos surdos desde a primeira aula.</p>
+          </div>
+          <div class="cartao">
+            <h3>Proteção de crianças e adolescentes</h3>
+            <p>Regras de cuidado e convivência nas turmas juvenis, de acordo com o Estatuto da Criança e do Adolescente (ECA).</p>
+          </div>
+        </div>
+        <p>Os professores contam com a ajuda de <strong>monitores</strong>: alunos mais graduados que apoiam as turmas, principalmente nas aulas gratuitas de sábado.</p>
+      </div>
+    </section>
+
+    <!-- ===== CHAMADA FINAL ===== -->
+    <section class="secao chamada-final" aria-labelledby="titulo-chamada">
+      <div class="container">
+        <h2 id="titulo-chamada">Treine com quem entende</h2>
+        <p class="introducao">Veja em que dias cada professor dá aula e escolha a sua turma.</p>
+        <div class="grupo-botoes">
+          <a class="botao botao-amarelo" href="aula-experimental.html">Agendar aula experimental</a>
+          <a class="botao botao-azul" href="turmas-horarios.html">Ver turmas e horários</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== RODAPÉ ==================== -->
+  <footer class="rodape">
+    <div class="container rodape-grade">
+      <section aria-labelledby="rodape-contato">
+        <h2 class="rodape-titulo" id="rodape-contato">Contato</h2>
+        <address>
+          <p>Rua da Comunidade, 100, Itaquera<br>São Paulo (SP)<br>CEP 08210-000</p>
+          <p>Telefone: <a href="tel:+551120000000">(11) 2000-0000</a><br>
+            WhatsApp: <a href="https://wa.me/5511900000000" target="_blank" rel="noopener noreferrer">(11) 90000-0000<span class="visualmente-oculto"> (abre em nova aba)</span></a></p>
+          <p><a href="mailto:contato@baseforteleste.com.br">contato@baseforteleste.com.br</a></p>
+        </address>
+      </section>
+      <section aria-labelledby="rodape-redes">
+        <h2 class="rodape-titulo" id="rodape-redes">Redes sociais</h2>
+        <ul>
+          <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram<span class="visualmente-oculto"> (abre em nova aba)</span></a></li>
+          <li><a href="https://wa.me/5511900000000" target="_blank" rel="noopener noreferrer">WhatsApp<span class="visualmente-oculto"> (abre em nova aba)</span></a></li>
+        </ul>
+        <p>Trocamos panfletos de papel por divulgação digital.</p>
+      </section>
+      <section aria-labelledby="rodape-horario">
+        <h2 class="rodape-titulo" id="rodape-horario">Horário de funcionamento</h2>
+        <ul>
+          <li>Segunda a sexta: 6h às 22h</li>
+          <li>Sábado: 8h às 12h</li>
+          <li>Domingo e feriados: fechado</li>
+        </ul>
+      </section>
+      <section aria-labelledby="rodape-compromisso">
+        <h2 class="rodape-titulo" id="rodape-compromisso">Nosso compromisso</h2>
+        <p>Espaço acessível e site pensado para leitores de tela, teclado e alto contraste. <a href="sobre.html#acessibilidade">Ver medidas de acessibilidade</a></p>
+        <p>Menos papel e mais reciclagem. <a href="orcamento_hospedagem.html#papel-digital">Ver nossa economia</a></p>
+      </section>
+    </div>
+    <div class="rodape-creditos">
+      <div class="container">
+        <p>Site desenvolvido no Projeto Horizonte Leste (Front-End, Ciência da Computação, UNICID, 2026) por Nickolas Henrique Bezerra, Pedro Henrique Ruola Coiado, Raphaela Gonçalves Neves e Williams Vargas Neves Paoli dos Santos. <a href="contato.html#creditos">Ver créditos</a></p>
+        <p>© 2026 Academia Base Forte Leste. Projeto acadêmico.</p>
+      </div>
+    </div>
+    <a class="whatsapp-flutuante" href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Base%20Forte%20Leste." target="_blank" rel="noopener noreferrer" aria-label="Conversar com a academia pelo WhatsApp (abre em nova aba)">WhatsApp</a>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Codificação de caracteres: permite acentos e "ç" -->
+  <meta charset="UTF-8">
+  <!-- Faz o site se adaptar à largura da tela (essencial para o celular) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Resumo da página que aparece nos buscadores -->
+  <meta name="description" content="Academia de artes marciais em Itaquera, Zona Leste de São Paulo: Muay Thai, Kickboxing, Boxe, Jiu-Jitsu, Capoeira e No-Gi, com aulas gratuitas para jovens aos sábados.">
+  <title>Início | Academia Base Forte Leste</title>
+
+  <!-- Ícone que aparece na aba do navegador -->
+  <link rel="icon" href="img/logo-emblema.svg" type="image/svg+xml">
+
+  <!-- Fontes do Google: League Gothic (títulos) e Atkinson Hyperlegible (textos).
+       &amp; é a forma correta de escrever o caractere & dentro do HTML. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;family=League+Gothic&amp;display=swap">
+
+  <!-- Folha de estilos única, usada pelas 10 páginas -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- JavaScript OPCIONAL (só a barra de acessibilidade).
+       "defer" faz o script rodar depois que o HTML terminou de carregar. -->
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <!-- Acessibilidade: link escondido que aparece ao apertar Tab e pula direto para o conteúdo -->
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo principal</a>
+
+  <!-- Barra de acessibilidade: começa escondida (hidden) e só aparece com o JavaScript ativo -->
+  <div class="barra-acessibilidade" hidden>
+    <div class="container" role="group" aria-label="Recursos de acessibilidade">
+      <span class="barra-titulo">Acessibilidade:</span>
+      <button type="button" data-acao="diminuir" aria-label="Diminuir o tamanho do texto">A−</button>
+      <button type="button" data-acao="normal" aria-label="Voltar ao tamanho normal do texto">A</button>
+      <button type="button" data-acao="aumentar" aria-label="Aumentar o tamanho do texto">A+</button>
+      <button type="button" data-acao="contraste" aria-pressed="false">Alto contraste</button>
+    </div>
+  </div>
+
+  <!-- ==================== CABEÇALHO (igual em todas as páginas) ==================== -->
+  <header class="cabecalho">
+    <div class="container cabecalho-topo">
+      <!-- Logo: sempre leva de volta para a página inicial -->
+      <a class="logo" href="index.html">
+        <img src="img/logo-emblema.svg" alt="" width="44" height="44">
+        <span class="logo-nome">Base Forte Leste</span>
+      </a>
+      <a class="botao botao-amarelo cabecalho-acao" href="aula-experimental.html">Agendar aula experimental</a>
+      <button type="button"
+              class="botao-hamburguer"
+              id="btn-hamburguer"
+              aria-label="Abrir menu de navegação"
+              aria-expanded="false"
+              aria-controls="menu-principal">
+        <span class="hamburguer-linha"></span>
+        <span class="hamburguer-linha"></span>
+        <span class="hamburguer-linha"></span>
+      </button>
+    </div>
+
+    <!-- Menu de navegação: interliga as 10 páginas do site.
+         aria-current="page" marca a página em que a pessoa está. -->
+    <nav class="menu" id="menu-principal" aria-label="Menu principal">
+      <div class="menu-cabecalho-mobile">
+        <a class="logo" href="index.html">
+          <img src="img/logo-emblema.svg" alt="" width="38" height="38">
+          <span class="logo-nome">Base Forte Leste</span>
+        </a>
+        <button type="button" class="botao-fechar-menu" id="btn-fechar-menu" aria-label="Fechar menu">
+          &times;
+        </button>
+      </div>
+      <ul class="container menu-lista">
+        <li><a href="index.html" aria-current="page">Início</a></li>
+        <li><a href="sobre.html">Quem somos</a></li>
+        <li><a href="modalidades.html">Modalidades</a></li>
+        <li><a href="professor.html">Professores</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="aula-experimental.html">Aula experimental</a></li>
+        <li><a href="acoes-sociais.html">Ações sociais</a></li>
+        <li><a href="turmas-horarios.html">Turmas e horários</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="orcamento_hospedagem.html">Orçamento</a></li>
+      </ul>
+    </nav>
+    <div class="menu-overlay" id="menu-overlay" hidden></div>
+  </header>
+
+  <!-- ==================== CONTEÚDO PRINCIPAL ==================== -->
+  <main id="conteudo">
+
+    <!-- ===== 1. BANNER PRINCIPAL: a "vitrine" da academia ===== -->
+    <section class="banner" aria-labelledby="titulo-principal">
+      <div class="container banner-conteudo">
+        <div>
+          <h1 id="titulo-principal">Aqui, todo mundo pisa no tatame.</h1>
+          <p class="banner-descricao">Muay Thai, Kickboxing, Boxe, Jiu-Jitsu, Capoeira e No-Gi em Itaquera, na Zona Leste de São Paulo. Turmas para iniciantes, aulas adaptadas para pessoas com deficiência e treino gratuito para jovens aos sábados.</p>
+          <div class="grupo-botoes">
+            <a class="botao botao-amarelo" href="aula-experimental.html">Agendar aula experimental</a>
+            <a class="botao botao-contorno" href="#aulas-sabado">Conhecer as aulas de sábado</a>
+          </div>
+        </div>
+
+        <!-- Cartaz amarelo: o panfleto de papel que virou conteúdo digital.
+             <aside> = conteúdo complementar ao assunto principal. -->
+        <aside class="cartaz" aria-labelledby="titulo-cartaz">
+          <p class="cartaz-quando">Todo sábado, das 9h às 11h</p>
+          <h2 id="titulo-cartaz">Treino gratuito para jovens</h2>
+          <p>Muay Thai e Capoeira para quem tem de 10 a 17 anos. Não precisa ser aluno nem ter equipamento.</p>
+          <a href="aula-experimental.html#inscricao-sabado">Fazer inscrição gratuita</a>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===== 2. NOSSA ESSÊNCIA (breve introdução) ===== -->
+    <section class="secao" aria-labelledby="titulo-essencia">
+      <div class="container duas-colunas duas-colunas-centro">
+        <div>
+          <h2 id="titulo-essencia">Uma academia da Zona Leste, para a Zona Leste</h2>
+          <p class="introducao">A Base Forte Leste ensina artes marciais com disciplina e respeito, sem deixar ninguém do lado de fora do tatame.</p>
+          <p>Aqui treinam juntos quem quer perder o medo, quem quer competir e quem só precisa de um lugar para descarregar a semana. Iniciantes são recebidos em todas as turmas, alunos novos não precisam comprar equipamento para começar e pessoas com deficiência encontram treino adaptado.</p>
+          <p><a href="sobre.html">Conheça a nossa história</a></p>
+        </div>
+        <figure class="ilustracao">
+          <img src="img/sobre-espaco.svg" alt="Ilustração do espaço de treino: tatame azul, sacos de pancada, espelho e porta com rampa e símbolo de acessibilidade" width="800" height="600">
+          <figcaption>O espaço tem tatame sem degraus e entrada com rampa.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== 3. DESTAQUE PRINCIPAL: AULAS GRATUITAS DE SÁBADO ===== -->
+    <section class="secao secao-alternada" id="aulas-sabado" aria-labelledby="titulo-sabado">
+      <div class="container">
+        <div class="destaque-sabado">
+          <div>
+            <h2 id="titulo-sabado">Sábado é dia de treino gratuito para a juventude</h2>
+            <p class="introducao">Desde 2019, abrimos o tatame aos sábados para jovens da comunidade treinarem de graça, com os mesmos professores das turmas regulares.</p>
+            <p>O projeto ensina luta e também pontualidade, cuidado com o colega e confiança. Alunos mais graduados da academia ajudam como monitores voluntários.</p>
+            <div class="grupo-botoes">
+              <a class="botao botao-amarelo" href="aula-experimental.html#inscricao-sabado">Fazer inscrição gratuita</a>
+              <a class="botao botao-azul" href="acoes-sociais.html">Conhecer o projeto social</a>
+            </div>
+          </div>
+
+          <!-- Lista de definição: <dt> é o termo e <dd> é a explicação -->
+          <dl class="ficha">
+            <dt>Quem pode</dt>
+            <dd>Jovens de 10 a 17 anos, com autorização do responsável. Não precisa ser aluno.</dd>
+            <dt>Quando</dt>
+            <dd>Todo sábado: Muay Thai das 9h às 10h e Capoeira das 10h às 11h.</dd>
+            <dt>Quanto custa</dt>
+            <dd>Nada. Luvas e caneleiras são emprestadas pela academia.</dd>
+            <dt>O que levar</dt>
+            <dd>Roupa confortável, garrafa de água e, no primeiro dia, o responsável.</dd>
+            <dt>Vagas</dt>
+            <dd>25 por turma, para garantir um treino seguro.</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 4. ATALHOS VISUAIS PARA AS MODALIDADES ===== -->
+    <section class="secao" aria-labelledby="titulo-atalhos">
+      <div class="container">
+        <h2 id="titulo-atalhos">Escolha sua modalidade</h2>
+        <p class="introducao">Seis estilos de luta, todos com turmas para iniciantes.</p>
+
+        <!-- Cada atalho leva direto à modalidade na página Modalidades (link com #) -->
+        <ul class="grade-atalhos">
+          <li>
+            <a class="atalho" href="modalidades.html#muay-thai">
+              <img src="img/icone-muay-thai.svg" alt="" width="64" height="64">
+              <span class="atalho-nome">Muay Thai</span>
+              <span>A arte das oito armas: socos, chutes, joelhadas e cotoveladas.</span>
+            </a>
+          </li>
+          <li>
+            <a class="atalho" href="modalidades.html#kickboxing">
+              <img src="img/icone-kickboxing.svg" alt="" width="64" height="64">
+              <span class="atalho-nome">Kickboxing</span>
+              <span>Socos e chutes em sequência, com ritmo e muito condicionamento.</span>
+            </a>
+          </li>
+          <li>
+            <a class="atalho" href="modalidades.html#boxe">
+              <img src="img/icone-boxe.svg" alt="" width="64" height="64">
+              <span class="atalho-nome">Boxe</span>
+              <span>Socos, esquivas e trabalho de pernas. Tem turma adaptada.</span>
+            </a>
+          </li>
+          <li>
+            <a class="atalho" href="modalidades.html#jiu-jitsu">
+              <img src="img/icone-jiu-jitsu.svg" alt="" width="64" height="64">
+              <span class="atalho-nome">Jiu-Jitsu</span>
+              <span>Luta de solo com kimono: alavancas, controle e estratégia.</span>
+            </a>
+          </li>
+          <li>
+            <a class="atalho" href="modalidades.html#capoeira">
+              <img src="img/icone-capoeira.svg" alt="" width="64" height="64">
+              <span class="atalho-nome">Capoeira</span>
+              <span>Luta, dança e música afro-brasileira ao som do berimbau.</span>
+            </a>
+          </li>
+          <li>
+            <a class="atalho" href="modalidades.html#no-gi">
+              <img src="img/icone-no-gi.svg" alt="" width="64" height="64">
+              <span class="atalho-nome">No-Gi</span>
+              <span>O Jiu-Jitsu sem kimono, mais rápido e dinâmico.</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== 5. DEPOIMENTOS RÁPIDOS DE ALUNOS ===== -->
+    <!-- <figure> agrupa a citação (<blockquote>) e o autor (<figcaption>).
+         Depoimentos ilustrativos do projeto acadêmico: troque por relatos reais, com autorização. -->
+    <section class="secao secao-azul" aria-labelledby="titulo-depoimentos">
+      <div class="container">
+        <h2 id="titulo-depoimentos">Quem treina aqui conta</h2>
+        <div class="grade-depoimentos">
+          <figure class="depoimento">
+            <blockquote>
+              <p>Comecei nas aulas de sábado com 13 anos. Hoje ajudo os mais novos no aquecimento e já penso em dar aula.</p>
+            </blockquote>
+            <figcaption>Lucas, 16 anos, aluno das aulas gratuitas de sábado</figcaption>
+          </figure>
+          <figure class="depoimento">
+            <blockquote>
+              <p>Sou cadeirante e nunca imaginei treinar boxe. Aqui o treino foi adaptado desde o primeiro dia, e ninguém me olhou diferente.</p>
+            </blockquote>
+            <figcaption>Rafael, 34 anos, aluno da turma de Boxe adaptado</figcaption>
+          </figure>
+          <figure class="depoimento">
+            <blockquote>
+              <p>Treino Muay Thai depois do trabalho e durmo muito melhor. O ambiente é sério, mas todo mundo se ajuda.</p>
+            </blockquote>
+            <figcaption>Carla, 29 anos, aluna de Muay Thai</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 6. PERGUNTAS FREQUENTES (FAQ) ===== -->
+    <!-- <details> + <summary> criam perguntas que abrem e fecham sem JavaScript -->
+    <section class="secao" aria-labelledby="titulo-faq">
+      <div class="container">
+        <h2 id="titulo-faq">Perguntas frequentes</h2>
+        <div class="faq">
+          <details>
+            <summary>Preciso ter experiência ou estar em forma para começar?</summary>
+            <p>Não. Todas as turmas recebem iniciantes, e o professor ajusta a intensidade para cada aluno. O condicionamento vem com o treino.</p>
+          </details>
+          <details>
+            <summary>Preciso comprar equipamento antes da primeira aula?</summary>
+            <p>Não. Alunos novos começam sem equipamento. No Muay Thai, os iniciantes contam com caneleiras, luvas e capacete básicos sem custo extra na mensalidade.</p>
+          </details>
+          <details>
+            <summary>A aula experimental é gratuita?</summary>
+            <p>Sim. Todo aluno novo tem direito a uma aula experimental gratuita. Você pode pedir pelo <a href="aula-experimental.html">formulário do site</a>, pelo WhatsApp ou na recepção.</p>
+          </details>
+          <details>
+            <summary>Quem pode participar das aulas gratuitas de sábado?</summary>
+            <p>Jovens de 10 a 17 anos, com autorização de um responsável. Não é preciso ser aluno da academia. Cada turma tem 25 vagas.</p>
+          </details>
+          <details>
+            <summary>A academia é acessível para pessoas com deficiência?</summary>
+            <p>Sim. Temos rampa na entrada, banheiro adaptado, tatame sem degraus e uma turma inclusiva de Boxe adaptado às quartas-feiras, às 15h. Nas outras turmas, o professor adapta os exercícios. Avise no agendamento para prepararmos a aula.</p>
+          </details>
+          <details>
+            <summary>Posso treinar mais de uma modalidade?</summary>
+            <p>Sim. Com o plano ativo, você pode treinar em qualquer modalidade da grade de horários.</p>
+          </details>
+          <details>
+            <summary>Existe plano para famílias?</summary>
+            <p>Sim, temos o plano Família. Os valores e as condições são informados pelo WhatsApp ou na recepção.</p>
+          </details>
+          <details>
+            <summary>Como funciona a arrecadação de recicláveis?</summary>
+            <p>Nos eventos da academia, recebemos garrafas PET, latas, papelão e vidro limpos. Tudo é separado e entregue a uma cooperativa de reciclagem da região. <a href="acoes-sociais.html#reciclagem">Saiba como participar</a></p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 7. CHAMADA FINAL ===== -->
+    <section class="secao secao-alternada chamada-final" aria-labelledby="titulo-chamada">
+      <div class="container">
+        <h2 id="titulo-chamada">Seu primeiro treino é por nossa conta</h2>
+        <p class="introducao">Escolha a modalidade, marque o dia e venha conhecer a Base Forte Leste.</p>
+        <div class="grupo-botoes">
+          <a class="botao botao-amarelo" href="aula-experimental.html">Agendar aula experimental</a>
+          <a class="botao botao-azul" href="turmas-horarios.html">Ver turmas e horários</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== RODAPÉ (igual em todas as páginas) ==================== -->
+  <footer class="rodape">
+    <div class="container rodape-grade">
+      <!-- Contatos (endereço e telefones de exemplo: troque pelos dados reais) -->
+      <section aria-labelledby="rodape-contato">
+        <h2 class="rodape-titulo" id="rodape-contato">Contato</h2>
+        <address>
+          <p>Rua da Comunidade, 100, Itaquera<br>São Paulo (SP)<br>CEP 08210-000</p>
+          <p>Telefone: <a href="tel:+551120000000">(11) 2000-0000</a><br>
+            WhatsApp: <a href="https://wa.me/5511900000000" target="_blank" rel="noopener noreferrer">(11) 90000-0000<span class="visualmente-oculto"> (abre em nova aba)</span></a></p>
+          <p><a href="mailto:contato@baseforteleste.com.br">contato@baseforteleste.com.br</a></p>
+        </address>
+      </section>
+
+      <!-- Redes sociais -->
+      <section aria-labelledby="rodape-redes">
+        <h2 class="rodape-titulo" id="rodape-redes">Redes sociais</h2>
+        <ul>
+          <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram<span class="visualmente-oculto"> (abre em nova aba)</span></a></li>
+          <li><a href="https://wa.me/5511900000000" target="_blank" rel="noopener noreferrer">WhatsApp<span class="visualmente-oculto"> (abre em nova aba)</span></a></li>
+        </ul>
+        <p>Trocamos panfletos de papel por divulgação digital.</p>
+      </section>
+
+      <!-- Horário de funcionamento -->
+      <section aria-labelledby="rodape-horario">
+        <h2 class="rodape-titulo" id="rodape-horario">Horário de funcionamento</h2>
+        <ul>
+          <li>Segunda a sexta: 6h às 22h</li>
+          <li>Sábado: 8h às 12h</li>
+          <li>Domingo e feriados: fechado</li>
+        </ul>
+      </section>
+
+      <!-- Compromisso com acessibilidade e sustentabilidade -->
+      <section aria-labelledby="rodape-compromisso">
+        <h2 class="rodape-titulo" id="rodape-compromisso">Nosso compromisso</h2>
+        <p>Espaço acessível e site pensado para leitores de tela, teclado e alto contraste. <a href="sobre.html#acessibilidade">Ver medidas de acessibilidade</a></p>
+        <p>Menos papel e mais reciclagem. <a href="orcamento_hospedagem.html#papel-digital">Ver nossa economia</a></p>
+      </section>
+    </div>
+
+    <!-- Créditos: integrantes da equipe que desenvolveu o site -->
+    <div class="rodape-creditos">
+      <div class="container">
+        <p>Site desenvolvido no Projeto Horizonte Leste (Front-End, Ciência da Computação, UNICID, 2026) por Nickolas Henrique Bezerra, Pedro Henrique Ruola Coiado, Raphaela Gonçalves Neves e Williams Vargas Neves Paoli dos Santos. <a href="contato.html#creditos">Ver créditos</a></p>
+        <p>© 2026 Academia Base Forte Leste. Projeto acadêmico.</p>
+      </div>
+    </div>
+
+    <!-- Botão flutuante do WhatsApp: position: fixed no CSS o prende no canto da tela.
+         aria-label descreve o botão para leitores de tela. -->
+    <a class="whatsapp-flutuante" href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Base%20Forte%20Leste." target="_blank" rel="noopener noreferrer" aria-label="Conversar com a academia pelo WhatsApp (abre em nova aba)">WhatsApp</a>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ações sociais da Academia Base Forte Leste: aulas gratuitas de sábado para jovens da periferia, inclusão de pessoas com deficiência e arrecadação de recicláveis nos eventos.">
+  <title>Ações sociais | Academia Base Forte Leste</title>
+
+  <link rel="icon" href="img/logo-emblema.svg" type="image/svg+xml">
+
+  <!-- Fontes do Google (títulos e textos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;family=League+Gothic&amp;display=swap">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo principal</a>
+
+  <!-- Barra de acessibilidade (aparece só com JavaScript ativo) -->
+  <div class="barra-acessibilidade" hidden>
+    <div class="container" role="group" aria-label="Recursos de acessibilidade">
+      <span class="barra-titulo">Acessibilidade:</span>
+      <button type="button" data-acao="diminuir" aria-label="Diminuir o tamanho do texto">A−</button>
+      <button type="button" data-acao="normal" aria-label="Voltar ao tamanho normal do texto">A</button>
+      <button type="button" data-acao="aumentar" aria-label="Aumentar o tamanho do texto">A+</button>
+      <button type="button" data-acao="contraste" aria-pressed="false">Alto contraste</button>
+    </div>
+  </div>
+
+  <!-- ==================== CABEÇALHO ==================== -->
+  <header class="cabecalho">
+    <div class="container cabecalho-topo">
+      <a class="logo" href="index.html">
+        <img src="img/logo-emblema.svg" alt="" width="44" height="44">
+        <span class="logo-nome">Base Forte Leste</span>
+      </a>
+      <a class="botao botao-amarelo cabecalho-acao" href="aula-experimental.html">Agendar aula experimental</a>
+      <button type="button"
+              class="botao-hamburguer"
+              id="btn-hamburguer"
+              aria-label="Abrir menu de navegação"
+              aria-expanded="false"
+              aria-controls="menu-principal">
+        <span class="hamburguer-linha"></span>
+        <span class="hamburguer-linha"></span>
+        <span class="hamburguer-linha"></span>
+      </button>
+    </div>
+    <nav class="menu" id="menu-principal" aria-label="Menu principal">
+      <div class="menu-cabecalho-mobile">
+        <a class="logo" href="index.html">
+          <img src="img/logo-emblema.svg" alt="" width="38" height="38">
+          <span class="logo-nome">Base Forte Leste</span>
+        </a>
+        <button type="button" class="botao-fechar-menu" id="btn-fechar-menu" aria-label="Fechar menu">
+          &times;
+        </button>
+      </div>
+      <ul class="container menu-lista">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Quem somos</a></li>
+        <li><a href="modalidades.html">Modalidades</a></li>
+        <li><a href="professor.html">Professores</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="aula-experimental.html">Aula experimental</a></li>
+        <li><a href="acoes-sociais.html" aria-current="page">Ações sociais</a></li>
+        <li><a href="turmas-horarios.html">Turmas e horários</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="orcamento_hospedagem.html">Orçamento</a></li>
+      </ul>
+    </nav>
+    <div class="menu-overlay" id="menu-overlay" hidden></div>
+  </header>
+
+  <!-- ==================== CONTEÚDO PRINCIPAL ==================== -->
+  <main id="conteudo">
+
+    <!-- ===== TOPO DA PÁGINA ===== -->
+    <section class="topo-pagina" aria-labelledby="titulo-pagina">
+      <div class="container">
+        <h1 id="titulo-pagina">Ações sociais</h1>
+        <p>O coração da Base Forte Leste: esporte gratuito para a juventude, inclusão de pessoas com deficiência e cuidado com o meio ambiente.</p>
+      </div>
+    </section>
+
+    <!-- ===== 1. AULAS GRATUITAS DE SÁBADO ===== -->
+    <section class="secao" id="sabado" aria-labelledby="titulo-sabado">
+      <div class="container duas-colunas">
+        <div>
+          <h2 id="titulo-sabado">Aulas gratuitas de sábado para a juventude</h2>
+          <p class="introducao">Todo sábado, das 9h às 11h, o tatame fica aberto para jovens de 10 a 17 anos da periferia de Itaquera e dos bairros vizinhos. Sem mensalidade, sem matrícula e sem precisar ter equipamento.</p>
+          <p>As aulas começaram em 2019 com Muay Thai e hoje também têm Capoeira. Os professores são os mesmos das turmas regulares, e os alunos mais graduados da academia atuam como monitores voluntários: ajudam no aquecimento, emprestam as luvas e cuidam dos mais novos.</p>
+          <h3>O que o jovem encontra aqui</h3>
+          <ul>
+            <li>Treino com professor qualificado, em turmas de até 25 alunos.</li>
+            <li>Luvas, caneleiras e protetores emprestados pela academia.</li>
+            <li>Regras claras de respeito e um espaço seguro para conviver.</li>
+            <li>Um motivo para levantar cedo no fim de semana.</li>
+          </ul>
+          <p><a class="botao botao-amarelo" href="aula-experimental.html#inscricao-sabado">Fazer inscrição gratuita</a></p>
+        </div>
+        <figure class="ilustracao">
+          <img src="img/galeria-aulao-sabado.svg" alt="Ilustração de um professor de camiseta preta orientando oito jovens em posição de guarda sobre o tatame azul" width="800" height="600">
+          <figcaption>Aula gratuita de sábado: até 25 jovens por turma.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== 2. INCLUSÃO DE PESSOAS COM DEFICIÊNCIA ===== -->
+    <section class="secao secao-alternada" id="inclusao" aria-labelledby="titulo-inclusao">
+      <div class="container duas-colunas">
+        <figure class="ilustracao">
+          <img src="img/galeria-turma-inclusiva.svg" alt="Ilustração de um aluno em cadeira de rodas socando o aparador segurado pela professora, ao lado de outra aluna em posição de guarda" width="800" height="600">
+          <figcaption>Turma inclusiva de Boxe adaptado, às quartas-feiras.</figcaption>
+        </figure>
+        <div>
+          <h2 id="titulo-inclusao">Tatame para todos: inclusão de pessoas com deficiência</h2>
+          <p class="introducao">Na Base Forte Leste, quem se adapta é o treino. Pessoas com deficiência treinam nas turmas regulares e também contam com uma turma inclusiva.</p>
+          <p>Antes da primeira aula, a professora Larissa, especialista em atividade física adaptada, conversa com o aluno e com a família para entender as necessidades de cada um. A partir daí, os exercícios são ajustados: golpes feitos sentados, comandos de voz para quem não enxerga, sinais visuais para quem não ouve e mais tempo de descanso quando necessário.</p>
+          <ul>
+            <li>Turma inclusiva de Boxe adaptado: quartas-feiras, às 15h, com até 8 alunos.</li>
+            <li>Acompanhante pode participar do treino.</li>
+            <li>Espaço com rampa, banheiro adaptado e tatame sem degraus.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3. ARRECADAÇÃO E RECICLAGEM ===== -->
+    <section class="secao" id="reciclagem" aria-labelledby="titulo-reciclagem">
+      <div class="container duas-colunas">
+        <div>
+          <h2 id="titulo-reciclagem">Recicla na luta: arrecadação nos eventos</h2>
+          <p class="introducao">Festivais e campeonatos reúnem muita gente e geram muito lixo. Por isso, todo evento da academia tem um ponto de coleta seletiva.</p>
+          <h3>Como funciona</h3>
+          <ol class="passos">
+            <li>O público traz garrafas PET, latas, papelão e vidro limpos.</li>
+            <li>Os monitores separam o material nos coletores com as cores da coleta seletiva: azul para papel, vermelho para plástico, verde para vidro e amarelo para metal.</li>
+            <li>Tudo é pesado e entregue a uma cooperativa de catadores da região.</li>
+            <li>Quem leva recicláveis ganha uma aula experimental gratuita.</li>
+          </ol>
+          <div class="destaque-verde">
+            <p>Também recebemos <strong>kimonos, luvas e caneleiras usados</strong> em bom estado. Eles são revisados e emprestados aos jovens das aulas de sábado. <a href="blog.html#artigo-kimono">Saiba como doar</a></p>
+          </div>
+        </div>
+        <figure class="ilustracao">
+          <img src="img/galeria-coleta-reciclaveis.svg" alt="Ilustração de quatro coletores de recicláveis nas cores azul, vermelha, verde e amarela, com uma garrafa caindo no coletor vermelho, um saco de garrafas e duas pessoas" width="800" height="600">
+          <figcaption>Ponto de coleta seletiva montado em um evento.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== 4. TEXTOS MOTIVACIONAIS ===== -->
+    <section class="secao secao-azul" aria-labelledby="titulo-frases">
+      <div class="container">
+        <h2 id="titulo-frases">Para levar do tatame para a vida</h2>
+        <ul class="frases">
+          <li>Força não é bater mais forte. É levantar quem caiu do seu lado.</li>
+          <li>No tatame, todo mundo começa de faixa branca.</li>
+          <li>O treino acaba às 11h. O que ele ensina vai com você a semana inteira.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== 5. GALERIA DE FOTOS ===== -->
+    <!-- Cada foto fica em um <figure>; a legenda e a fonte (crédito) ficam no <figcaption>.
+         As imagens são ilustrações: troque pelas fotos reais dos eventos (com autorização de uso de imagem). -->
+    <section class="secao" aria-labelledby="titulo-galeria">
+      <div class="container">
+        <h2 id="titulo-galeria">Galeria</h2>
+        <div class="galeria">
+          <figure>
+            <img src="img/galeria-aulao-sabado.svg" alt="Jovens em posição de guarda durante a aula gratuita de sábado, com bandeirinhas na parede" width="800" height="600">
+            <figcaption>Aulão de sábado com a turma de Muay Thai.
+              <span class="fonte-imagem">Fonte: ilustração da equipe do projeto, 2026.</span>
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="img/galeria-turma-inclusiva.svg" alt="Aluno cadeirante treinando socos no aparador com a professora" width="800" height="600">
+            <figcaption>Treino da turma inclusiva de Boxe adaptado.
+              <span class="fonte-imagem">Fonte: ilustração da equipe do projeto, 2026.</span>
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="img/galeria-coleta-reciclaveis.svg" alt="Coletores de recicláveis coloridos montados em um evento ao ar livre" width="800" height="600">
+            <figcaption>Coleta seletiva no Festival de Inverno.
+              <span class="fonte-imagem">Fonte: ilustração da equipe do projeto, 2026.</span>
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="img/galeria-doacao-kimonos.svg" alt="Mesa com pilhas de kimonos dobrados, arara com um kimono pendurado e duas pessoas trocando uma doação" width="800" height="600">
+            <figcaption>Entrega de kimonos doados para as aulas de sábado.
+              <span class="fonte-imagem">Fonte: ilustração da equipe do projeto, 2026.</span>
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="img/galeria-festival-comunidade.svg" alt="Festival na rua com bandeirinhas, barraca listrada, tatame com dois lutadores de kimono e público assistindo" width="800" height="600">
+            <figcaption>Demonstração de Jiu-Jitsu aberta à comunidade.
+              <span class="fonte-imagem">Fonte: ilustração da equipe do projeto, 2026.</span>
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="img/galeria-roda-capoeira.svg" alt="Roda de capoeira com tocador de berimbau à esquerda e dois capoeiristas jogando no centro" width="800" height="600">
+            <figcaption>Roda de capoeira da turma juvenil.
+              <span class="fonte-imagem">Fonte: ilustração da equipe do projeto, 2026.</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 6. TABELA DE IMPACTO SOCIAL E SUSTENTÁVEL ===== -->
+    <section class="secao secao-alternada" id="impacto" aria-labelledby="titulo-impacto">
+      <div class="container">
+        <h2 id="titulo-impacto">Impacto social e sustentável</h2>
+        <p class="introducao">Os números mostram o que o trabalho da academia já mudou na comunidade.</p>
+
+        <!-- A caixa .tabela-rolagem deixa a tabela rolar para o lado no celular.
+             tabindex="0" permite rolar também pelo teclado. -->
+        <div class="tabela-rolagem" role="region" aria-labelledby="legenda-impacto" tabindex="0">
+          <table>
+            <!-- <caption> é o título da tabela (lido pelos leitores de tela) -->
+            <caption id="legenda-impacto">Indicadores de impacto da Base Forte Leste por ano</caption>
+            <!-- <thead> = cabeçalho da tabela; scope="col" diz que o título vale para a coluna -->
+            <thead>
+              <tr>
+                <th scope="col">Indicador</th>
+                <th scope="col" class="numero">2024</th>
+                <th scope="col" class="numero">2025</th>
+                <th scope="col" class="numero">2026*</th>
+              </tr>
+            </thead>
+            <!-- <tbody> = corpo da tabela; scope="row" diz que o título vale para a linha -->
+            <tbody>
+              <tr>
+                <th scope="row">Jovens atendidos nas aulas gratuitas de sábado</th>
+                <td class="numero">48</td>
+                <td class="numero">72</td>
+                <td class="numero">85</td>
+              </tr>
+              <tr>
+                <th scope="row">Aulas gratuitas realizadas</th>
+                <td class="numero">46</td>
+                <td class="numero">48</td>
+                <td class="numero">38</td>
+              </tr>
+              <tr>
+                <th scope="row">Alunos com deficiência matriculados</th>
+                <td class="numero">7</td>
+                <td class="numero">11</td>
+                <td class="numero">15</td>
+              </tr>
+              <tr>
+                <th scope="row">Recicláveis arrecadados nos eventos (kg)</th>
+                <td class="numero">95</td>
+                <td class="numero">140</td>
+                <td class="numero">231</td>
+              </tr>
+              <tr>
+                <th scope="row">Kimonos, luvas e caneleiras doados ou reaproveitados</th>
+                <td class="numero">12</td>
+                <td class="numero">21</td>
+                <td class="numero">34</td>
+              </tr>
+              <tr>
+                <th scope="row">Panfletos de papel impressos</th>
+                <td class="numero">12.000</td>
+                <td class="numero">9.000</td>
+                <td class="numero">4.000</td>
+              </tr>
+              <tr>
+                <th scope="row">Voluntários (monitores e familiares)</th>
+                <td class="numero">6</td>
+                <td class="numero">9</td>
+                <td class="numero">12</td>
+              </tr>
+            </tbody>
+            <!-- <tfoot> = rodapé da tabela, usado aqui para a fonte dos dados -->
+            <tfoot>
+              <tr>
+                <td colspan="4">* 2026: dados até outubro. Com o site no ar, a meta para 2027 é não imprimir nenhum panfleto. Fonte: registros internos da academia (valores ilustrativos do projeto acadêmico).</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CHAMADA FINAL ===== -->
+    <section class="secao chamada-final" aria-labelledby="titulo-chamada">
+      <div class="container">
+        <h2 id="titulo-chamada">Quer fazer parte?</h2>
+        <p class="introducao">Inscreva um jovem, doe equipamentos ou seja voluntário. Toda ajuda vira treino.</p>
+        <div class="grupo-botoes">
+          <a class="botao botao-amarelo" href="aula-experimental.html#inscricao-sabado">Inscrever um jovem</a>
+          <a class="botao botao-azul" href="contato.html">Quero ser voluntário</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== RODAPÉ ==================== -->
+  <footer class="rodape">
+    <div class="container rodape-grade">
+      <section aria-labelledby="rodape-contato">
+        <h2 class="rodape-titulo" id="rodape-contato">Contato</h2>
+        <address>
+          <p>Rua da Comunidade, 100, Itaquera<br>São Paulo (SP)<br>CEP 08210-000</p>
+          <p>Telefone: <a href="tel:+551120000000">(11) 2000-0000</a><br>
+            WhatsApp: <a href="https://wa.me/5511900000000" target="_blank" rel="noopener noreferrer">(11) 90000-0000<span class="visualmente-oculto"> (abre em nova aba)</span></a></p>
+          <p><a href="mailto:contato@baseforteleste.com.br">contato@baseforteleste.com.br</a></p>
+        </address>
+      </section>
+      <section aria-labelledby="rodape-redes">
+        <h2 class="rodape-titulo" id="rodape-redes">Redes sociais</h2>
+        <ul>
+          <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram<span class="visualmente-oculto"> (abre em nova aba)</span></a></li>
+          <li><a href="https://wa.me/5511900000000" target="_blank" rel="noopener noreferrer">WhatsApp<span class="visualmente-oculto"> (abre em nova aba)</span></a></li>
+        </ul>
+        <p>Trocamos panfletos de papel por divulgação digital.</p>
+      </section>
+      <section aria-labelledby="rodape-horario">
+        <h2 class="rodape-titulo" id="rodape-horario">Horário de funcionamento</h2>
+        <ul>
+          <li>Segunda a sexta: 6h às 22h</li>
+          <li>Sábado: 8h às 12h</li>
+          <li>Domingo e feriados: fechado</li>
+        </ul>
+      </section>
+      <section aria-labelledby="rodape-compromisso">
+        <h2 class="rodape-titulo" id="rodape-compromisso">Nosso compromisso</h2>
+        <p>Espaço acessível e site pensado para leitores de tela, teclado e alto contraste. <a href="sobre.html#acessibilidade">Ver medidas de acessibilidade</a></p>
+        <p>Menos papel e mais reciclagem. <a href="orcamento_hospedagem.html#papel-digital">Ver nossa economia</a></p>
+      </section>
+    </div>
+    <div class="rodape-creditos">
+      <div class="container">
+        <p>Site desenvolvido no Projeto Horizonte Leste (Front-End, Ciência da Computação, UNICID, 2026) por Nickolas Henrique Bezerra, Pedro Henrique Ruola Coiado, Raphaela Gonçalves Neves e Williams Vargas Neves Paoli dos Santos. <a href="contato.html#creditos">Ver créditos</a></p>
+        <p>© 2026 Academia Base Forte Leste. Projeto acadêmico.</p>
+      </div>
+    </div>
+    <a class="whatsapp-flutuante" href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Base%20Forte%20Leste." target="_blank" rel="noopener noreferrer" aria-label="Conversar com a academia pelo WhatsApp (abre em nova aba)">WhatsApp</a>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fale com a Academia Base Forte Leste: endereço em Itaquera, mapa, telefone, WhatsApp, e-mail, redes sociais, formulário de contato e créditos da equipe que desenvolveu o site.">
+  <title>Contato e localização | Academia Base Forte Leste</title>
+
+  <link rel="icon" href="img/logo-emblema.svg" type="image/svg+xml">
+
+  <!-- Fontes do Google (títulos e textos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;family=League+Gothic&amp;display=swap">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo principal</a>
+
+  <!-- Barra de acessibilidade (aparece só com JavaScript ativo) -->
+  <div class="barra-acessibilidade" hidden>
+    <div class="container" role="group" aria-label="Recursos de acessibilidade">
+      <span class="barra-titulo">Acessibilidade:</span>
+      <button type="button" data-acao="diminuir" aria-label="Diminuir o tamanho do texto">A−</button>
+      <button type="button" data-acao="normal" aria-label="Voltar ao tamanho normal do texto">A</button>
+      <button type="button" data-acao="aumentar" aria-label="Aumentar o tamanho do texto">A+</button>
+      <button type="button" data-acao="contraste" aria-pressed="false">Alto contraste</button>
+    </div>
+  </div>
+
+  <!-- ==================== CABEÇALHO ==================== -->
+  <header class="cabecalho">
+    <div class="container cabecalho-topo">
+      <a class="logo" href="index.html">
+        <img src="img/logo-emblema.svg" alt="" width="44" height="44">
+        <span class="logo-nome">Base Forte Leste</span>
+      </a>
+      <a class="botao botao-amarelo cabecalho-acao" href="aula-experimental.html">Agendar aula experimental</a>
+      <button type="button"
+              class="botao-hamburguer"
+              id="btn-hamburguer"
+              aria-label="Abrir menu de navegação"
+              aria-expanded="false"
+              aria-controls="menu-principal">
+        <span class="hamburguer-linha"></span>
+        <span class="hamburguer-linha"></span>
+        <span class="hamburguer-linha"></span>
+      </button>
+    </div>
+    <nav class="menu" id="menu-principal" aria-label="Menu principal">
+      <div class="menu-cabecalho-mobile">
+        <a class="logo" href="index.html">
+          <img src="img/logo-emblema.svg" alt="" width="38" height="38">
+          <span class="logo-nome">Base Forte Leste</span>
+        </a>
+        <button type="button" class="botao-fechar-menu" id="btn-fechar-menu" aria-label="Fechar menu">
+          &times;
+        </button>
+      </div>
+      <ul class="container menu-lista">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Quem somos</a></li>
+        <li><a href="modalidades.html">Modalidades</a></li>
+        <li><a href="professor.html">Professores</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="aula-experimental.html">Aula experimental</a></li>
+        <li><a href="acoes-sociais.html">Ações sociais</a></li>
+        <li><a href="turmas-horarios.html">Turmas e horários</a></li>
+        <li><a href="contato.html" aria-current="page">Contato</a></li>
+        <li><a href="orcamento_hospedagem.html">Orçamento</a></li>
+      </ul>
+    </nav>
+    <div class="menu-overlay" id="menu-overlay" hidden></div>
+  </header>
+
+  <!-- ==================== CONTEÚDO PRINCIPAL ==================== -->
+  <main id="conteudo">
+
+    <!-- ===== TOPO DA PÁGINA ===== -->
+    <section class="topo-pagina" aria-labelledby="titulo-pagina">
+      <div class="container">
+        <h1 id="titulo-pagina">Contato e localização</h1>
+        <p>Fale com a administração da academia pelo canal que for mais fácil para você.</p>
+      </div>
+    </section>
+
+    <!-- ===== FORMAS DE CONTATO ===== -->
+    <!-- ATENÇÃO, EQUIPE: endereço, telefones e e-mail são exemplos. Troquem pelos dados reais da academia. -->
+    <section class="secao" aria-labelledby="titulo-contatos">
+      <div class="container">
+        <h2 id="titulo-contatos">Fale com a academia</h2>
+        <div class="grade-contato">
+          <div class="cartao">
+            <h3>Endereço</h3>
+            <!-- <address> marca informações de contato -->
+            <address>
+              Rua da Comunidade, 100<br>
+              Itaquera, Zona Leste<br>
+              São Paulo (SP)<br>
+              CEP 08210-000
+            </address>
+          </div>
+          <div class="cartao">
+            <h3>Telefone e WhatsApp</h3>
+            <!-- tel: abre a ligação no celular; wa.me abre a conversa no WhatsApp -->
+            <p>Recepção: <a class="sem-quebra" href="tel:+551120000000">(11) 2000-0000</a></p>
+            <p>WhatsApp: <a class="sem-quebra" href="https://wa.me/5511900000000" target="_blank" rel="noopener noreferrer">(11) 90000-0000<span class="visualmente-oculto"> (abre em nova aba)</span></a></p>
+          </div>
+          <div class="cartao">
+            <h3>E-mail</h3>
+            <!-- mailto: abre o programa de e-mail da pessoa -->
+            <p><a href="mailto:contato@baseforteleste.com.br">contato@baseforteleste.com.br</a></p>
+            <p>Respondemos em até dois dias úteis.</p>
+          </div>
+          <div class="cartao">
+            <h3>Redes sociais</h3>
+            <ul>
+              <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram<span class="visualmente-oculto"> (abre em nova aba)</span></a></li>
+              <li><a href="https://wa.me/5511900000000" target="_blank" rel="noopener noreferrer">WhatsApp<span class="visualmente-oculto"> (abre em nova aba)</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MAPA E COMO CHEGAR ===== -->
+    <section class="secao secao-alternada" aria-labelledby="titulo-mapa">
+      <div class="container duas-colunas">
+        <div>
+          <h2 id="titulo-mapa">Como chegar</h2>
+          <p class="introducao">A academia fica em Itaquera, na Zona Leste de São Paulo.</p>
+          <ul>
+            <li>Metrô: Linha 3-Vermelha, estação Corinthians-Itaquera.</li>
+            <li>Ônibus: linhas que passam pelo terminal de Itaquera.</li>
+            <li>Bicicleta: há bicicletário na entrada.</li>
+            <li>Acessibilidade: entrada com rampa e vaga reservada na rua em frente.</li>
+          </ul>
+          <p><strong>Horário:</strong> segunda a sexta, das 6h às 22h, e sábado, das 8h às 12h.</p>
+        </div>
+
+        <!-- MAPA INCORPORADO COM <iframe>: o iframe "abre uma janela" para outra página
+             (aqui, o Google Maps). O atributo title descreve o mapa para leitores de tela
+             e loading="lazy" só carrega o mapa quando a pessoa chega até ele. -->
+        <iframe class="mapa"
+                src="https://maps.google.com/maps?q=Itaquera%2C%20S%C3%A3o%20Paulo%20-%20SP&amp;z=14&amp;output=embed"
+                title="Mapa do bairro de Itaquera, na Zona Leste de São Paulo, onde fica a Academia Base Forte Leste"
+                width="600" height="400"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- ===== FORMULÁRIO DE CONTATO ===== -->
+    <section class="secao" id="mensagem" aria-labelledby="titulo-formulario">
+      <div class="container">
+        <h2 id="titulo-formulario">Envie uma mensagem</h2>
+
+        <!-- Aparece só depois do envio (seletor :target do CSS) -->
+        <div class="mensagem-sucesso" id="confirmacao-contato">
+          <h3>Mensagem enviada</h3>
+          <p>Obrigado pelo contato! Na versão real do site, a academia responderia em até dois dias úteis. Como este é um projeto acadêmico, nenhum dado foi enviado.</p>
+        </div>
+
+        <!-- Validação HTML5: required, type="email", type="tel" com pattern e <label for> em todos os campos.
+             Sem servidor (back-end), o envio é apenas uma demonstração. -->
+        <form class="formulario" action="#confirmacao-contato" method="get">
+          <p class="dica">Os campos marcados com <span class="obrigatorio" aria-hidden="true">*</span> são obrigatórios.</p>
+
+          <div class="campo">
+            <label for="contato-nome">Nome <span class="obrigatorio" aria-hidden="true">*</span></label>
+            <input type="text" id="contato-nome" name="nome" autocomplete="name" minlength="3" required>
+          </div>
+
+          <div class="campo">
+            <label for="contato-email">E-mail <span class="obrigatorio" aria-hidden="true">*</span></label>
+            <input type="email" id="contato-email" name="email" autocomplete="email" placeholder="seunome@email.com" required>
+          </div>
+
+          <div class="campo">
+            <label for="contato-telefone">Telefone <span class="obrigatorio" aria-hidden="true">*</span></label>
+            <input type="tel" id="contato-telefone" name="telefone" autocomplete="tel"
+                   placeholder="(11) 91234-5678"
+                   pattern="\(\d{2}\) \d{4,5}-\d{4}"
+                   title="Use o formato (11) 91234-5678"
+                   aria-describedby="contato-telefone-dica" required>
+            <p class="dica" id="contato-telefone-dica">Formato: (11) 91234-5678, com DDD entre parênteses.</p>
+          </div>
+
+          <div class="campo">
+            <label for="contato-assunto">Assunto <span class="obrigatorio" aria-hidden="true">*</span></label>
+            <select id="contato-assunto" name="assunto" required>
+              <option value="">Selecione um assunto</option>
+              <option value="planos">Planos e valores</option>
+              <option value="horarios">Turmas e horários</option>
+              <option value="acoes-sociais">Aulas gratuitas de sábado</option>
+              <option value="acessibilidade">Acessibilidade e turma inclusiva</option>
+              <option value="voluntariado">Quero ser voluntário</option>
+              <option value="doacao">Doação de equipamentos</option>
+              <option value="outro">Outro assunto</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="contato-mensagem">Mensagem <span class="obrigatorio" aria-hidden="true">*</span></label>
+            <textarea id="contato-mensagem" name="mensagem" rows="5" minlength="10" maxlength="1000" aria-describedby="contato-mensagem-dica" required></textarea>
+            <p class="dica" id="contato-mensagem-dica">Escreva pelo menos 10 caracteres.</p>
+          </div>
+
+          <fieldset>
+            <legend>Como prefere receber a resposta? <span class="obrigatorio" aria-hidden="true">*</span></legend>
+            <div class="opcoes">
+              <div class="opcao">
+                <input type="radio" id="contato-retorno-whatsapp" name="retorno" value="whatsapp" required>
+                <label for="contato-retorno-whatsapp">WhatsApp</label>
+              </div>
+              <div class="opcao">
+                <input type="radio" id="contato-retorno-email" name="retorno" value="email" required>
+                <label for="contato-retorno-email">E-mail</label>
+              </div>
+              <div class="opcao">
+                <input type="radio" id="contato-retorno-telefone" name="retorno" value="telefone" required>
+                <label for="contato-retorno-telefone">Ligação</label>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="campo-checkbox">
+            <input type="checkbox" id="contato-lgpd" name="lgpd" value="aceito" required>
+            <label for="contato-lgpd">Autorizo a Base Forte Leste a usar meus dados apenas para responder esta mensagem, conforme a LGPD. <span class="obrigatorio" aria-hidden="true">*</span></label>
+          </div>
+
+          <div class="grupo-botoes">
+            <button type="submit" class="botao botao-amarelo">Enviar mensagem</button>
+            <button type="button" id="btn-preencher-teste" class="botao botao-azul">Preencher Dados de Teste</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== CRÉDITOS DA EQUIPE DESENVOLVEDORA ===== -->
+    <section class="secao secao-alternada" id="creditos" aria-labelledby="titulo-creditos">
+      <div class="container">
+        <h2 id="titulo-creditos">Créditos da equipe desenvolvedora</h2>
+        <p class="introducao">Este site foi desenvolvido no <strong>Projeto Horizonte Leste</strong>, trabalho da disciplina de Front-End do curso de Ciência da Computação da UNICID, no 2º semestre de 2026.</p>
+
+        <div class="tabela-rolagem" role="region" aria-labelledby="legenda-equipe" tabindex="0">
+          <table>
+            <caption id="legenda-equipe">Integrantes da equipe</caption>
+            <thead>
+              <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">RGM</th>
+                <th scope="col">GitHub</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Nickolas Henrique Bezerra</th>
+                <td>47685778</td>
+                <td><a href="https://github.com/Nickolashbezerra">Nickolashbezerra</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Pedro Henrique Ruola Coiado</th>
+                <td>47589124</td>
+                <td><a href="https://github.com/PedroCoiado">PedroCoiado</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Raphaela Gonçalves Neves</th>
+                <td>47656166</td>
+                <td><a href="https://github.com/RaphaelaSeven">RaphaelaSeven</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Williams Vargas Neves Paoli dos Santos</th>
+                <td>47336820</td>
+                <td><a href="https://github.com/WilliamsVargas-Code">WilliamsVargas-Code</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Código-fonte: <a href="https://github.com/WilliamsVargas-Code/U-UNICID-CC-FRONTEND-2260022-N7-2-2026-NT-BASEFORTELESTE">repositório do projeto no GitHub</a>.</p>
+        <p>Tecnologias: HTML5 e CSS3, sem frameworks. JavaScript usado só na barra de acessibilidade, que é opcional.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== RODAPÉ ==================== -->
+  <footer class="rodape">
+    <div class="container rodape-grade">
+      <section aria-labelledby="rodape-contato">
+        <h2 class="rodape-titulo" id="rodape-contato">Contato</h2>
+        <address>
+          <p>Rua da Comunidade, 100, Itaquera<br>São Paulo (SP)<br>CEP 08210-000</p>
+          <p>Telefone: <a href="tel:+551120000000">(11) 2000-0000</a><br>
+            WhatsApp: <a href="https://wa.me/5511900000000" target="_blank" rel="noopener noreferrer">(11) 90000-0000<span class="visualmente-oculto"> (abre em nova aba)</span></a></p>
+          <p><a href="mailto:contato@baseforteleste.com.br">contato@baseforteleste.com.br</a></p>
+        </address>
+      </section>
+      <section aria-labelledby="rodape-redes">
+        <h2 class="rodape-titulo" id="rodape-redes">Redes sociais</h2>
+        <ul>
+          <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram<span class="visualmente-oculto"> (abre em nova aba)</span></a></li>
+          <li><a href="https://wa.me/5511900000000" target="_blank" rel="noopener noreferrer">WhatsApp<span class="visualmente-oculto"> (abre em nova aba)</span></a></li>
+        </ul>
+        <p>Trocamos panfletos de papel por divulgação digital.</p>
+      </section>
+      <section aria-labelledby="rodape-horario">
+        <h2 class="rodape-titulo" id="rodape-horario">Horário de funcionamento</h2>
+        <ul>
+          <li>Segunda a sexta: 6h às 22h</li>
+          <li>Sábado: 8h às 12h</li>
+          <li>Domingo e feriados: fechado</li>
+        </ul>
+      </section>
+      <section aria-labelledby="rodape-compromisso">
+        <h2 class="rodape-titulo" id="rodape-compromisso">Nosso compromisso</h2>
+        <p>Espaço acessível e site pensado para leitores de tela, teclado e alto contraste. <a href="sobre.html#acessibilidade">Ver medidas de acessibilidade</a></p>
+        <p>Menos papel e mais reciclagem. <a href="orcamento_hospedagem.html#papel-digital">Ver nossa economia</a></p>
+      </section>
+    </div>
+    <div class="rodape-creditos">
+      <div class="container">
+        <p>Site desenvolvido no Projeto Horizonte Leste (Front-End, Ciência da Computação, UNICID, 2026) por Nickolas Henrique Bezerra, Pedro Henrique Ruola Coiado, Raphaela Gonçalves Neves e Williams Vargas Neves Paoli dos Santos. <a href="contato.html#creditos">Ver créditos</a></p>
+        <p>© 2026 Academia Base Forte Leste. Projeto acadêmico.</p>
+      </div>
+    </div>
+    <a class="whatsapp-flutuante" href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Base%20Forte%20Leste." target="_blank" rel="noopener noreferrer" aria-label="Conversar com a academia pelo WhatsApp (abre em nova aba)">WhatsApp</a>
+  </footer>
+</body>
+</html>

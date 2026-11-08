@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Agende uma aula experimental gratuita na Academia Base Forte Leste ou inscreva um jovem de 10 a 17 anos nas aulas gratuitas de sábado.">
+  <title>Aula experimental e aulas de sábado | Academia Base Forte Leste</title>
+
+  <link rel="icon" href="img/logo-emblema.svg" type="image/svg+xml">
+
+  <!-- Fontes do Google (títulos e textos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;family=League+Gothic&amp;display=swap">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo principal</a>
+
+  <!-- Barra de acessibilidade (aparece só com JavaScript ativo) -->
+  <div class="barra-acessibilidade" hidden>
+    <div class="container" role="group" aria-label="Recursos de acessibilidade">
+      <span class="barra-titulo">Acessibilidade:</span>
+      <button type="button" data-acao="diminuir" aria-label="Diminuir o tamanho do texto">A−</button>
+      <button type="button" data-acao="normal" aria-label="Voltar ao tamanho normal do texto">A</button>
+      <button type="button" data-acao="aumentar" aria-label="Aumentar o tamanho do texto">A+</button>
+      <button type="button" data-acao="contraste" aria-pressed="false">Alto contraste</button>
+    </div>
+  </div>
+
+  <!-- ==================== CABEÇALHO ==================== -->
+  <header class="cabecalho">
+    <div class="container cabecalho-topo">
+      <a class="logo" href="index.html">
+        <img src="img/logo-emblema.svg" alt="" width="44" height="44">
+        <span class="logo-nome">Base Forte Leste</span>
+      </a>
+      <a class="botao botao-amarelo cabecalho-acao" href="aula-experimental.html">Agendar aula experimental</a>
+      <button type="button"
+              class="botao-hamburguer"
+              id="btn-hamburguer"
+              aria-label="Abrir menu de navegação"
+              aria-expanded="false"
+              aria-controls="menu-principal">
+        <span class="hamburguer-linha"></span>
+        <span class="hamburguer-linha"></span>
+        <span class="hamburguer-linha"></span>
+      </button>
+    </div>
+    <nav class="menu" id="menu-principal" aria-label="Menu principal">
+      <div class="menu-cabecalho-mobile">
+        <a class="logo" href="index.html">
+          <img src="img/logo-emblema.svg" alt="" width="38" height="38">
+          <span class="logo-nome">Base Forte Leste</span>
+        </a>
+        <button type="button" class="botao-fechar-menu" id="btn-fechar-menu" aria-label="Fechar menu">
+          &times;
+        </button>
+      </div>
+      <ul class="container menu-lista">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Quem somos</a></li>
+        <li><a href="modalidades.html">Modalidades</a></li>
+        <li><a href="professor.html">Professores</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="aula-experimental.html" aria-current="page">Aula experimental</a></li>
+        <li><a href="acoes-sociais.html">Ações sociais</a></li>
+        <li><a href="turmas-horarios.html">Turmas e horários</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="orcamento_hospedagem.html">Orçamento</a></li>
+      </ul>
+    </nav>
+    <div class="menu-overlay" id="menu-overlay" hidden></div>
+  </header>
+
+  <!-- ==================== CONTEÚDO PRINCIPAL ==================== -->
+  <main id="conteudo">
+
+    <!-- ===== TOPO DA PÁGINA ===== -->
+    <section class="topo-pagina" aria-labelledby="titulo-pagina">
+      <div class="container">
+        <h1 id="titulo-pagina">Aula experimental e aulas de sábado</h1>
+        <p>Dois caminhos para começar a treinar na Base Forte Leste. Escolha o seu e preencha o formulário.</p>
+      </div>
+    </section>
+
+    <!-- ===== OS DOIS CAMINHOS ===== -->
+    <section class="secao" aria-labelledby="titulo-caminhos">
+      <div class="container">
+        <h2 id="titulo-caminhos">Escolha o seu caminho</h2>
+
+        <div class="caminhos">
+          <!-- Caminho 1: turmas regulares -->
+          <div class="caminho">
+            <h3>Aula experimental</h3>
+            <p>Para quem quer conhecer as turmas regulares da academia.</p>
+            <ul>
+              <li>Uma aula gratuita, sem compromisso.</li>
+              <li>Qualquer modalidade da grade, a partir de 7 anos.</li>
+              <li>Não precisa ter equipamento.</li>
+            </ul>
+            <a class="botao botao-azul" href="#agendamento">Preencher pedido de aula</a>
+          </div>
+
+          <!-- Caminho 2: projeto social de sábado -->
+          <div class="caminho caminho-sabado">
+            <h3>Aulas gratuitas de sábado</h3>
+            <p>Para jovens da comunidade que querem treinar de graça, toda semana.</p>
+            <ul>
+              <li>Jovens de 10 a 17 anos.</li>
+              <li>Muay Thai às 9h e Capoeira às 10h.</li>
+              <li>Inscrição feita pelo responsável.</li>
+            </ul>
+            <a class="botao botao-amarelo" href="#inscricao-sabado">Fazer inscrição gratuita</a>
+          </div>
+        </div>
+
+        <h3>Como funciona</h3>
+        <!-- Lista ordenada (<ol>), porque os passos seguem uma ordem -->
+        <ol class="passos">
+          <li>Preencha o formulário do caminho escolhido.</li>
+          <li>A academia confirma o dia e o horário pelo WhatsApp, em até um dia útil.</li>
+          <li>Chegue 15 minutos antes, com roupa confortável e garrafa de água.</li>
+          <li>Treine, tire suas dúvidas com o professor e decida com calma.</li>
+        </ol>
+
+        <div class="aviso">
+          <p><strong>Projeto acadêmico:</strong> estes formulários são uma demonstração e não enviam os dados para a academia. Para marcar uma aula de verdade, fale com a Base Forte Leste pelo WhatsApp.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FORMULÁRIO 1: AULA EXPERIMENTAL ===== -->
+    <section class="secao secao-alternada" id="agendamento" aria-labelledby="titulo-agendamento">
+      <div class="container">
+        <h2 id="titulo-agendamento">Pedir aula experimental</h2>
+
+        <!-- Mensagem de confirmação: só aparece quando a URL termina em #confirmacao-experimental
+             (o CSS usa o seletor :target para mostrar a mensagem) -->
+        <div class="mensagem-sucesso" id="confirmacao-experimental">
+          <h3>Pedido de aula experimental enviado</h3>
+          <p>Obrigado! Na versão real do site, a academia confirmaria o horário pelo WhatsApp em até um dia útil. Como este é um projeto acadêmico, nenhum dado foi enviado.</p>
+        </div>
+
+        <!-- COMO FUNCIONA A VALIDAÇÃO HTML5:
+             o navegador só deixa enviar quando todos os campos estão corretos.
+             - required  = campo obrigatório
+             - type      = tipo de dado (email, tel, date, number...)
+             - pattern   = formato exigido (expressão regular)
+             - min/max   = limites de número ou de data
+             Como o site não tem servidor (back-end), usamos method="get" e um action
+             com #, só para demonstrar o envio. Em um site real, o formulário enviaria os
+             dados por POST para um servidor, e dados pessoais nunca iriam na URL. -->
+        <form class="formulario" action="#confirmacao-experimental" method="get">
+          <p class="dica">Os campos marcados com <span class="obrigatorio" aria-hidden="true">*</span> são obrigatórios.</p>
+
+          <!-- <fieldset> agrupa campos relacionados; <legend> é o título do grupo -->
+          <fieldset>
+            <legend>Seus dados</legend>
+
+            <!-- O "for" do label precisa ser igual ao "id" do campo: assim, clicar no
+                 texto seleciona o campo, e o leitor de tela lê o rótulo certo -->
+            <div class="campo">
+              <label for="exp-nome">Nome completo <span class="obrigatorio" aria-hidden="true">*</span></label>
+              <input type="text" id="exp-nome" name="nome" autocomplete="name" minlength="3" required>
+            </div>
+
+            <div class="campo">
+              <label for="exp-email">E-mail <span class="obrigatorio" aria-hidden="true">*</span></label>
+              <input type="email" id="exp-email" name="email" autocomplete="email" placeholder="seunome@email.com" required>
+            </div>
+
+            <div class="campo">
+              <label for="exp-telefone">Telefone com WhatsApp <span class="obrigatorio" aria-hidden="true">*</span></label>
+              <!-- pattern: (2 dígitos) espaço 4 ou 5 dígitos - 4 dígitos. Ex.: (11) 91234-5678 -->
+              <input type="tel" id="exp-telefone" name="telefone" autocomplete="tel"
+                     placeholder="(11) 91234-5678"
+                     pattern="\(\d{2}\) \d{4,5}-\d{4}"
+                     title="Use o formato (11) 91234-5678"
+                     aria-describedby="exp-telefone-dica" required>
+              <p class="dica" id="exp-telefone-dica">Formato: (11) 91234-5678, com DDD entre parênteses.</p>
+            </div>
+
+            <div class="campo">
+              <label for="exp-idade">Idade <span class="obrigatorio" aria-hidden="true">*</span></label>
+              <input type="number" id="exp-idade" name="idade" min="7" max="99" aria-describedby="exp-idade-dica" required>
+              <p class="dica" id="exp-idade-dica">A aula experimental é para quem tem a partir de 7 anos.</p>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Sobre a aula</legend>
+
+            <div class="campo">
+              <label for="exp-modalidade">Modalidade <span class="obrigatorio" aria-hidden="true">*</span></label>
+              <!-- A primeira opção tem value vazio: com required, a pessoa precisa escolher outra -->
+              <select id="exp-modalidade" name="modalidade" required>
+                <option value="">Selecione uma modalidade</option>
+                <option value="muay-thai">Muay Thai</option>
+                <option value="kickboxing">Kickboxing</option>
+                <option value="boxe">Boxe</option>
+                <option value="boxe-adaptado">Boxe adaptado (turma inclusiva)</option>
+                <option value="jiu-jitsu">Jiu-Jitsu</option>
+                <option value="capoeira">Capoeira</option>
+                <option value="no-gi">No-Gi</option>
+              </select>
+            </div>
+
+            <div class="campo">
+              <label for="exp-data">Data da aula <span class="obrigatorio" aria-hidden="true">*</span></label>
+              <!-- min impede escolher uma data antiga (atualize antes de apresentar, se precisar) -->
+              <input type="date" id="exp-data" name="data" min="2026-11-09" aria-describedby="exp-data-dica" required>
+              <p class="dica" id="exp-data-dica">Atendemos de segunda a sábado. Confira os horários em <a href="turmas-horarios.html">Turmas e horários</a>.</p>
+            </div>
+
+            <!-- Grupo de opções: fieldset + legend dentro do fieldset principal -->
+            <fieldset>
+              <legend>Período preferido <span class="obrigatorio" aria-hidden="true">*</span></legend>
+              <div class="opcoes">
+                <!-- Radios com o mesmo "name" formam um grupo: só dá para marcar um -->
+                <div class="opcao">
+                  <input type="radio" id="exp-periodo-manha" name="periodo" value="manha" required>
+                  <label for="exp-periodo-manha">Manhã</label>
+                </div>
+                <div class="opcao">
+                  <input type="radio" id="exp-periodo-tarde" name="periodo" value="tarde" required>
+                  <label for="exp-periodo-tarde">Tarde</label>
+                </div>
+                <div class="opcao">
+                  <input type="radio" id="exp-periodo-noite" name="periodo" value="noite" required>
+                  <label for="exp-periodo-noite">Noite</label>
+                </div>
+              </div>
+            </fieldset>
+          </fieldset>
+
+          <fieldset>
+            <legend>Acessibilidade</legend>
+
+            <fieldset>
+              <legend>Você precisa de alguma adaptação no treino? <span class="obrigatorio" aria-hidden="true">*</span></legend>
+              <div class="opcoes">
+                <div class="opcao">
+                  <input type="radio" id="exp-adaptacao-sim" name="adaptacao" value="sim" required>
+                  <label for="exp-adaptacao-sim">Sim</label>
+                </div>
+                <div class="opcao">
+                  <input type="radio" id="exp-adaptacao-nao" name="adaptacao" value="nao" required>
+                  <label for="exp-adaptacao-nao">Não</label>
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="campo">
+              <label for="exp-adaptacao-detalhe">Se sim, conte o que podemos preparar (opcional)</label>
+              <textarea id="exp-adaptacao-detalhe" name="adaptacao_detalhe" rows="3" maxlength="500"></textarea>
+            </div>
+          </fieldset>
+
+          <div class="campo">
+            <label for="exp-mensagem">Mensagem ou dúvida (opcional)</label>
+            <textarea id="exp-mensagem" name="mensagem" rows="4" maxlength="800"></textarea>
+          </div>
+
+          <!-- Consentimento exigido pela LGPD (Lei Geral de Proteção de Dados) -->
+          <div class="campo-checkbox">
+            <input type="checkbox" id="exp-lgpd" name="lgpd" value="aceito" required>
+            <label for="exp-lgpd">Autorizo a Base Forte Leste a usar meus dados apenas para combinar a aula experimental, conforme a LGPD. <span class="obrigatorio" aria-hidden="true">*</span></label>
+          </div>
+
+          <button type="submit" class="botao botao-amarelo">Enviar pedido de aula experimental</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== FORMULÁRIO 2: INSCRIÇÃO NAS AULAS GRATUITAS DE SÁBADO ===== -->
+    <section class="secao" id="inscricao-sabado" aria-labelledby="titulo-inscricao">
+      <div class="container">
+        <h2 id="titulo-inscricao">Inscrição nas aulas gratuitas de sábado</h2>
+        <p class="introducao">Como o projeto atende menores de idade, a inscrição é feita pelo responsável. Pedimos só os dados necessários: não solicitamos CPF nem documentos pelo site.</p>
+
+        <div class="mensagem-sucesso" id="confirmacao-sabado">
+          <h3>Inscrição enviada</h3>
+          <p>Obrigado! Na versão real do site, a academia entraria em contato com o responsável pelo WhatsApp para confirmar a vaga. Como este é um projeto acadêmico, nenhum dado foi enviado.</p>
+        </div>
+
+        <form class="formulario" action="#confirmacao-sabado" method="get">
+          <p class="dica">Os campos marcados com <span class="obrigatorio" aria-hidden="true">*</span> são obrigatórios.</p>
+
+          <fieldset>
+            <legend>Dados do jovem</legend>
+
+            <div class="campo">
+              <label for="sab-nome">Nome do jovem <span class="obrigatorio" aria-hidden="true">*</span></label>
+              <input type="text" id="sab-nome" name="nome_jovem" minlength="3" required>
+            </div>
+
+            <div class="campo">
+              <label for="sab-idade">Idade <span class="obrigatorio" aria-hidden="true">*</span></label>
+              <!-- type="number" com min e max: só aceita de 10 a 17 anos -->
+              <input type="number" id="sab-idade" name="idade" min="10" max="17" aria-describedby="sab-idade-dica" required>
+              <p class="dica" id="sab-idade-dica">As aulas de sábado são para jovens de 10 a 17 anos.</p>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Dados do responsável</legend>
+
+            <div class="campo">
+              <label for="sab-responsavel">Nome do responsável <span class="obrigatorio" aria-hidden="true">*</span></label>
+              <input type="text" id="sab-responsavel" name="responsavel" autocomplete="name" minlength="3" required>
+            </div>
+
+            <div class="campo">
+              <label for="sab-telefone">Telefone do responsável <span class="obrigatorio" aria-hidden="true">*</span></label>
+              <input type="tel" id="sab-telefone" name="telefone" autocomplete="tel"
+                     placeholder="(11) 91234-5678"
+                     pattern="\(\d{2}\) \d{4,5}-\d{4}"
+                     title="Use o formato (11) 91234-5678"
+                     aria-describedby="sab-telefone-dica" required>
+              <p class="dica" id="sab-telefone-dica">Formato: (11) 91234-5678, com DDD entre parênteses.</p>
+            </div>
+
+            <div class="campo">
+              <label for="sab-email">E-mail do responsável <span class="obrigatorio" aria-hidden="true">*</span></label>
+              <input type="email" id="sab-email" name="email" autocomplete="email" placeholder="responsavel@email.com" required>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Participação</legend>
+
+            <fieldset>
+              <legend>Turma de interesse <span class="obrigatorio" aria-hidden="true">*</span></legend>
+              <div class="opcoes">
+                <div class="opcao">
+                  <input type="radio" id="sab-turma-muay" name="turma" value="muay-thai" required>
+                  <label for="sab-turma-muay">Muay Thai (9h)</label>
+                </div>
+                <div class="opcao">
+                  <input type="radio" id="sab-turma-capoeira" name="turma" value="capoeira" required>
+                  <label for="sab-turma-capoeira">Capoeira (10h)</label>
+                </div>
+                <div class="opcao">
+                  <input type="radio" id="sab-turma-ambas" name="turma" value="ambas" required>
+                  <label for="sab-turma-ambas">As duas</label>
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="campo">
+              <label for="sab-data">Data da primeira aula <span class="obrigatorio" aria-hidden="true">*</span></label>
+              <!-- TRUQUE DO HTML5: min é um sábado (14/11/2026) e step="7" pula de 7 em 7 dias.
+                   Resultado: o navegador só aceita datas que caem no sábado. -->
+              <input type="date" id="sab-data" name="primeira_aula" min="2026-11-14" step="7" aria-describedby="sab-data-dica" required>
+              <p class="dica" id="sab-data-dica">Escolha um sábado. O formulário não aceita outros dias da semana.</p>
+            </div>
+
+            <div class="campo">
+              <label for="sab-adaptacao">O jovem precisa de alguma adaptação no treino? (opcional)</label>
+              <textarea id="sab-adaptacao" name="adaptacao" rows="3" maxlength="500"></textarea>
+            </div>
+          </fieldset>
+
+          <div class="campo-checkbox">
+            <input type="checkbox" id="sab-autorizacao" name="autorizacao" value="autorizo" required>
+            <label for="sab-autorizacao">Sou o responsável legal e autorizo a participação do jovem nas aulas gratuitas, e o uso destes dados apenas para contato da academia, conforme a LGPD. <span class="obrigatorio" aria-hidden="true">*</span></label>
+          </div>
+
+          <button type="submit" class="botao botao-amarelo">Enviar inscrição gratuita</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== RODAPÉ ==================== -->
+  <footer class="rodape">
+    <div class="container rodape-grade">
+      <section aria-labelledby="rodape-contato">
+        <h2 class="rodape-titulo" id="rodape-contato">Contato</h2>
+        <address>
+          <p>Rua da Comunidade, 100, Itaquera<br>São Paulo (SP)<br>CEP 08210-000</p>
+          <p>Telefone: <a href="tel:+551120000000">(11) 2000-0000</a><br>
+            WhatsApp: <a href="https://wa.me/5511900000000" target="_blank" rel="noopener noreferrer">(11) 90000-0000<span class="visualmente-oculto"> (abre em nova aba)</span></a></p>
+          <p><a href="mailto:contato@baseforteleste.com.br">contato@baseforteleste.com.br</a></p>
+        </address>
+      </section>
+      <section aria-labelledby="rodape-redes">
+        <h2 class="rodape-titulo" id="rodape-redes">Redes sociais</h2>
+        <ul>
+          <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram<span class="visualmente-oculto"> (abre em nova aba)</span></a></li>
+          <li><a href="https://wa.me/5511900000000" target="_blank" rel="noopener noreferrer">WhatsApp<span class="visualmente-oculto"> (abre em nova aba)</span></a></li>
+        </ul>
+        <p>Trocamos panfletos de papel por divulgação digital.</p>
+      </section>
+      <section aria-labelledby="rodape-horario">
+        <h2 class="rodape-titulo" id="rodape-horario">Horário de funcionamento</h2>
+        <ul>
+          <li>Segunda a sexta: 6h às 22h</li>
+          <li>Sábado: 8h às 12h</li>
+          <li>Domingo e feriados: fechado</li>
+        </ul>
+      </section>
+      <section aria-labelledby="rodape-compromisso">
+        <h2 class="rodape-titulo" id="rodape-compromisso">Nosso compromisso</h2>
+        <p>Espaço acessível e site pensado para leitores de tela, teclado e alto contraste. <a href="sobre.html#acessibilidade">Ver medidas de acessibilidade</a></p>
+        <p>Menos papel e mais reciclagem. <a href="orcamento_hospedagem.html#papel-digital">Ver nossa economia</a></p>
+      </section>
+    </div>
+    <div class="rodape-creditos">
+      <div class="container">
+        <p>Site desenvolvido no Projeto Horizonte Leste (Front-End, Ciência da Computação, UNICID, 2026) por Nickolas Henrique Bezerra, Pedro Henrique Ruola Coiado, Raphaela Gonçalves Neves e Williams Vargas Neves Paoli dos Santos. <a href="contato.html#creditos">Ver créditos</a></p>
+        <p>© 2026 Academia Base Forte Leste. Projeto acadêmico.</p>
+      </div>
+    </div>
+    <a class="whatsapp-flutuante" href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Base%20Forte%20Leste." target="_blank" rel="noopener noreferrer" aria-label="Conversar com a academia pelo WhatsApp (abre em nova aba)">WhatsApp</a>
+  </footer>
+</body>
+</html>

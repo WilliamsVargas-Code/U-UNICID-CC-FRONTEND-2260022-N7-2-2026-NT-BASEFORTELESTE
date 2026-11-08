@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blog da Academia Base Forte Leste: artigos sobre bem-estar, saúde mental, alívio do estresse, sono e sustentabilidade no esporte, e notícias da academia.">
+  <title>Blog e notícias | Academia Base Forte Leste</title>
+
+  <link rel="icon" href="img/logo-emblema.svg" type="image/svg+xml">
+
+  <!-- Fontes do Google (títulos e textos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;family=League+Gothic&amp;display=swap">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo principal</a>
+
+  <!-- Barra de acessibilidade (aparece só com JavaScript ativo) -->
+  <div class="barra-acessibilidade" hidden>
+    <div class="container" role="group" aria-label="Recursos de acessibilidade">
+      <span class="barra-titulo">Acessibilidade:</span>
+      <button type="button" data-acao="diminuir" aria-label="Diminuir o tamanho do texto">A−</button>
+      <button type="button" data-acao="normal" aria-label="Voltar ao tamanho normal do texto">A</button>
+      <button type="button" data-acao="aumentar" aria-label="Aumentar o tamanho do texto">A+</button>
+      <button type="button" data-acao="contraste" aria-pressed="false">Alto contraste</button>
+    </div>
+  </div>
+
+  <!-- ==================== CABEÇALHO ==================== -->
+  <header class="cabecalho">
+    <div class="container cabecalho-topo">
+      <a class="logo" href="index.html">
+        <img src="img/logo-emblema.svg" alt="" width="44" height="44">
+        <span class="logo-nome">Base Forte Leste</span>
+      </a>
+      <a class="botao botao-amarelo cabecalho-acao" href="aula-experimental.html">Agendar aula experimental</a>
+      <button type="button"
+              class="botao-hamburguer"
+              id="btn-hamburguer"
+              aria-label="Abrir menu de navegação"
+              aria-expanded="false"
+              aria-controls="menu-principal">
+        <span class="hamburguer-linha"></span>
+        <span class="hamburguer-linha"></span>
+        <span class="hamburguer-linha"></span>
+      </button>
+    </div>
+    <nav class="menu" id="menu-principal" aria-label="Menu principal">
+      <div class="menu-cabecalho-mobile">
+        <a class="logo" href="index.html">
+          <img src="img/logo-emblema.svg" alt="" width="38" height="38">
+          <span class="logo-nome">Base Forte Leste</span>
+        </a>
+        <button type="button" class="botao-fechar-menu" id="btn-fechar-menu" aria-label="Fechar menu">
+          &times;
+        </button>
+      </div>
+      <ul class="container menu-lista">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Quem somos</a></li>
+        <li><a href="modalidades.html">Modalidades</a></li>
+        <li><a href="professor.html">Professores</a></li>
+        <li><a href="blog.html" aria-current="page">Blog</a></li>
+        <li><a href="aula-experimental.html">Aula experimental</a></li>
+        <li><a href="acoes-sociais.html">Ações sociais</a></li>
+        <li><a href="turmas-horarios.html">Turmas e horários</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="orcamento_hospedagem.html">Orçamento</a></li>
+      </ul>
+    </nav>
+    <div class="menu-overlay" id="menu-overlay" hidden></div>
+  </header>
+
+  <!-- ==================== CONTEÚDO PRINCIPAL ==================== -->
+  <main id="conteudo">
+
+    <!-- ===== TOPO DA PÁGINA ===== -->
+    <section class="topo-pagina" aria-labelledby="titulo-pagina">
+      <div class="container">
+        <h1 id="titulo-pagina">Blog e notícias</h1>
+        <p>Bem-estar, saúde mental, sono e sustentabilidade no esporte, além das novidades da academia.</p>
+      </div>
+    </section>
+
+    <!-- ===== NOTÍCIA PRINCIPAL (texto completo) ===== -->
+    <section class="secao" aria-label="Notícia principal">
+      <div class="container">
+
+        <!-- <article> = conteúdo completo e independente (poderia ser compartilhado sozinho).
+             Dentro dele, <header> guarda o título e os dados da publicação. -->
+        <article class="noticia-principal" id="artigo-sono" aria-labelledby="titulo-artigo-sono">
+          <header>
+            <span class="etiqueta etiqueta-categoria">Saúde e bem-estar</span>
+            <h2 id="titulo-artigo-sono">Treinar luta ajuda a dormir melhor e a aliviar o estresse</h2>
+            <p class="noticia-meta">Publicado em <time datetime="2026-11-03">3 de novembro de 2026</time>, pela equipe Base Forte Leste. Leitura de 4 minutos.</p>
+          </header>
+
+          <figure>
+            <img src="img/blog-sono.svg" alt="Ilustração de uma pessoa dormindo tranquila em um quarto à noite, com luvas de boxe penduradas na cabeceira da cama" width="800" height="450">
+            <figcaption>O cansaço bom do treino ajuda a desligar à noite. Fonte: ilustração da equipe do projeto.</figcaption>
+          </figure>
+
+          <p class="introducao">Quem chega à academia depois de um dia puxado costuma sair dizendo a mesma coisa: a cabeça ficou mais leve. Essa sensação tem explicação, e ela continua depois que o treino acaba.</p>
+
+          <h3>O que acontece no corpo durante o treino</h3>
+          <p>Em uma aula de luta, o coração acelera, os músculos trabalham em sequência e a respiração entra no ritmo dos golpes. O corpo gasta energia e libera substâncias ligadas à sensação de bem-estar. A tensão acumulada no dia, que ficaria guardada nos ombros e na mandíbula, encontra uma saída no saco de pancada.</p>
+
+          <h3>Foco total: uma pausa para a mente</h3>
+          <p>Na luta não dá para ficar pensando no boleto enquanto o parceiro está na sua frente. Prestar atenção no próprio movimento, na respiração e no outro funciona como uma pausa nas preocupações. Muitos alunos descrevem o treino como o único momento do dia em que conseguem desligar o celular e a cabeça ao mesmo tempo.</p>
+
+          <h3>Treino e sono</h3>
+          <p>A prática regular de atividade física está associada a um sono de melhor qualidade. Para aproveitar esse efeito, a dica é manter a constância: treinar duas ou três vezes por semana faz mais diferença do que um treino muito puxado de vez em quando. Se você dorme cedo, prefira não fazer os treinos mais intensos logo antes de deitar e use a volta à calma, com alongamento e respiração, para desacelerar.</p>
+
+          <!-- <blockquote> marca uma citação; o <footer> dentro dela mostra quem falou -->
+          <blockquote class="citacao">
+            <p>Muita gente chega aqui pela luta e fica pelo que ela faz pela cabeça. Depois de algumas semanas, os alunos contam que estão dormindo melhor e chegando mais calmos em casa.</p>
+            <footer>Larissa Duarte, professora de Kickboxing e de Boxe adaptado</footer>
+          </blockquote>
+
+          <h3>Quanto treinar?</h3>
+          <p>A Organização Mundial da Saúde (OMS) recomenda que adultos façam de 150 a 300 minutos de atividade física moderada por semana, ou de 75 a 150 minutos de atividade intensa. Para crianças e adolescentes, a recomendação é uma média de 60 minutos por dia de atividade moderada a intensa. Três aulas de uma hora por semana já colocam um adulto dentro da faixa recomendada.</p>
+
+          <h3>Cuidados importantes</h3>
+          <p>Comece no seu ritmo e conte ao professor sobre lesões, dores ou problemas de saúde. O treino ajuda, mas não substitui o acompanhamento médico ou psicológico: se o estresse ou a insônia estão atrapalhando a sua rotina, procure a Unidade Básica de Saúde (UBS) mais próxima.</p>
+
+          <!-- Fontes consultadas para escrever o artigo -->
+          <div class="fontes">
+            <h3>Fontes</h3>
+            <ul>
+              <li>BULL, F. C. et al. World Health Organization 2020 guidelines on physical activity and sedentary behaviour. <cite>British Journal of Sports Medicine</cite>, v. 54, n. 24, p. 1451-1462, 2020. Disponível em: <a href="https://doi.org/10.1136/bjsports-2020-102955">https://doi.org/10.1136/bjsports-2020-102955</a>.</li>
+              <li>BRASIL. Ministério da Saúde. <cite>Guia de Atividade Física para a População Brasileira</cite>. Brasília: Ministério da Saúde, 2021. Disponível em: <a href="https://bvsms.saude.gov.br/bvs/publicacoes/guia_atividade_fisica_populacao_brasileira.pdf">https://bvsms.saude.gov.br/bvs/publicacoes/guia_atividade_fisica_populacao_brasileira.pdf</a>.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== MAIS PUBLICAÇÕES ===== -->
+    <!-- Cada publicação é um <article>. O texto completo fica dentro de <details>,
+         que abre ao clicar em "Continuar lendo" (sem JavaScript). -->
+    <section class="secao secao-alternada" aria-labelledby="titulo-publicacoes">
+      <div class="container">
+        <h2 id="titulo-publicacoes">Mais publicações</h2>
+        <div class="grade-artigos">
+
+          <article class="artigo" id="artigo-respiracao" aria-labelledby="titulo-respiracao">
+            <span class="etiqueta etiqueta-categoria">Saúde mental</span>
+            <h3 id="titulo-respiracao">Respiração de lutador: um exercício para baixar a ansiedade</h3>
+            <p class="noticia-meta">Publicado em <time datetime="2026-10-20">20 de outubro de 2026</time></p>
+            <p>A mesma respiração que recupera o fôlego entre os rounds pode ajudar antes de uma prova ou de uma entrevista de emprego.</p>
+            <details>
+              <summary>Continuar lendo<span class="visualmente-oculto"> sobre respiração de lutador</span></summary>
+              <p>Sente com a coluna reta e os pés no chão. Inspire pelo nariz contando até quatro, segure o ar contando até quatro e solte devagar pela boca contando até seis. Repita por dois minutos.</p>
+              <p>Soltar o ar mais devagar do que puxou ajuda o corpo a sair do modo de alerta. No treino, usamos esse exercício no fim de cada aula. Fora dele, vale para o ônibus lotado e para a fila do banco.</p>
+            </details>
+          </article>
+
+          <article class="artigo" id="artigo-frustracao" aria-labelledby="titulo-frustracao">
+            <span class="etiqueta etiqueta-categoria">Saúde mental</span>
+            <h3 id="titulo-frustracao">O que o tatame ensina sobre lidar com a frustração</h3>
+            <p class="noticia-meta">Publicado em <time datetime="2026-09-28">28 de setembro de 2026</time></p>
+            <p>Ninguém aprende a lutar sem ser derrubado algumas vezes. Esse é justamente o ponto.</p>
+            <details>
+              <summary>Continuar lendo<span class="visualmente-oculto"> sobre lidar com a frustração</span></summary>
+              <p>No Jiu-Jitsu, todo mundo começa de faixa branca e passa meses sendo finalizado pelos colegas mais experientes. Quem fica aprende que errar faz parte e que cada treino é uma nova chance.</p>
+              <p>Os professores reforçam essa ideia com um ritual simples: ao fim da aula, cada aluno conta uma coisa que melhorou na semana, por menor que seja.</p>
+            </details>
+          </article>
+
+          <article class="artigo" id="artigo-kimono" aria-labelledby="titulo-kimono">
+            <span class="etiqueta etiqueta-categoria">Sustentabilidade</span>
+            <h3 id="titulo-kimono">Kimono parado no armário? Doe para um jovem treinar</h3>
+            <p class="noticia-meta">Publicado em <time datetime="2026-10-05">5 de outubro de 2026</time></p>
+            <p>A campanha de doação de kimonos, luvas e caneleiras já reaproveitou 34 peças em 2026.</p>
+            <details>
+              <summary>Continuar lendo<span class="visualmente-oculto"> sobre a doação de kimonos</span></summary>
+              <p>Equipamento de luta dura anos e quase sempre fica parado quando a pessoa para de treinar. Lave a peça e entregue na recepção, de segunda a sábado. Aceitamos kimonos, faixas, luvas, caneleiras, protetores bucais novos e bermudas de treino.</p>
+              <p>Tudo é conferido e vai para os jovens das aulas gratuitas de sábado. Reaproveitar equipamento é a forma mais simples de esporte sustentável: menos produção, menos descarte e mais gente treinando.</p>
+            </details>
+          </article>
+
+          <article class="artigo" id="artigo-festival" aria-labelledby="titulo-festival">
+            <span class="etiqueta etiqueta-categoria">Notícias</span>
+            <h3 id="titulo-festival">Festival de Inverno arrecada 186 kg de recicláveis</h3>
+            <p class="noticia-meta">Publicado em <time datetime="2026-08-24">24 de agosto de 2026</time></p>
+            <p>Rodas de capoeira, demonstrações de Jiu-Jitsu e um ponto de coleta seletiva movimentaram a rua da academia.</p>
+            <details>
+              <summary>Continuar lendo<span class="visualmente-oculto"> sobre o Festival de Inverno</span></summary>
+              <p>O público trouxe garrafas PET, latas, papelão e vidro, separados em quatro coletores com as cores da coleta seletiva. No fim do dia, foram 186 kg de material entregues a uma cooperativa de catadores da região.</p>
+              <p>Quem levou recicláveis ganhou uma aula experimental gratuita. A próxima edição já está marcada para o verão.</p>
+            </details>
+          </article>
+
+          <article class="artigo" id="artigo-inclusiva" aria-labelledby="titulo-inclusiva">
+            <span class="etiqueta etiqueta-categoria">Inclusão</span>
+            <h3 id="titulo-inclusiva">Turma inclusiva completa quatro anos de treino</h3>
+            <p class="noticia-meta">Publicado em <time datetime="2026-09-15">15 de setembro de 2026</time></p>
+            <p>A turma de Boxe adaptado começou com três alunos. Hoje a academia tem 15 alunos com deficiência matriculados.</p>
+            <details>
+              <summary>Continuar lendo<span class="visualmente-oculto"> sobre a turma inclusiva</span></summary>
+              <p>As aulas acontecem às quartas-feiras, às 15h, com no máximo oito alunos e a presença de um acompanhante, se a pessoa quiser. Cadeirantes, pessoas com deficiência visual e alunos autistas treinam juntos, cada um com seus ajustes.</p>
+              <p>Para comemorar, a turma fez uma apresentação aberta e convidou as famílias para um treino conjunto.</p>
+            </details>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== RODAPÉ ==================== -->
+  <footer class="rodape">
+    <div class="container rodape-grade">
+      <section aria-labelledby="rodape-contato">
+        <h2 class="rodape-titulo" id="rodape-contato">Contato</h2>
+        <address>
+          <p>Rua da Comunidade, 100, Itaquera<br>São Paulo (SP)<br>CEP 08210-000</p>
+          <p>Telefone: <a href="tel:+551120000000">(11) 2000-0000</a><br>
+            WhatsApp: <a href="https://wa.me/5511900000000" target="_blank" rel="noopener noreferrer">(11) 90000-0000<span class="visualmente-oculto"> (abre em nova aba)</span></a></p>
+          <p><a href="mailto:contato@baseforteleste.com.br">contato@baseforteleste.com.br</a></p>
+        </address>
+      </section>
+      <section aria-labelledby="rodape-redes">
+        <h2 class="rodape-titulo" id="rodape-redes">Redes sociais</h2>
+        <ul>
+          <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram<span class="visualmente-oculto"> (abre em nova aba)</span></a></li>
+          <li><a href="https://wa.me/5511900000000" target="_blank" rel="noopener noreferrer">WhatsApp<span class="visualmente-oculto"> (abre em nova aba)</span></a></li>
+        </ul>
+        <p>Trocamos panfletos de papel por divulgação digital.</p>
+      </section>
+      <section aria-labelledby="rodape-horario">
+        <h2 class="rodape-titulo" id="rodape-horario">Horário de funcionamento</h2>
+        <ul>
+          <li>Segunda a sexta: 6h às 22h</li>
+          <li>Sábado: 8h às 12h</li>
+          <li>Domingo e feriados: fechado</li>
+        </ul>
+      </section>
+      <section aria-labelledby="rodape-compromisso">
+        <h2 class="rodape-titulo" id="rodape-compromisso">Nosso compromisso</h2>
+        <p>Espaço acessível e site pensado para leitores de tela, teclado e alto contraste. <a href="sobre.html#acessibilidade">Ver medidas de acessibilidade</a></p>
+        <p>Menos papel e mais reciclagem. <a href="orcamento_hospedagem.html#papel-digital">Ver nossa economia</a></p>
+      </section>
+    </div>
+    <div class="rodape-creditos">
+      <div class="container">
+        <p>Site desenvolvido no Projeto Horizonte Leste (Front-End, Ciência da Computação, UNICID, 2026) por Nickolas Henrique Bezerra, Pedro Henrique Ruola Coiado, Raphaela Gonçalves Neves e Williams Vargas Neves Paoli dos Santos. <a href="contato.html#creditos">Ver créditos</a></p>
+        <p>© 2026 Academia Base Forte Leste. Projeto acadêmico.</p>
+      </div>
+    </div>
+    <a class="whatsapp-flutuante" href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Base%20Forte%20Leste." target="_blank" rel="noopener noreferrer" aria-label="Conversar com a academia pelo WhatsApp (abre em nova aba)">WhatsApp</a>
+  </footer>
+</body>
+</html>

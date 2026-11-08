@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Transparência da infraestrutura digital da Academia Base Forte Leste: como o site é publicado, comparativo de hospedagem (Vercel, Render e Railway) e de domínio, orçamento anual e economia ao trocar panfletos de papel pelo site.">
+  <title>Orçamento e hospedagem | Academia Base Forte Leste</title>
+ 
+  <link rel="icon" href="img/logo-emblema.svg" type="image/svg+xml">
+ 
+  <!-- Fontes do Google (títulos e textos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;family=League+Gothic&amp;display=swap">
+ 
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo principal</a>
+ 
+  <!-- Barra de acessibilidade (aparece só com JavaScript ativo) -->
+  <div class="barra-acessibilidade" hidden>
+    <div class="container" role="group" aria-label="Recursos de acessibilidade">
+      <span class="barra-titulo">Acessibilidade:</span>
+      <button type="button" data-acao="diminuir" aria-label="Diminuir o tamanho do texto">A−</button>
+      <button type="button" data-acao="normal" aria-label="Voltar ao tamanho normal do texto">A</button>
+      <button type="button" data-acao="aumentar" aria-label="Aumentar o tamanho do texto">A+</button>
+      <button type="button" data-acao="contraste" aria-pressed="false">Alto contraste</button>
+    </div>
+  </div>
+ 
+  <!-- ==================== CABEÇALHO ==================== -->
+  <header class="cabecalho">
+    <div class="container cabecalho-topo">
+      <a class="logo" href="index.html">
+        <img src="img/logo-emblema.svg" alt="" width="44" height="44">
+        <span class="logo-nome">Base Forte Leste</span>
+      </a>
+      <a class="botao botao-amarelo cabecalho-acao" href="aula-experimental.html">Agendar aula experimental</a>
+      <button type="button"
+              class="botao-hamburguer"
+              id="btn-hamburguer"
+              aria-label="Abrir menu de navegação"
+              aria-expanded="false"
+              aria-controls="menu-principal">
+        <span class="hamburguer-linha"></span>
+        <span class="hamburguer-linha"></span>
+        <span class="hamburguer-linha"></span>
+      </button>
+    </div>
+    <nav class="menu" id="menu-principal" aria-label="Menu principal">
+      <div class="menu-cabecalho-mobile">
+        <a class="logo" href="index.html">
+          <img src="img/logo-emblema.svg" alt="" width="38" height="38">
+          <span class="logo-nome">Base Forte Leste</span>
+        </a>
+        <button type="button" class="botao-fechar-menu" id="btn-fechar-menu" aria-label="Fechar menu">
+          &times;
+        </button>
+      </div>
+      <ul class="container menu-lista">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Quem somos</a></li>
+        <li><a href="modalidades.html">Modalidades</a></li>
+        <li><a href="professor.html">Professores</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="aula-experimental.html">Aula experimental</a></li>
+        <li><a href="acoes-sociais.html">Ações sociais</a></li>
+        <li><a href="turmas-horarios.html">Turmas e horários</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="orcamento_hospedagem.html" aria-current="page">Orçamento</a></li>
+      </ul>
+    </nav>
+    <div class="menu-overlay" id="menu-overlay" hidden></div>
+  </header>
+ 
+  <!-- ==================== CONTEÚDO PRINCIPAL ==================== -->
+  <main id="conteudo">
+ 
+    <!-- ===== TOPO DA PÁGINA ===== -->
+    <section class="topo-pagina" aria-labelledby="titulo-pagina">
+      <div class="container">
+        <h1 id="titulo-pagina">Orçamento e hospedagem</h1>
+        <p>Transparência sobre a infraestrutura digital: onde o site fica, quanto custa e por que ele é mais sustentável que o papel.</p>
+      </div>
+    </section>
+ 
+    <!-- ===== 1. COMO O SITE É PUBLICADO ===== -->
+    <section class="secao" aria-labelledby="titulo-publicacao">
+      <div class="container">
+        <h2 id="titulo-publicacao">Como o site é publicado</h2>
+        <p class="introducao">Um site é um conjunto de arquivos: HTML, CSS, JavaScript e imagens. Para qualquer pessoa conseguir acessá-lo, esses arquivos precisam ficar em um servidor ligado o tempo todo (a <strong>hospedagem</strong>) e ter um endereço fácil de lembrar (o <strong>domínio</strong>).</p>
+        <ol class="passos">
+          <li><strong>Versionamento:</strong> o código fica no GitHub, onde a equipe registra cada alteração (commit) e revisa as mudanças por pull request.</li>
+          <li><strong>Publicação (deploy):</strong> a Vercel fica conectada ao repositório. A cada envio para a branch principal, ela publica a nova versão automaticamente. Como o site é estático, não precisa de banco de dados nem de servidor próprio.</li>
+          <li><strong>Prévia de cada pull request:</strong> a Vercel também gera um link de teste para cada pull request, assim a equipe confere a mudança antes de juntá-la ao site oficial.</li>
+          <li><strong>Domínio e segurança:</strong> o endereço (por enquanto o gratuito .vercel.app) chega ao site com HTTPS, o cadeado do navegador, sem custo.</li>
+        </ol>
+      </div>
+    </section>
+ 
+    <!-- ===== 2. COMPARATIVO DE HOSPEDAGEM ===== -->
+    <section class="secao secao-alternada" aria-labelledby="titulo-hospedagem">
+      <div class="container">
+        <h2 id="titulo-hospedagem">Comparativo de hospedagem</h2>
+        <p class="introducao">Comparamos três plataformas de deploy que publicam direto do GitHub: Vercel, Render e Railway.</p>
+ 
+        <div class="tabela-rolagem" role="region" aria-labelledby="legenda-hospedagem" tabindex="0">
+          <table>
+            <caption id="legenda-hospedagem">Três opções de hospedagem (preços consultados em novembro de 2026)</caption>
+            <thead>
+              <tr>
+                <th scope="col">Critério</th>
+                <th scope="col">Vercel (plano Hobby)</th>
+                <th scope="col">Render (workspace Hobby)</th>
+                <th scope="col">Railway</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Custo do plano gratuito</th>
+                <td>Grátis, sem prazo</td>
+                <td>Grátis, sem prazo (sites estáticos)</td>
+                <td>Teste de 30 dias com US$ 5 de crédito; depois, plano Free com US$ 1 de crédito por mês</td>
+              </tr>
+              <tr>
+                <th scope="row">Tráfego incluído por mês</th>
+                <td>100 GB</td>
+                <td>5 GB (acima disso, US$ 0,15 por GB)</td>
+                <td>Descontado do crédito de uso</td>
+              </tr>
+              <tr>
+                <th scope="row">Primeiro plano pago</th>
+                <td>Pro: US$ 20 por usuário/mês</td>
+                <td>Pro: US$ 25 por mês</td>
+                <td>Hobby: US$ 5 por mês (com US$ 5 de uso incluído)</td>
+              </tr>
+              <tr>
+                <th scope="row">Feito para</th>
+                <td>Sites estáticos e front-end</td>
+                <td>Sites estáticos e aplicações com back-end</td>
+                <td>Aplicações com servidor e banco de dados</td>
+              </tr>
+              <tr>
+                <th scope="row">Deploy pelo GitHub e HTTPS</th>
+                <td>Sim, com prévia de cada pull request</td>
+                <td>Sim</td>
+                <td>Sim</td>
+              </tr>
+              <tr>
+                <th scope="row">Pontos de atenção</th>
+                <td>Plano gratuito só para uso pessoal e não comercial; se um limite acabar, o recurso para até o próximo ciclo de 30 dias</td>
+                <td>Franquia de tráfego pequena: caiu de 100 GB para 5 GB em 2026</td>
+                <td>Sem plano gratuito de verdade para manter um site no ar; cobrança por uso, menos previsível</td>
+              </tr>
+              <tr>
+                <th scope="row">Sustentabilidade</th>
+                <td>Usa vários provedores de nuvem com metas de redução de carbono, mas não consegue medir a própria pegada</td>
+                <td>Não encontramos informações públicas sobre energia renovável</td>
+                <td>Não encontramos informações públicas sobre energia renovável</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="dica">Valores em dólar variam com o câmbio. Na cotação de referência de R$ 5,15 (setembro de 2026): US$ 5 ≈ R$ 25,75, US$ 20 ≈ R$ 103,00 e US$ 25 ≈ R$ 128,75 por mês. Nenhuma das três é uma "hospedagem verde" certificada; para esse perfil, uma alternativa paga é a GreenGeeks, que compra créditos de energia renovável equivalentes a três vezes a energia que consome.</p>
+      </div>
+    </section>
+ 
+    <!-- ===== 3. COMPARATIVO DE DOMÍNIO ===== -->
+    <section class="secao" aria-labelledby="titulo-dominio">
+      <div class="container">
+        <h2 id="titulo-dominio">Comparativo de domínio</h2>
+        <p class="introducao">O domínio é o endereço que as pessoas digitam para chegar ao site.</p>
+ 
+        <div class="tabela-rolagem" role="region" aria-labelledby="legenda-dominio" tabindex="0">
+          <table>
+            <caption id="legenda-dominio">Três opções de domínio para a academia</caption>
+            <thead>
+              <tr>
+                <th scope="col">Opção</th>
+                <th scope="col">Exemplo de endereço</th>
+                <th scope="col">Custo por ano</th>
+                <th scope="col">Vantagens</th>
+                <th scope="col">Desvantagens</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Subdomínio gratuito da Vercel</th>
+                <td>baseforteleste.vercel.app</td>
+                <td>Grátis</td>
+                <td>Já vem pronto, com HTTPS, e é curto o bastante para divulgar.</td>
+                <td>Leva o nome da Vercel no endereço e não passa a imagem de empresa.</td>
+              </tr>
+              <tr>
+                <th scope="row">.com.br no Registro.br</th>
+                <td>baseforteleste.com.br</td>
+                <td>R$ 40,00, o mesmo valor na renovação</td>
+                <td>Extensão brasileira, registrada direto na entidade oficial, com preço mantido desde 2017.</td>
+                <td>Renovação anual obrigatória e exige CPF ou CNPJ do titular.</td>
+              </tr>
+              <tr>
+                <th scope="row">.com na Hostinger</th>
+                <td>baseforteleste.com</td>
+                <td>R$ 0,01 no 1º ano (promoção) mais taxa ICANN de R$ 1,09; renovação a R$ 94,99</td>
+                <td>Extensão internacional e promoção forte no primeiro ano.</td>
+                <td>Renovação mais que o dobro do .com.br e menos associada a um negócio local.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+ 
+    <!-- ===== 4. ESCOLHA E JUSTIFICATIVA ===== -->
+    <section class="secao secao-alternada" aria-labelledby="titulo-escolha">
+      <div class="container duas-colunas">
+        <div>
+          <h2 id="titulo-escolha">Nossa escolha: Vercel</h2>
+          <h3>Por que a Vercel</h3>
+          <ul>
+            <li><strong>Gratuita e sem prazo:</strong> o plano Hobby não expira, ao contrário do teste de 30 dias da Railway.</li>
+            <li><strong>Franquia que sobra:</strong> 100 GB de tráfego por mês. O site inteiro, com vídeo e áudio, tem menos de 1 MB: mesmo que cada visita baixasse tudo, seriam mais de 100 mil visitas por mês. Na Render, os 5 GB gratuitos dariam para cerca de 7,7 mil.</li>
+            <li><strong>Feita para front-end:</strong> publica HTML, CSS e JavaScript sem configuração, com CDN e HTTPS automáticos.</li>
+            <li><strong>Integra com o nosso processo no GitHub:</strong> cada pull request ganha um link de prévia, o que ajuda a revisar o trabalho da equipe antes de publicar.</li>
+          </ul>
+          <h3>Atenção às regras de uso</h3>
+          <p>O plano Hobby da Vercel é só para projetos pessoais e não comerciais. Ele atende à fase acadêmica, mas, se a academia adotar o site oficialmente, o caminho é passar para o plano Pro (US$ 20 por mês) ou migrar para outra hospedagem, como a Render, que publica sites estáticos de graça no plano Hobby.</p>
+        </div>
+ 
+        <!-- Resumo do orçamento anual em lista de definição -->
+        <div class="resumo-orcamento">
+          <h3>Orçamento anual</h3>
+          <dl class="ficha">
+            <dt>Hospedagem (Vercel Hobby)</dt>
+            <dd>R$ 0,00</dd>
+            <dt>Domínio .com.br (Registro.br)</dt>
+            <dd>R$ 40,00</dd>
+            <dt>Certificado HTTPS</dt>
+            <dd>R$ 0,00</dd>
+          </dl>
+          <p class="total">Total: R$ 40,00 por ano</p>
+          <p>Cerca de R$ 3,33 por mês. Usando só o endereço gratuito .vercel.app, o custo é zero.</p>
+        </div>
+      </div>
+    </section>
+ 
+    <!-- ===== 5. PAPEL X DIGITAL ===== -->
+    <!-- id="papel-digital": destino do link "Ver nossa economia" do rodapé -->
+    <section class="secao" id="papel-digital" aria-labelledby="titulo-papel">
+      <div class="container">
+        <h2 id="titulo-papel">Papel x digital: sustentabilidade e economia</h2>
+        <p class="introducao">Antes do site, a divulgação dependia de panfletos, cartazes e fichas impressas. Para comparar, estimamos o gasto com 1.000 panfletos por mês, a mesma média de 2024.</p>
+ 
+        <div class="tabela-rolagem" role="region" aria-labelledby="legenda-papel" tabindex="0">
+          <table>
+            <caption id="legenda-papel">Comparativo de um ano: panfletos impressos x site</caption>
+            <thead>
+              <tr>
+                <th scope="col">Critério</th>
+                <th scope="col">Panfletos de papel</th>
+                <th scope="col">Site da academia</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Custo por ano</th>
+                <td>R$ 1.503,72 (12 lotes de 1.000 panfletos a R$ 125,31)</td>
+                <td>R$ 40,00 (domínio)</td>
+              </tr>
+              <tr>
+                <th scope="row">Papel consumido por ano</th>
+                <td>Cerca de 20 kg (12.000 panfletos de 10 × 14 cm em papel de 120 g/m²)</td>
+                <td>Nenhum</td>
+              </tr>
+              <tr>
+                <th scope="row">Atualizar horários e eventos</th>
+                <td>Exige imprimir tudo de novo</td>
+                <td>Na hora e sem custo</td>
+              </tr>
+              <tr>
+                <th scope="row">Alcance</th>
+                <td>Só quem recebe o panfleto na mão</td>
+                <td>Qualquer pessoa, 24 horas por dia, pelo celular</td>
+              </tr>
+              <tr>
+                <th scope="row">Acessibilidade</th>
+                <td>Não amplia o texto nem funciona com leitor de tela</td>
+                <td>Leitor de tela, ampliação do texto e alto contraste</td>
+              </tr>
+              <tr>
+                <th scope="row">Resíduo</th>
+                <td>Vira lixo depois de lido</td>
+                <td>Nenhum resíduo físico</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+ 
+        <div class="destaque-verde">
+          <p><strong>Economia estimada: R$ 1.463,72 por ano</strong>, cerca de 97% a menos, e aproximadamente 20 kg de papel que deixam de ser impressos.</p>
+          <p>O site também foi pensado para gastar pouca energia: imagens leves em SVG, nenhum framework e nenhum banco de dados. Cada página carrega entre 65 e 125 KB de HTML, CSS e imagens (sem contar vídeo, áudio e fontes), e o projeto completo, com vídeo e áudio, tem menos de 1 MB.</p>
+        </div>
+      </div>
+    </section>
+ 
+    <!-- ===== 6. FONTES CONSULTADAS ===== -->
+    <section class="secao secao-alternada" aria-labelledby="titulo-fontes">
+      <div class="container">
+        <h2 id="titulo-fontes">Fontes consultadas</h2>
+        <p>Preços consultados em 7 de novembro de 2026. Os valores podem mudar: confira nos sites antes de contratar.</p>
+        <ul class="fontes">
+          <li>Vercel. Hobby Plan (uso pessoal e não comercial; limites que reiniciam a cada 30 dias). <a href="https://vercel.com/docs/plans/hobby">https://vercel.com/docs/plans/hobby</a></li>
+          <li>Vercel. Pricing (plano Pro de US$ 20 por usuário). <a href="https://vercel.com/pricing">https://vercel.com/pricing</a></li>
+          <li>Vercel. What is Vercel's Green Energy Policy? <a href="https://vercel.com/support/articles/what-is-vercel-green-energy-policy">https://vercel.com/support/articles/what-is-vercel-green-energy-policy</a></li>
+          <li>Render. Deploy for Free (sites estáticos gratuitos). <a href="https://render.com/docs/free">https://render.com/docs/free</a></li>
+          <li>Render. Pricing (workspace Hobby com 5 GB de tráfego e Pro de US$ 25). <a href="https://render.com/pricing">https://render.com/pricing</a></li>
+          <li>Railway. Pricing Plans (Free, Hobby de US$ 5 e Pro de US$ 20). <a href="https://docs.railway.com/reference/pricing">https://docs.railway.com/reference/pricing</a></li>
+          <li>GreenGeeks. Compare hosting (programa de energia renovável de 300%). <a href="https://www.greengeeks.ca/compare/hosting/">https://www.greengeeks.ca/compare/hosting/</a></li>
+          <li>Registro.br, entidade responsável pelos domínios .br. <a href="https://registro.br/">https://registro.br/</a></li>
+          <li>Homehost. Quanto custa um domínio? (preço de R$ 40 por ano no Registro.br). <a href="https://www.homehost.com.br/blog/registro-de-dominios/quanto-custa-um-dominio">https://www.homehost.com.br/blog/registro-de-dominios/quanto-custa-um-dominio</a></li>
+          <li>Hostinger. Registre seu nome de domínio .com. <a href="https://www.hostinger.com/br/tld/dominio-com">https://www.hostinger.com/br/tld/dominio-com</a></li>
+          <li>Mercado Livre. Anúncio de 1.000 panfletos coloridos de 10 × 14 cm em papel de 120 g. <a href="https://lista.mercadolivre.com.br/panfletos-baratos-grafica-impressao">https://lista.mercadolivre.com.br/panfletos-baratos-grafica-impressao</a></li>
+          <li>Meelion. Valor do dólar hoje (cotação de R$ 5,15 em 16/09/2026). <a href="https://www.meelion.com/indicadores-financeiros/dolar-hoje/">https://www.meelion.com/indicadores-financeiros/dolar-hoje/</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+ 
+  <!-- ==================== RODAPÉ ==================== -->
+  <footer class="rodape">
+    <div class="container rodape-grade">
+      <section aria-labelledby="rodape-contato">
+        <h2 class="rodape-titulo" id="rodape-contato">Contato</h2>
+        <address>
+          <p>Rua da Comunidade, 100, Itaquera<br>São Paulo (SP)<br>CEP 08210-000</p>
+          <p>Telefone: <a href="tel:+551120000000">(11) 2000-0000</a><br>
+            WhatsApp: <a href="https://wa.me/5511900000000" target="_blank" rel="noopener noreferrer">(11) 90000-0000<span class="visualmente-oculto"> (abre em nova aba)</span></a></p>
+          <p><a href="mailto:contato@baseforteleste.com.br">contato@baseforteleste.com.br</a></p>
+        </address>
+      </section>
+      <section aria-labelledby="rodape-redes">
+        <h2 class="rodape-titulo" id="rodape-redes">Redes sociais</h2>
+        <ul>
+          <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram<span class="visualmente-oculto"> (abre em nova aba)</span></a></li>
+          <li><a href="https://wa.me/5511900000000" target="_blank" rel="noopener noreferrer">WhatsApp<span class="visualmente-oculto"> (abre em nova aba)</span></a></li>
+        </ul>
+        <p>Trocamos panfletos de papel por divulgação digital.</p>
+      </section>
+      <section aria-labelledby="rodape-horario">
+        <h2 class="rodape-titulo" id="rodape-horario">Horário de funcionamento</h2>
+        <ul>
+          <li>Segunda a sexta: 6h às 22h</li>
+          <li>Sábado: 8h às 12h</li>
+          <li>Domingo e feriados: fechado</li>
+        </ul>
+      </section>
+      <section aria-labelledby="rodape-compromisso">
+        <h2 class="rodape-titulo" id="rodape-compromisso">Nosso compromisso</h2>
+        <p>Espaço acessível e site pensado para leitores de tela, teclado e alto contraste. <a href="sobre.html#acessibilidade">Ver medidas de acessibilidade</a></p>
+        <p>Menos papel e mais reciclagem. <a href="orcamento_hospedagem.html#papel-digital">Ver nossa economia</a></p>
+      </section>
+    </div>
+    <div class="rodape-creditos">
+      <div class="container">
+        <p>Site desenvolvido no Projeto Horizonte Leste (Front-End, Ciência da Computação, UNICID, 2026) por Nickolas Henrique Bezerra, Pedro Henrique Ruola Coiado, Raphaela Gonçalves Neves e Williams Vargas Neves Paoli dos Santos. <a href="contato.html#creditos">Ver créditos</a></p>
+        <p>© 2026 Academia Base Forte Leste. Projeto acadêmico.</p>
+      </div>
+    </div>
+    <a class="whatsapp-flutuante" href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Base%20Forte%20Leste." target="_blank" rel="noopener noreferrer" aria-label="Conversar com a academia pelo WhatsApp (abre em nova aba)">WhatsApp</a>
+  </footer>
+</body>
+</html>
+ 

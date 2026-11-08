@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="As seis modalidades da Academia Base Forte Leste: Muay Thai, Kickboxing, Boxe, Jiu-Jitsu, Capoeira e No-Gi, com benefícios, foco do treino, músculos trabalhados e adaptações para pessoas com deficiência.">
+  <title>Modalidades | Academia Base Forte Leste</title>
+
+  <link rel="icon" href="img/logo-emblema.svg" type="image/svg+xml">
+
+  <!-- Fontes do Google (títulos e textos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;family=League+Gothic&amp;display=swap">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo principal</a>
+
+  <!-- Barra de acessibilidade (aparece só com JavaScript ativo) -->
+  <div class="barra-acessibilidade" hidden>
+    <div class="container" role="group" aria-label="Recursos de acessibilidade">
+      <span class="barra-titulo">Acessibilidade:</span>
+      <button type="button" data-acao="diminuir" aria-label="Diminuir o tamanho do texto">A−</button>
+      <button type="button" data-acao="normal" aria-label="Voltar ao tamanho normal do texto">A</button>
+      <button type="button" data-acao="aumentar" aria-label="Aumentar o tamanho do texto">A+</button>
+      <button type="button" data-acao="contraste" aria-pressed="false">Alto contraste</button>
+    </div>
+  </div>
+
+  <!-- ==================== CABEÇALHO ==================== -->
+  <header class="cabecalho">
+    <div class="container cabecalho-topo">
+      <a class="logo" href="index.html">
+        <img src="img/logo-emblema.svg" alt="" width="44" height="44">
+        <span class="logo-nome">Base Forte Leste</span>
+      </a>
+      <a class="botao botao-amarelo cabecalho-acao" href="aula-experimental.html">Agendar aula experimental</a>
+      <button type="button"
+              class="botao-hamburguer"
+              id="btn-hamburguer"
+              aria-label="Abrir menu de navegação"
+              aria-expanded="false"
+              aria-controls="menu-principal">
+        <span class="hamburguer-linha"></span>
+        <span class="hamburguer-linha"></span>
+        <span class="hamburguer-linha"></span>
+      </button>
+    </div>
+    <nav class="menu" id="menu-principal" aria-label="Menu principal">
+      <div class="menu-cabecalho-mobile">
+        <a class="logo" href="index.html">
+          <img src="img/logo-emblema.svg" alt="" width="38" height="38">
+          <span class="logo-nome">Base Forte Leste</span>
+        </a>
+        <button type="button" class="botao-fechar-menu" id="btn-fechar-menu" aria-label="Fechar menu">
+          &times;
+        </button>
+      </div>
+      <ul class="container menu-lista">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Quem somos</a></li>
+        <li><a href="modalidades.html" aria-current="page">Modalidades</a></li>
+        <li><a href="professor.html">Professores</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="aula-experimental.html">Aula experimental</a></li>
+        <li><a href="acoes-sociais.html">Ações sociais</a></li>
+        <li><a href="turmas-horarios.html">Turmas e horários</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="orcamento_hospedagem.html">Orçamento</a></li>
+      </ul>
+    </nav>
+    <div class="menu-overlay" id="menu-overlay" hidden></div>
+  </header>
+
+  <!-- ==================== CONTEÚDO PRINCIPAL ==================== -->
+  <main id="conteudo">
+
+    <!-- ===== TOPO DA PÁGINA ===== -->
+    <section class="topo-pagina" aria-labelledby="titulo-pagina">
+      <div class="container">
+        <h1 id="titulo-pagina">Modalidades</h1>
+        <p>Seis artes marciais, cada uma com seu jeito de treinar. Todas recebem iniciantes e todas podem ser adaptadas para pessoas com deficiência.</p>
+      </div>
+    </section>
+
+    <!-- ===== CATÁLOGO DAS 6 MODALIDADES ===== -->
+    <section class="secao" aria-labelledby="titulo-catalogo">
+      <div class="container">
+        <h2 id="titulo-catalogo">Catálogo de modalidades</h2>
+
+        <!-- Sumário: cada link leva ao id da modalidade nesta mesma página -->
+        <nav class="sumario" aria-label="Ir direto para uma modalidade">
+          <ul>
+            <li><a href="#muay-thai">Muay Thai</a></li>
+            <li><a href="#kickboxing">Kickboxing</a></li>
+            <li><a href="#boxe">Boxe</a></li>
+            <li><a href="#jiu-jitsu">Jiu-Jitsu</a></li>
+            <li><a href="#capoeira">Capoeira</a></li>
+            <li><a href="#no-gi">No-Gi</a></li>
+          </ul>
+        </nav>
+
+        <!-- ===== MODALIDADE 1: MUAY THAI ===== -->
+        <!-- <article> = conteúdo independente, que faria sentido sozinho -->
+        <article class="modalidade" id="muay-thai" aria-labelledby="titulo-muay-thai">
+          <div class="modalidade-cabecalho">
+            <img src="img/icone-muay-thai.svg" alt="" width="64" height="64">
+            <h3 id="titulo-muay-thai">Muay Thai</h3>
+          </div>
+          <p class="introducao">Arte marcial da Tailândia conhecida como "a arte das oito armas", porque usa punhos, cotovelos, joelhos e canelas.</p>
+          <div class="modalidade-grade">
+            <div>
+              <h4>Benefícios</h4>
+              <ul>
+                <li>Melhora o condicionamento do coração e dos pulmões.</li>
+                <li>Aumenta a força e a resistência do corpo todo.</li>
+                <li>Desenvolve coordenação, reflexo e autoconfiança.</li>
+                <li>Ajuda a descarregar o estresse do dia.</li>
+              </ul>
+            </div>
+            <!-- Ficha técnica em lista de definição (dt = termo, dd = descrição) -->
+            <dl class="ficha">
+              <dt>Foco do treino</dt>
+              <dd>Golpes em pé, clinch (agarre em pé) e condicionamento.</dd>
+              <dt>Músculos trabalhados</dt>
+              <dd>Pernas e panturrilhas, glúteos, abdômen, lombar, ombros e braços.</dd>
+              <dt>Adaptação para PCD</dt>
+              <dd>Treino em pé ou sentado, com aparador na altura certa. Para pessoas cegas ou com baixa visão, o professor usa comandos de voz e contato guiado.</dd>
+              <dt>Professor</dt>
+              <dd>Adalberto</dd>
+            </dl>
+          </div>
+        </article>
+
+        <!-- ===== MODALIDADE 2: KICKBOXING ===== -->
+        <article class="modalidade" id="kickboxing" aria-labelledby="titulo-kickboxing">
+          <div class="modalidade-cabecalho">
+            <img src="img/icone-kickboxing.svg" alt="" width="64" height="64">
+            <h3 id="titulo-kickboxing">Kickboxing</h3>
+          </div>
+          <p class="introducao">Esporte que junta os socos do boxe com os chutes das artes marciais, em combinações rápidas e cheias de ritmo.</p>
+          <div class="modalidade-grade">
+            <div>
+              <h4>Benefícios</h4>
+              <ul>
+                <li>Alto gasto de energia em pouco tempo de aula.</li>
+                <li>Melhora a agilidade, o equilíbrio e a flexibilidade.</li>
+                <li>Treina o raciocínio rápido nas sequências de golpes.</li>
+                <li>Libera a tensão acumulada na semana.</li>
+              </ul>
+            </div>
+            <dl class="ficha">
+              <dt>Foco do treino</dt>
+              <dd>Combinações de socos e chutes, deslocamento e resistência.</dd>
+              <dt>Músculos trabalhados</dt>
+              <dd>Glúteos, coxas, abdômen, ombros e costas.</dd>
+              <dt>Adaptação para PCD</dt>
+              <dd>Versões sem saltos e sem impacto, chutes baixos ou só socos, e treino sentado em cadeira firme quando necessário.</dd>
+              <dt>Professora</dt>
+              <dd>Larissa</dd>
+            </dl>
+          </div>
+        </article>
+
+        <!-- ===== MODALIDADE 3: BOXE ===== -->
+        <article class="modalidade" id="boxe" aria-labelledby="titulo-boxe">
+          <div class="modalidade-cabecalho">
+            <img src="img/icone-boxe.svg" alt="" width="64" height="64">
+            <h3 id="titulo-boxe">Boxe</h3>
+          </div>
+          <p class="introducao">A luta só com as mãos: socos precisos, esquivas e muito trabalho de pernas. É a modalidade da nossa turma inclusiva.</p>
+          <div class="modalidade-grade">
+            <div>
+              <h4>Benefícios</h4>
+              <ul>
+                <li>Melhora a coordenação entre olhos e mãos.</li>
+                <li>Fortalece a parte de cima do corpo e a postura.</li>
+                <li>Treina foco e tomada de decisão sob pressão.</li>
+                <li>Fácil de adaptar para quem treina sentado.</li>
+              </ul>
+            </div>
+            <dl class="ficha">
+              <dt>Foco do treino</dt>
+              <dd>Jab, direto, cruzado, gancho e uppercut, com esquivas e movimentação.</dd>
+              <dt>Músculos trabalhados</dt>
+              <dd>Ombros, peitoral, tríceps, costas, abdômen e pernas (na base).</dd>
+              <dt>Adaptação para PCD</dt>
+              <dd>Boxe adaptado para cadeirantes, luvas com velcro, saco de pancada com altura ajustável e turma inclusiva às quartas-feiras.</dd>
+              <dt>Professoras</dt>
+              <dd>Juliana (turmas regulares) e Larissa (turma inclusiva)</dd>
+            </dl>
+          </div>
+        </article>
+
+        <!-- ===== MODALIDADE 4: JIU-JITSU ===== -->
+        <article class="modalidade" id="jiu-jitsu" aria-labelledby="titulo-jiu-jitsu">
+          <div class="modalidade-cabecalho">
+            <img src="img/icone-jiu-jitsu.svg" alt="" width="64" height="64">
+            <h3 id="titulo-jiu-jitsu">Jiu-Jitsu</h3>
+          </div>
+          <p class="introducao">Luta de solo com kimono, desenvolvida no Brasil, que usa alavancas e técnica para controlar o adversário, mesmo quando ele é maior.</p>
+          <div class="modalidade-grade">
+            <div>
+              <h4>Benefícios</h4>
+              <ul>
+                <li>Exercita o raciocínio estratégico, como um xadrez com o corpo.</li>
+                <li>Melhora a flexibilidade e a força de pegada.</li>
+                <li>Ensina a manter a calma em situações de pressão.</li>
+                <li>Ótimo para defesa pessoal.</li>
+              </ul>
+            </div>
+            <dl class="ficha">
+              <dt>Foco do treino</dt>
+              <dd>Quedas, controle no solo, raspagens e finalizações com kimono.</dd>
+              <dt>Músculos trabalhados</dt>
+              <dd>Abdômen, costas, antebraços, quadril e pernas.</dd>
+              <dt>Adaptação para PCD</dt>
+              <dd>Como o treino acontece no chão, é uma das lutas mais fáceis de adaptar. Há atletas cegos e com deficiência física em competições de paradesporto.</dd>
+              <dt>Professor</dt>
+              <dd>Thiago</dd>
+            </dl>
+          </div>
+        </article>
+
+        <!-- ===== MODALIDADE 5: CAPOEIRA ===== -->
+        <article class="modalidade" id="capoeira" aria-labelledby="titulo-capoeira">
+          <div class="modalidade-cabecalho">
+            <img src="img/icone-capoeira.svg" alt="" width="64" height="64">
+            <h3 id="titulo-capoeira">Capoeira</h3>
+          </div>
+          <p class="introducao">Luta, dança e música afro-brasileira. A roda de capoeira é reconhecida pela UNESCO como Patrimônio Cultural Imaterial da Humanidade.</p>
+          <div class="modalidade-grade">
+            <div>
+              <h4>Benefícios</h4>
+              <ul>
+                <li>Desenvolve flexibilidade, equilíbrio e ritmo.</li>
+                <li>Aumenta a consciência corporal.</li>
+                <li>Aproxima os alunos da cultura afro-brasileira.</li>
+                <li>Treina em grupo: ninguém joga sozinho na roda.</li>
+              </ul>
+            </div>
+            <dl class="ficha">
+              <dt>Foco do treino</dt>
+              <dd>Ginga, esquivas, golpes giratórios, acrobacias e música (berimbau, pandeiro e atabaque).</dd>
+              <dt>Músculos trabalhados</dt>
+              <dd>Pernas, glúteos, abdômen, ombros e braços (nos apoios no chão).</dd>
+              <dt>Adaptação para PCD</dt>
+              <dd>Na roda, todos participam: quem não joga pode tocar e cantar. Os movimentos podem ser feitos no chão, e o ritmo da música orienta alunos com deficiência visual.</dd>
+              <dt>Professor</dt>
+              <dd>Contramestre Edson</dd>
+            </dl>
+          </div>
+        </article>
+
+        <!-- ===== MODALIDADE 6: NO-GI ===== -->
+        <article class="modalidade" id="no-gi" aria-labelledby="titulo-no-gi">
+          <div class="modalidade-cabecalho">
+            <img src="img/icone-no-gi.svg" alt="" width="64" height="64">
+            <h3 id="titulo-no-gi">No-Gi</h3>
+          </div>
+          <p class="introducao">O Jiu-Jitsu praticado sem kimono, com camisa de lycra e bermuda. Sem pegadas na roupa, o jogo fica mais rápido.</p>
+          <div class="modalidade-grade">
+            <div>
+              <h4>Benefícios</h4>
+              <ul>
+                <li>Explosão e condicionamento acima da média.</li>
+                <li>Melhora a mobilidade do quadril e dos ombros.</li>
+                <li>Desenvolve reflexo e adaptação a mudanças rápidas.</li>
+                <li>Complementa o treino de Jiu-Jitsu com kimono.</li>
+              </ul>
+            </div>
+            <dl class="ficha">
+              <dt>Foco do treino</dt>
+              <dd>Controle sem pegadas na roupa, chaves de perna e ritmo acelerado.</dd>
+              <dt>Músculos trabalhados</dt>
+              <dd>Abdômen, quadril, pernas, costas e braços.</dd>
+              <dt>Adaptação para PCD</dt>
+              <dd>As mesmas adaptações do Jiu-Jitsu, com treino a partir do solo e intensidade combinada com o aluno.</dd>
+              <dt>Professor</dt>
+              <dd>Thiago</dd>
+            </dl>
+          </div>
+        </article>
+
+        <p><a href="turmas-horarios.html">Ver os horários de todas as modalidades</a></p>
+      </div>
+    </section>
+
+    <!-- ===== DEMONSTRAÇÃO MULTIMÍDIA: VÍDEO E ÁUDIO ===== -->
+    <section class="secao secao-alternada" aria-labelledby="titulo-multimidia">
+      <div class="container">
+        <h2 id="titulo-multimidia">Veja e ouça o treino</h2>
+        <div class="grade-midia">
+
+          <!-- VÍDEO: controls mostra os botões de play/pausa e
+               poster é a imagem exibida antes de o vídeo começar.
+               <track> adiciona legendas em português (acessibilidade). -->
+          <figure class="midia">
+            <video controls poster="img/poster-video-treino.jpg" width="960" height="540" preload="metadata">
+              <source src="assets/video/treino-muay-thai.mp4" type="video/mp4">
+              <track kind="captions" src="assets/video/legendas-treino.vtt" srclang="pt-BR" label="Português" default>
+              Seu navegador não reproduz vídeos. <a href="assets/video/treino-muay-thai.mp4">Baixe o vídeo do treino</a>.
+            </video>
+            <figcaption>Sequência de treino de Muay Thai: guarda, jab, direto e chute circular (14 segundos, com legendas). Fonte: animação produzida pela equipe do projeto.</figcaption>
+          </figure>
+
+          <!-- ÁUDIO: controls mostra o player de áudio do navegador -->
+          <div>
+            <figure class="midia">
+              <audio controls preload="metadata">
+                <source src="assets/audio/berimbau-angola.mp3" type="audio/mpeg">
+                Seu navegador não reproduz áudio. <a href="assets/audio/berimbau-angola.mp3">Baixe o áudio do berimbau</a>.
+              </audio>
+              <figcaption>Toque de Angola no berimbau, o ritmo lento que abre a roda de capoeira (16 segundos). Fonte: áudio produzido digitalmente pela equipe do projeto.</figcaption>
+            </figure>
+
+            <!-- Descrição em texto do áudio, para quem não pode ouvir -->
+            <details class="transcricao">
+              <summary>Ler a descrição do áudio</summary>
+              <p>Áudio instrumental, sem fala. O berimbau repete o toque de Angola: duas batidas abafadas e chiadas, uma nota grave e uma nota um pouco mais aguda. Ao fundo, o chocalho do caxixi marca o tempo. O toque se repete nove vezes e termina com uma nota grave longa.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CHAMADA FINAL ===== -->
+    <section class="secao chamada-final" aria-labelledby="titulo-chamada">
+      <div class="container">
+        <h2 id="titulo-chamada">Ficou em dúvida sobre qual escolher?</h2>
+        <p class="introducao">Faça uma aula experimental gratuita e sinta qual luta combina com você.</p>
+        <div class="grupo-botoes">
+          <a class="botao botao-amarelo" href="aula-experimental.html">Agendar aula experimental</a>
+          <a class="botao botao-azul" href="turmas-horarios.html">Ver turmas e horários</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== RODAPÉ ==================== -->
+  <footer class="rodape">
+    <div class="container rodape-grade">
+      <section aria-labelledby="rodape-contato">
+        <h2 class="rodape-titulo" id="rodape-contato">Contato</h2>
+        <address>
+          <p>Rua da Comunidade, 100, Itaquera<br>São Paulo (SP)<br>CEP 08210-000</p>
+          <p>Telefone: <a href="tel:+551120000000">(11) 2000-0000</a><br>
+            WhatsApp: <a href="https://wa.me/5511900000000" target="_blank" rel="noopener noreferrer">(11) 90000-0000<span class="visualmente-oculto"> (abre em nova aba)</span></a></p>
+          <p><a href="mailto:contato@baseforteleste.com.br">contato@baseforteleste.com.br</a></p>
+        </address>
+      </section>
+      <section aria-labelledby="rodape-redes">
+        <h2 class="rodape-titulo" id="rodape-redes">Redes sociais</h2>
+        <ul>
+          <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram<span class="visualmente-oculto"> (abre em nova aba)</span></a></li>
+          <li><a href="https://wa.me/5511900000000" target="_blank" rel="noopener noreferrer">WhatsApp<span class="visualmente-oculto"> (abre em nova aba)</span></a></li>
+        </ul>
+        <p>Trocamos panfletos de papel por divulgação digital.</p>
+      </section>
+      <section aria-labelledby="rodape-horario">
+        <h2 class="rodape-titulo" id="rodape-horario">Horário de funcionamento</h2>
+        <ul>
+          <li>Segunda a sexta: 6h às 22h</li>
+          <li>Sábado: 8h às 12h</li>
+          <li>Domingo e feriados: fechado</li>
+        </ul>
+      </section>
+      <section aria-labelledby="rodape-compromisso">
+        <h2 class="rodape-titulo" id="rodape-compromisso">Nosso compromisso</h2>
+        <p>Espaço acessível e site pensado para leitores de tela, teclado e alto contraste. <a href="sobre.html#acessibilidade">Ver medidas de acessibilidade</a></p>
+        <p>Menos papel e mais reciclagem. <a href="orcamento_hospedagem.html#papel-digital">Ver nossa economia</a></p>
+      </section>
+    </div>
+    <div class="rodape-creditos">
+      <div class="container">
+        <p>Site desenvolvido no Projeto Horizonte Leste (Front-End, Ciência da Computação, UNICID, 2026) por Nickolas Henrique Bezerra, Pedro Henrique Ruola Coiado, Raphaela Gonçalves Neves e Williams Vargas Neves Paoli dos Santos. <a href="contato.html#creditos">Ver créditos</a></p>
+        <p>© 2026 Academia Base Forte Leste. Projeto acadêmico.</p>
+      </div>
+    </div>
+    <a class="whatsapp-flutuante" href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Base%20Forte%20Leste." target="_blank" rel="noopener noreferrer" aria-label="Conversar com a academia pelo WhatsApp (abre em nova aba)">WhatsApp</a>
+  </footer>
+</body>
+</html>

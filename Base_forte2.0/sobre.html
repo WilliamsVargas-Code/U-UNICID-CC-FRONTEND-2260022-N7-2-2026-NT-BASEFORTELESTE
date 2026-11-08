@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conheça a história da Academia Base Forte Leste, sua missão, visão e valores, os eventos de que participa e as medidas de acessibilidade para pessoas com deficiência.">
+  <title>Quem somos | Academia Base Forte Leste</title>
+
+  <link rel="icon" href="img/logo-emblema.svg" type="image/svg+xml">
+
+  <!-- Fontes do Google (títulos e textos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;family=League+Gothic&amp;display=swap">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo principal</a>
+
+  <!-- Barra de acessibilidade (aparece só com JavaScript ativo) -->
+  <div class="barra-acessibilidade" hidden>
+    <div class="container" role="group" aria-label="Recursos de acessibilidade">
+      <span class="barra-titulo">Acessibilidade:</span>
+      <button type="button" data-acao="diminuir" aria-label="Diminuir o tamanho do texto">A−</button>
+      <button type="button" data-acao="normal" aria-label="Voltar ao tamanho normal do texto">A</button>
+      <button type="button" data-acao="aumentar" aria-label="Aumentar o tamanho do texto">A+</button>
+      <button type="button" data-acao="contraste" aria-pressed="false">Alto contraste</button>
+    </div>
+  </div>
+
+  <!-- ==================== CABEÇALHO ==================== -->
+  <header class="cabecalho">
+    <div class="container cabecalho-topo">
+      <a class="logo" href="index.html">
+        <img src="img/logo-emblema.svg" alt="" width="44" height="44">
+        <span class="logo-nome">Base Forte Leste</span>
+      </a>
+      <a class="botao botao-amarelo cabecalho-acao" href="aula-experimental.html">Agendar aula experimental</a>
+      <button type="button"
+              class="botao-hamburguer"
+              id="btn-hamburguer"
+              aria-label="Abrir menu de navegação"
+              aria-expanded="false"
+              aria-controls="menu-principal">
+        <span class="hamburguer-linha"></span>
+        <span class="hamburguer-linha"></span>
+        <span class="hamburguer-linha"></span>
+      </button>
+    </div>
+    <nav class="menu" id="menu-principal" aria-label="Menu principal">
+      <div class="menu-cabecalho-mobile">
+        <a class="logo" href="index.html">
+          <img src="img/logo-emblema.svg" alt="" width="38" height="38">
+          <span class="logo-nome">Base Forte Leste</span>
+        </a>
+        <button type="button" class="botao-fechar-menu" id="btn-fechar-menu" aria-label="Fechar menu">
+          &times;
+        </button>
+      </div>
+      <ul class="container menu-lista">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html" aria-current="page">Quem somos</a></li>
+        <li><a href="modalidades.html">Modalidades</a></li>
+        <li><a href="professor.html">Professores</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="aula-experimental.html">Aula experimental</a></li>
+        <li><a href="acoes-sociais.html">Ações sociais</a></li>
+        <li><a href="turmas-horarios.html">Turmas e horários</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="orcamento_hospedagem.html">Orçamento</a></li>
+      </ul>
+    </nav>
+    <div class="menu-overlay" id="menu-overlay" hidden></div>
+  </header>
+
+  <!-- ==================== CONTEÚDO PRINCIPAL ==================== -->
+  <main id="conteudo">
+
+    <!-- ===== TOPO DA PÁGINA ===== -->
+    <section class="topo-pagina" aria-labelledby="titulo-pagina">
+      <div class="container">
+        <h1 id="titulo-pagina">Quem somos</h1>
+        <p>Uma academia que começou pequena em Itaquera e hoje abre o tatame para toda a comunidade.</p>
+      </div>
+    </section>
+
+    <!-- ===== 1. HISTÓRIA DA FUNDAÇÃO ===== -->
+    <!-- Linha do tempo de exemplo do projeto acadêmico: confirme datas e fatos com a academia -->
+    <section class="secao" aria-labelledby="titulo-historia">
+      <div class="container duas-colunas">
+        <div>
+          <h2 id="titulo-historia">Nossa história</h2>
+          <p class="introducao">A Base Forte Leste foi fundada pelo professor Adalberto, que até hoje é o responsável por todas as aulas de Muay Thai da academia.</p>
+          <p>O começo foi simples: poucos alunos, sacos de pancada pendurados no teto e equipamentos comprados aos poucos. Para que ninguém deixasse de treinar por falta de dinheiro, o professor passou a comprar luvas, caneleiras e capacetes básicos para os iniciantes, um costume que continua até hoje.</p>
+          <p>A academia cresceu enfrentando aluguel caro, a pandemia e a falta de patrocínio. Cada desafio deixou a mesma lição: a força de uma academia está na comunidade que treina nela.</p>
+        </div>
+
+        <!-- <ol> = lista ORDENADA, porque a história segue uma sequência de anos.
+             <time datetime="..."> marca a data de um jeito que o computador entende. -->
+        <ol class="linha-do-tempo">
+          <li>
+            <time datetime="2015">2015</time>
+            <h3>O começo numa garagem</h3>
+            <p>As primeiras aulas de Muay Thai acontecem numa garagem de Itaquera, com oito alunos.</p>
+          </li>
+          <li>
+            <time datetime="2017">2017</time>
+            <h3>A primeira sede</h3>
+            <p>A academia muda para um galpão alugado e passa a oferecer Boxe, Kickboxing e Jiu-Jitsu.</p>
+          </li>
+          <li>
+            <time datetime="2019">2019</time>
+            <h3>Portas abertas aos sábados</h3>
+            <p>Começam as aulas gratuitas para jovens da comunidade, primeiro com Muay Thai e depois com Capoeira.</p>
+          </li>
+          <li>
+            <time datetime="2020">2020</time>
+            <h3>O treino não parou</h3>
+            <p>Na pandemia, as aulas viram treinos online e a academia arrecada alimentos para famílias de alunos.</p>
+          </li>
+          <li>
+            <time datetime="2022">2022</time>
+            <h3>Reforma para acessibilidade</h3>
+            <p>Chegam a rampa de entrada, o banheiro adaptado e a turma inclusiva de Boxe adaptado.</p>
+          </li>
+          <li>
+            <time datetime="2024">2024</time>
+            <h3>Recicla na luta</h3>
+            <p>Os eventos ganham pontos de coleta de recicláveis e começa a campanha de doação de kimonos.</p>
+          </li>
+          <li>
+            <time datetime="2026">2026</time>
+            <h3>Adeus, panfleto</h3>
+            <p>Este site reúne todas as informações da academia e substitui panfletos, cartazes e fichas de papel.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== 2. MISSÃO, VISÃO E VALORES ===== -->
+    <section class="secao secao-alternada" aria-labelledby="titulo-mvv">
+      <div class="container">
+        <h2 id="titulo-mvv">Missão, visão e valores</h2>
+        <div class="grade">
+          <div class="cartao cartao-missao">
+            <h3>Missão</h3>
+            <p>Usar as artes marciais para formar pessoas mais fortes, disciplinadas e respeitosas, abrindo o tatame para toda a comunidade da Zona Leste.</p>
+          </div>
+          <div class="cartao cartao-visao">
+            <h3>Visão</h3>
+            <p>Ser referência na Zona Leste como academia inclusiva, onde qualquer pessoa, de qualquer idade, condição física ou renda, encontre um lugar para treinar.</p>
+          </div>
+          <div class="cartao cartao-valores">
+            <h3>Valores</h3>
+            <dl class="ficha">
+              <dt>Disciplina</dt>
+              <dd>Constância vale mais que talento.</dd>
+              <dt>Inclusão</dt>
+              <dd>O treino se adapta à pessoa.</dd>
+              <dt>Sustentabilidade</dt>
+              <dd>Menos papel, mais reaproveitamento.</dd>
+              <dt>Respeito</dt>
+              <dd>Pelo professor, pelo colega e pelo adversário.</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3. EVENTOS E CAMPEONATOS ===== -->
+    <!-- Registro de exemplo: substitua pelos eventos e resultados reais da academia -->
+    <section class="secao" aria-labelledby="titulo-eventos">
+      <div class="container duas-colunas">
+        <div>
+          <h2 id="titulo-eventos">Eventos e campeonatos</h2>
+          <p>Competir não é obrigatório, mas quem quer encontra apoio. Nossos alunos participam de torneios regionais e de festivais da comunidade, sempre com o mesmo combinado: respeito ao adversário antes, durante e depois da luta.</p>
+          <p>Os eventos organizados pela academia também são momentos de arrecadação de recicláveis e de doação de equipamentos.</p>
+        </div>
+        <ul class="lista-eventos">
+          <li>
+            <time datetime="2026-08">2026</time>
+            <p><strong>Festival de Inverno da Base Forte Leste</strong><br>Demonstrações abertas ao público e 186 kg de recicláveis arrecadados.</p>
+          </li>
+          <li>
+            <time datetime="2025-11">2025</time>
+            <p><strong>Torneio interacademias de Muay Thai da Zona Leste</strong><br>Seis atletas inscritos, duas medalhas de ouro e duas de bronze.</p>
+          </li>
+          <li>
+            <time datetime="2025-06">2025</time>
+            <p><strong>Festival de Capoeira da comunidade</strong><br>Roda aberta com 40 participantes e troca de cordas da turma juvenil.</p>
+          </li>
+          <li>
+            <time datetime="2024-09">2024</time>
+            <p><strong>Open regional de Jiu-Jitsu</strong><br>Primeira participação da equipe, com três medalhas na faixa branca.</p>
+          </li>
+          <li>
+            <time datetime="2023-10">2023</time>
+            <p><strong>Jogos comunitários de Itaquera</strong><br>Apresentação da turma inclusiva de Boxe adaptado.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== 4. ACESSIBILIDADE FÍSICA E DIGITAL ===== -->
+    <!-- O id="acessibilidade" permite chegar aqui pelo link do rodapé (sobre.html#acessibilidade) -->
+    <section class="secao secao-alternada" id="acessibilidade" aria-labelledby="titulo-acessibilidade">
+      <div class="container">
+        <h2 id="titulo-acessibilidade">Acessibilidade para pessoas com deficiência</h2>
+        <p class="introducao">Acessibilidade aqui faz parte do treino. Ela começa na porta da academia e continua neste site.</p>
+        <div class="duas-colunas">
+          <div class="cartao">
+            <h3>No espaço físico</h3>
+            <ul>
+              <li>Rampa na entrada e portas largas.</li>
+              <li>Banheiro adaptado, com barras de apoio.</li>
+              <li>Tatame nivelado, sem degraus, com faixa colorida nas bordas.</li>
+              <li>Luvas com velcro e saco de pancada com altura ajustável.</li>
+              <li>Turma inclusiva de Boxe adaptado e professores capacitados em atividade física adaptada.</li>
+              <li>Equipe da recepção com noções de Libras.</li>
+            </ul>
+          </div>
+          <div class="cartao">
+            <h3>Neste site</h3>
+            <ul>
+              <li>Texto alternativo em todas as imagens informativas, lido pelos leitores de tela.</li>
+              <li>Navegação completa pelo teclado, com foco bem visível e o link "Pular para o conteúdo principal".</li>
+              <li>Cores com contraste adequado (nível AA das diretrizes WCAG) e modo de alto contraste.</li>
+              <li>Botões para aumentar e diminuir o tamanho do texto.</li>
+              <li>Fonte Atkinson Hyperlegible, criada pelo Braille Institute para facilitar a leitura de pessoas com baixa visão.</li>
+              <li>Vídeo com legendas e áudio com descrição em texto.</li>
+              <li>Formulários com rótulos e dicas de preenchimento.</li>
+              <li>Layout que se adapta ao celular.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CHAMADA FINAL ===== -->
+    <section class="secao chamada-final" aria-labelledby="titulo-chamada">
+      <div class="container">
+        <h2 id="titulo-chamada">Venha treinar com a gente</h2>
+        <p class="introducao">Conheça quem ensina na Base Forte Leste e marque sua primeira aula.</p>
+        <div class="grupo-botoes">
+          <a class="botao botao-amarelo" href="aula-experimental.html">Agendar aula experimental</a>
+          <a class="botao botao-azul" href="professor.html">Conhecer os professores</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== RODAPÉ ==================== -->
+  <footer class="rodape">
+    <div class="container rodape-grade">
+      <section aria-labelledby="rodape-contato">
+        <h2 class="rodape-titulo" id="rodape-contato">Contato</h2>
+        <address>
+          <p>Rua da Comunidade, 100, Itaquera<br>São Paulo (SP)<br>CEP 08210-000</p>
+          <p>Telefone: <a href="tel:+551120000000">(11) 2000-0000</a><br>
+            WhatsApp: <a href="https://wa.me/5511900000000" target="_blank" rel="noopener noreferrer">(11) 90000-0000<span class="visualmente-oculto"> (abre em nova aba)</span></a></p>
+          <p><a href="mailto:contato@baseforteleste.com.br">contato@baseforteleste.com.br</a></p>
+        </address>
+      </section>
+      <section aria-labelledby="rodape-redes">
+        <h2 class="rodape-titulo" id="rodape-redes">Redes sociais</h2>
+        <ul>
+          <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram<span class="visualmente-oculto"> (abre em nova aba)</span></a></li>
+          <li><a href="https://wa.me/5511900000000" target="_blank" rel="noopener noreferrer">WhatsApp<span class="visualmente-oculto"> (abre em nova aba)</span></a></li>
+        </ul>
+        <p>Trocamos panfletos de papel por divulgação digital.</p>
+      </section>
+      <section aria-labelledby="rodape-horario">
+        <h2 class="rodape-titulo" id="rodape-horario">Horário de funcionamento</h2>
+        <ul>
+          <li>Segunda a sexta: 6h às 22h</li>
+          <li>Sábado: 8h às 12h</li>
+          <li>Domingo e feriados: fechado</li>
+        </ul>
+      </section>
+      <section aria-labelledby="rodape-compromisso">
+        <h2 class="rodape-titulo" id="rodape-compromisso">Nosso compromisso</h2>
+        <p>Espaço acessível e site pensado para leitores de tela, teclado e alto contraste. <a href="sobre.html#acessibilidade">Ver medidas de acessibilidade</a></p>
+        <p>Menos papel e mais reciclagem. <a href="orcamento_hospedagem.html#papel-digital">Ver nossa economia</a></p>
+      </section>
+    </div>
+    <div class="rodape-creditos">
+      <div class="container">
+        <p>Site desenvolvido no Projeto Horizonte Leste (Front-End, Ciência da Computação, UNICID, 2026) por Nickolas Henrique Bezerra, Pedro Henrique Ruola Coiado, Raphaela Gonçalves Neves e Williams Vargas Neves Paoli dos Santos. <a href="contato.html#creditos">Ver créditos</a></p>
+        <p>© 2026 Academia Base Forte Leste. Projeto acadêmico.</p>
+      </div>
+    </div>
+    <a class="whatsapp-flutuante" href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Base%20Forte%20Leste." target="_blank" rel="noopener noreferrer" aria-label="Conversar com a academia pelo WhatsApp (abre em nova aba)">WhatsApp</a>
+  </footer>
+</body>
+</html>
