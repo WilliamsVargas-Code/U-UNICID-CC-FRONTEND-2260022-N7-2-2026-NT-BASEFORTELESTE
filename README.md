@@ -136,7 +136,7 @@ Responsabilidades:<br>
 * Atributos `alt`, contraste adequado e `lang="pt-BR"` em todas as páginas.
 * Pasta `/docs` com README, Diário de Bordo, Orçamento de Hospedagem e Evidências de Teste.
 
-## Uso de Inteligência Artificial
+## 12. Uso de Inteligência Artificial
 
 ### Ferramenta utilizada
 - **Claude** (Anthropic), usado em 07/11/2026 como assistente de desenvolvimento Front-End.
@@ -166,4 +166,5 @@ Responsabilidades:<br>
 
 ### Responsabilidade
 A IA foi usada como ferramenta de apoio. A equipe é responsável pelo conteúdo final, entende o código entregue e consegue explicar cada parte dele na apresentação.
+
 
