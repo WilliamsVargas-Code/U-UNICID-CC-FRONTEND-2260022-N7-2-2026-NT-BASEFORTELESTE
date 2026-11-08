@@ -123,4 +123,4 @@ Registro dos testes do site da Academia Base Forte Leste. As capturas de tela fi
 | Deploy na Vercel com status *Ready* | ⏳ | |
 | Site aberto pela URL com HTTPS | ⏳ | |
 | Commits de todos os integrantes | ⏳ | |
-| Pull request | ⏳ | |
+| Pull request | ✅ PR #1 "Evidência Lighthouse mobile (100/100/100)": branch `docs/lighthouse-mobile` → `main`. Houve conflito em `docs/evidencia_testes.md`, resolvido manualmente no editor do GitHub; depois o merge foi feito (08/11/2026). | [github-pull-request.png](evidencias/github-pull-request.png) |
