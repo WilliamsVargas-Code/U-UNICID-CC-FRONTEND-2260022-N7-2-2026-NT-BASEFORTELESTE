@@ -23,178 +23,79 @@ Academia de Artes Marciais (Base Forte Leste)
 
 ## 2. Visão Geral
 
-Site da Academia Base Forte Leste, uma academia de artes marciais de Itaquera, na Zona Leste de São Paulo. Ela oferece Muay Thai, Kickboxing, Boxe, Jiu-Jitsu, Capoeira e No-Gi, dá aulas gratuitas aos sábados para jovens da comunidade e tem uma turma inclusiva para pessoas com deficiência. O tema dialoga com os ODS 3, 4, 10 e 12 (saúde, educação, redução das desigualdades e consumo responsável).
-As 10 páginas, o CSS e a barra de acessibilidade em JavaScript (tamanho da fonte e alto contraste, com a preferência salva no localStorage)  
-Os números do site (alunos atendidos, recicláveis arrecadados, resultados em eventos), os depoimentos e os dados de contato são fictícios, criados para fins acadêmicos.
+Desenvolvimento do portal web oficial da Academia Base Forte Leste, localizada em Itaquera (Zona Leste de São Paulo). O ecossistema digital centraliza informações institucionais sobre modalidades (Muay Thai, Kickboxing, Boxe, Jiu-Jitsu, Capoeira e No-Gi), divulgação de aulas gratuitas aos sábados voltadas ao público juvenil e atendimento a turmas inclusivas para pessoas com deficiência. O projeto alinha-se diretamente aos Objetivos de Desenvolvimento Sustentável (ODS) da ONU: ODS 3 (Saúde e Bem-Estar), ODS 4 (Educação de Qualidade), ODS 10 (Redução das Desigualdades) e ODS 12 (Consumo e Produção Responsáveis).
 
+A arquitetura é composta por  10 páginas interligadas estruturadas com HTML5 semântico, estilização responsiva em CSS3 e recursos avançados de interatividade via JavaScript — incluindo barra de acessibilidade com ajuste dinâmico de fontes, modo de alto contraste e persistência de preferências de usuário via localStorage.
 
+Nota acadêmica: Todos os indicadores operacionais (métricas de alunos atendidos, volume de recicláveis arrecadados, resultados em eventos), bem como depoimentos e dados cadastrais, são estritamente fictícios e concebidos exclusivamente para fins acadêmicos.
+
+## 3. Problema que o produto resolve
+
+Atualmente, a gestão e a divulgação das informações da academia (horários, grade de modalidades, políticas de preços e projetos sociais) encontram-se descentralizadas e fragmentadas entre aplicativos de mensagens (WhatsApp) e panfletos impressos. Essa dispersão gera lacunas informacionais importantes: o público externo que não transita pelo entorno da academia desconhece as iniciativas de inclusão e as aulas gratuitas de sábado.
+
+Além disso, os pedidos de aulas experimentais chegam de forma despadronizada, enquanto o uso recorrente de material gráfico impresso acarreta custos operacionais desnecessários, impacto ambiental negativo e barreiras intransponíveis de acessibilidade para pessoas com deficiência visual (cegas ou com baixa visão).
 
 ## 4. Público-alvo
-- Moradores da Zona Leste que querem começar uma arte marcial, mesmo sem experiência ou equipamento.
-- Jovens de 10 a 17 anos e seus responsáveis, interessados nas aulas gratuitas de sábado.
-- Famílias que procuram uma atividade para fazer juntas.
-- Alunos atuais, que consultam horários e novidades.
-- Pessoas com deficiência: o site precisa ser usável pelo teclado, por leitores de tela e em alto contraste.
+
+- **Comunidade Local (Zona Leste)**: Moradores da região em busca de capacitação física e prática de artes marciais, independentemente de nível de experiência prévia ou disponibilidade de recursos para equipamentos.
+- **Público Infantojuvenil e Responsáveis**: Jovens na faixa etária de 10 a 17 anos e suas famílias, foco principal das ações sociais e das aulas gratuitas de sábado.
+- **Alunos Regulares**: Praticantes ativos que utilizam o canal digital como ferramenta rápida de consulta a horários, avisos e novidades institucionais.
+- **Público com Deficiência (PCDs)**: Usuários que necessitam de navegação assistida por teclado, compatibilidade com leitores de tela e suporte a modos de alto contraste em conformidade com as diretrizes WCAG.
 
 ## 5. Objetivos
 
-- Reunir em um só lugar as modalidades, os horários, os professores e as ações sociais.
-- Facilitar o pedido de aula experimental e a inscrição nas aulas de sábado com formulários padronizados.
-- Ampliar o alcance do projeto social para jovens e famílias da região.
-- Substituir panfletos de papel por divulgação digital, com economia estimada de R$ 1.463,72 por ano (cálculo baseado em preços reais de impressão).
-- Mostrar o impacto social da academia, mesmo com números fictícios, de forma honesta e acessível.
+- Centralizar em um único ambiente digital as modalidades, a grade horária, o corpo docente e o calendário de ações sociais da instituição.
+- Otimizar o fluxo de captação de leads por meio de formulários padronizados para agendamento de aulas experimentais e inscrições nas oficinas de sábado.
+- Expandir o alcance comunitário do projeto esportivo e de inclusão social voltado a jovens e famílias da região de Itaquera.
+- Substituir o modelo tradicional de divulgação impressa por canais digitais sustentáveis, projetando uma redução de custos (estimada de R$ 1.463,72 por ano - cálculo baseado em preços reais de impressão))e mitigação do desperdício de papel).
+- Consolidar a transparência institucional por meio de um layout acessível, responsivo e em conformidade estrita com os padrões web exigidos pela disciplina.
 
-
-### 2.3 Acessibilidade
-
-O site será pensado para que qualquer pessoa consiga utilizá-lo, incluindo pessoas com deficiência visual, baixa visão ou que navegam apenas pelo teclado. Para isso, serão aplicadas as seguintes práticas:
-
-- Botões para aumentar e diminuir o tamanho da fonte
-- Botão de modo alto contraste
-- Texto alternativo (`alt`) em todas as imagens
-- Boa diferença de cor (contraste) entre texto e fundo
-- Estrutura HTML semântica (`<header>`, `<nav>`, `<main>`, `<footer>`) e títulos na ordem correta
-- Formulário com campos identificados por `<label>`, permitindo o uso com leitores de tela
-- Layout responsivo, funcionando bem no celular
-
-## 3. Problemas que o Site Irá Resolver
-
-Durante o levantamento de requisitos com a academia **Base Forte Leste**, foram identificados problemas na forma como a academia se comunica com alunos, interessados e comunidade. O site foi pensado para resolver cada um deles.
-
-### 3.1 Informações espalhadas e difíceis de encontrar
-
-**Situação atual:** atualmente, a academia utiliza apenas o WhatsApp e o Instagram para divulgação. Nesses canais, as informações sobre modalidades, turmas, horários e história ficam espalhadas entre mensagens e publicações, e as mais antigas se perdem no feed. Quem tem interesse precisa ir até a academia ou perguntar por mensagem.
-
-**Como o site resolve:** centraliza todas as informações em um só ambiente digital, organizado e disponível 24 horas, com seções de Sobre Nós, História, Modalidades, Turmas e Horários e Blog de Notícias. O site complementa as redes sociais, que podem direcionar os visitantes para ele.
-
-**Pilar relacionado:** Impacto Social e Acessibilidade.
-
-### 3.2 Uso de materiais impressos
-
-**Situação atual:** a divulgação depende de panfletos, cartazes e formulários impressos, que geram consumo de papel e de materiais gráficos e precisam ser refeitos a cada mudança de horário ou evento.
-
-**Como o site resolve:** substitui o material impresso por páginas digitais e um formulário online, que podem ser atualizados sem custo de impressão.
-
-**Pilar relacionado:** Sustentabilidade.
-
-### 3.3 Pouca divulgação das ações sociais
-
-**Situação atual:** as aulas gratuitas aos sábados voltadas ao público juvenil alcançam principalmente quem já conhece a academia ou passa por ela.
-
-**Como o site resolve:** cria uma seção dedicada às ações sociais, explicando o projeto, quem pode participar e como se inscrever, ampliando o alcance para jovens e famílias da região.
-
-**Pilar relacionado:** Impacto Social.
-
-### 3.4 Pedidos de aula sem padrão
-
-**Situação atual:** a aula experimental é agendada pelo WhatsApp ou presencialmente, sem um padrão de informações. Cada interessado envia dados diferentes, e a academia precisa fazer várias perguntas antes de confirmar a aula.
-
-**Como o site resolve:** oferece um formulário padronizado para pedido de aula experimental e inscrição na aula gratuita de sábado. Ao enviar, o JavaScript valida os campos obrigatórios, monta uma mensagem organizada com os dados preenchidos e abre o WhatsApp da academia com o texto pronto. Assim, todos os pedidos chegam no mesmo formato, e a conversa fica registrada no WhatsApp da academia.
-
-**Pilar relacionado:** Impacto Social e Sustentabilidade.
-
-### 3.5 Comunicação pouco acessível
-
-**Situação atual:** materiais impressos não podem ser lidos por leitores de tela e nem ampliados por pessoas com baixa visão, excluindo parte do público.
-
-**Como o site resolve:** oferece botões para aumentar e diminuir a fonte, modo de alto contraste, textos alternativos nas imagens, estrutura HTML semântica e layout responsivo para celular.
-
-**Pilar relacionado:** Acessibilidade.
-
-## 4. Público-Alvo
-
-O site da academia **Base Forte Leste** foi pensado para atender públicos diferentes, cada um com necessidades próprias. Além de informar, o site também funciona como uma **ferramenta de marketing digital**, ajudando a academia a atrair novos alunos, fortalecer sua imagem na comunidade e manter os alunos atuais engajados.
-
-### 4.1 Novos interessados em artes marciais
-
-**Quem são:** pessoas que ainda não treinam na academia e querem começar uma arte marcial, seja por saúde, condicionamento físico, defesa pessoal ou hobby. Muitos são iniciantes e não sabem qual modalidade escolher.
-
-**O que procuram:** quais modalidades existem, horários das turmas, como funciona a primeira aula e se precisam de experiência ou equipamento.
-
-**Como o site atende:**
-- Apresenta cada modalidade de forma simples, ajudando o iniciante a escolher
-- Mostra os horários das turmas de forma organizada
-- Divulga a **aula experimental** como porta de entrada, com pedido feito pelo botão do WhatsApp
-- Informa que **não é necessário ter experiência** para começar, pois as turmas recebem iniciantes
-- Informa que **alunos novos não precisam ter equipamentos** para participar das aulas
-
-**Objetivo de marketing:** transformar visitantes do site em alunos matriculados, removendo barreiras comuns para quem quer começar, como a falta de experiência ou de equipamento.
-
-### 4.2 Jovens e seus responsáveis
-
-**Quem são:** jovens menores de 18 anos da região e seus pais ou responsáveis, interessados nas aulas gratuitas aos sábados.
-
-**O que procuram:** como funciona o projeto social, quem pode participar, dias e horários, e como fazer a inscrição.
-
-**Como o site atende:**
-- Seção de **Ações Sociais** explicando o projeto de forma clara
-- Botão de acesso ao WhatsApp da academia, onde o responsável faz a inscrição do jovem
-- Linguagem simples, acessível tanto para o jovem quanto para a família
-
-**Objetivo de marketing:** ampliar o alcance do projeto social e aproximar a academia das famílias da comunidade.
-
-### 4.3 Famílias
-
-**Quem são:** grupos familiares que buscam uma atividade física para treinar juntos.
-
-**O que procuram:** opções de plano para mais de uma pessoa e modalidades que atendam diferentes idades.
-
-**Como o site atende:** divulga a existência do **plano Família**, válido a partir de duas pessoas, e apresenta as modalidades e turmas disponíveis. Os valores dos planos não serão exibidos no site; o interessado poderá consultá-los diretamente com a academia pelo WhatsApp.
-
-**Objetivo de marketing:** aumentar o número de matrículas por meio de planos em grupo.
-
-### 4.4 Alunos atuais
-
-**Quem são:** pessoas que já treinam na academia.
-
-**O que procuram:** horários atualizados, novidades, eventos e notícias da academia.
-
-**Como o site atende:**
-- Seção de **Turmas e Horários** sempre disponível
-- **Blog de Notícias** com eventos, graduações e novidades
-
-**Objetivo de marketing:** manter os alunos engajados, reforçar o sentimento de pertencimento e incentivar que indiquem a academia para outras pessoas.
-
-### 4.5 Pessoas com deficiência
-
-**Quem são:** pessoas com deficiência visual, baixa visão ou que navegam apenas pelo teclado, que muitas vezes encontram barreiras em sites comuns.
-
-**O que procuram:** conseguir acessar as mesmas informações que qualquer outro visitante, sem depender de ajuda.
-
-**Como o site atende:** botões de tamanho da fonte, modo alto contraste, textos alternativos nas imagens, estrutura HTML semântica e botão do WhatsApp com descrição para leitores de tela.
-
-**Objetivo de marketing:** mostrar que a academia é um espaço inclusivo, alcançando um público que muitas vezes é ignorado.
-
-### 4.6 Comunidade da região
-
-**Quem são:** moradores da zona Leste, região onde a academia está localizada, que ainda não conhecem a Base Forte Leste.
-
-**O que procuram:** conhecer a academia, sua história e o que ela oferece para a comunidade.
-
-**Como o site atende:** seções de **Sobre Nós**, **História** e **Ações Sociais**, mostrando a trajetória da academia e seu compromisso com a região.
-
-**Objetivo de marketing:** fortalecer a reputação da academia como referência local em artes marciais e projeto social.
-
-### 4.7 O Site como Ferramenta de Marketing
-
-Além de informar, o site contribui diretamente para a divulgação da academia:
-
-- **Credibilidade:** um site próprio transmite mais profissionalismo do que apenas perfis em redes sociais
-- **Integração com as redes:** o Instagram e o WhatsApp, já usados pela academia, passam a direcionar os visitantes para o site, onde as informações ficam completas e organizadas
-- **Disponibilidade:** o site funciona 24 horas, permitindo que um interessado conheça a academia a qualquer momento
-- **Captação de alunos:** o botão do WhatsApp leva o visitante direto ao contato com a academia, transformando o interesse em conversa real
-- **Menos barreiras de entrada:** informar que não é preciso ter equipamento nem experiência incentiva iniciantes a darem o primeiro passo
-- **Imagem positiva:** a divulgação das ações sociais e o cuidado com acessibilidade e sustentabilidade reforçam uma imagem de academia comprometida com a comunidade
-- **Economia:** reduz gastos com materiais impressos de divulgação
-## 5. Objetivos
 
 ## 6. Funcionalidades principais
 
+O site é composto por 10 páginas interligadas, compartilhando uma identidade visual unificada, com cabeçalho, barra de acessibilidade, menu de navegação e rodapé padronizados em todo o site:
+
+| Página | Arquivo | Função principal |
+| :--- | :--- | :--- |
+| **Início** | `index.html` | Apresentação da causa, métricas de impacto, projetos e visão geral da academia |
+| **Quem somos** | `sobre.html` | Histórico institucional, missão, visão e valores voltados à inclusão, esporte e educação |
+| **Modalidades** | `modalidades.html` | Informações detalhadas sobre Muay Thai, Kickboxing, Boxe, Jiu-Jitsu, Capoeira e No-Gi |
+| **Professores** | `professor.html` | Apresentação do corpo docente, qualificações e especialidades dos mestres |
+| **Blog** | `blog.html` | Publicações informativas, avisos e novidades recentes da academia |
+| **Aula experimental** | `aula-experimental.html` | Página e formulário dedicado para agendamento de aulas práticas experimentais |
+| **Ações sociais** | `acoes-sociais.html` | Divulgação de projetos comunitários, aulas gratuitas de sábado e turmas inclusivas |
+| **Turmas e horários** | `turmas-horarios.html` | Grade horária das turmas, controle de capacidade operacional e gestão de vagas |
+| **Contato** | `contato.html` | Canal de atendimento equipado com formulário interativo validado e dados de localização |
+| **Orçamento** | `orcamento_hospedagem.html` | Demonstração e justificativa técnica/financeira da infraestrutura de deploy e hospedagem web |
+
+**Projetos e Iniciativas Divulgadas:**
+* **Aulas Gratuitas de Sábado:** Foco no atendimento ao público juvenil da comunidade, promovendo inclusão social, disciplina e desenvolvimento pessoal por meio das artes marciais.
+* **Turma Inclusiva:** Oficinas adaptadas para garantir a prática esportiva segura e integrada de pessoas com deficiência.
+
+**Indicadores de Impacto Institucional (Métricas Fictícias):**
+* 150 jovens atendidos mensalmente nas iniciativas comunitárias.
+* 6 modalidades de luta ativas na grade horária.
+* Limite operacional de 30 vagas por turma para assegurar excelência pedagógica e segurança.
+* 100% de digitalização da comunicação institucional, eliminando a dependência de impressos gráficos.
+  
 ## 7. Requisitos técnicos
+
+* **HTML5 Semântico:** Utilização rigorosa de tags estruturais e descritivas, com atributo global `lang="pt-BR"` e validação estrita em conformidade com o W3C Validator (zero erros).
+* **CSS3 Responsivo:** Layout adaptativo construído com abordagens modernas (Flexbox e Grid Layout), garantindo consistência visual em múltiplos dispositivos, foco visível customizado e transições fluidas.
+* **JavaScript Interativo:** Implementação de lógica de controle comportamental contendo validação robusta de formulários com interceptação de submissão (`preventDefault`), feedback textual de erros, destaque visual em bordas, persistência de dados e preferências via `localStorage`, além de eventos dinâmicos de DOM aplicados a menus de navegação mobile e filtros.
+* **Versionamento e Controle de Código:** Repositório centralizado no GitHub estruturado com histórico de commits colaborativos da equipe, mensagens descritivas e adoção de fluxo de ramificações (*branches*) com revisão por *Pull Request*.
+* **Deploy e Infraestrutura:** Aplicação publicada em ambiente de produção acessível via URL pública com protocolo de segurança HTTPS ativo.
 
 ## 8. Requisitos não funcionais
 
+* **Acessibilidade Digital (WCAG):** Conformidade estrita com os critérios de acessibilidade de nível AA, assegurando contraste cromático adequado, hierarquia semântica de cabeçalhos e suporte completo à navegação sequencial por teclado.
+* **Desempenho e Otimização:** Tempo de carregamento otimizado dos ativos estáticos (imagens, folhas de estilo e scripts) para garantir fluidez tanto em computadores quanto em dispositivos móveis.
+* **Manutenibilidade:** Código-fonte limpo, modularizado e devidamente documentado, facilitando futuras manutenções corretivas ou evolutivas por novos desenvolvedores.
+
 ## 9. Estrutura de pastas
+
+Organização padrão contendo os arquivos HTML na raiz, pastas dedicadas para `/css`, `/js`, `/img`, `/docs` (documentação completa) e diretórios de multimídia.
+
 ```markdown
 BaseForteLeste/
 ├── index.html              # páginas inicial que o usuário acessará quando clicar no link
@@ -216,9 +117,24 @@ BaseForteLeste/
 Responsabilidades:<br>
 • **Interface**: HTML semântico e css em `style.css`. Sem estilo inline.<br>
 • **Comportamento**: JavaScript em arquivo próprio, progressivo (a página funciona sem ele, exceto o envio de informações do formulário que depende de sua validação).
+
 ## 10. Pendências
 
+* Dados oficiais da academia Base Forte Leste e URLs das fontes institucionais.
+* Histórico oficial do projeto de ações sociais e destino das doações das aulas de sábado.
+* Notícias reais sobre as modalidades, com data e fonte.
+* Vídeos e áudios oficiais de treinamento (os atuais são demonstrativos).
+* Canais oficiais de contato e redes sociais da academia.
+* Link definitivo do site publicado em produção.
+
 ## 11. Critérios de sucesso
+
+* As 10 páginas interligadas, com o mesmo cabeçalho, menu e rodapé.
+* Zero erros no validador de HTML do W3C.
+* Formulários com validação nativa (`required`, `email`, `tel` etc.) e erro mostrado junto ao campo.
+* Vídeo, áudio e iframe funcionando corretamente.
+* Atributos `alt`, contraste adequado e `lang="pt-BR"` em todas as páginas.
+* Pasta `/docs` com README, Diário de Bordo, Orçamento de Hospedagem e Evidências de Teste.
 
 ## Uso de Inteligência Artificial
 
