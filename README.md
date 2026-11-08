@@ -3,11 +3,10 @@ Link do BaseForteLeste na hospedagem:
 # U-UNICID-CC-FRONTEND-2260022-N7-2-2026-NT-BASEFORTELESTE
 Projeto Front-End Unicid 2-BaseForteLeste
 
-# Plano de contexto e escopo — BaseForteLeste
+# Plano de Contexto e Escopo — Base Forte Leste
+Briefing permanente do projeto para a equipe e para a IA. Disciplina Desenvolvimento Front-End para Web · UNICID · 2026.2 · Prof. Paulo Sérgio Fratta. Organização e dados são fictícios, criados para fins acadêmicos.
 
-## 1. Nome do projeto:   Projeto Horizonte Leste
-
-## Metadados
+### Equipe de Desenvolvimento
 
 | Nome completo do aluno | RGM | Usuário do GitHub |
 | :-- | :-- | :-- |
@@ -15,6 +14,11 @@ Projeto Front-End Unicid 2-BaseForteLeste
 | Pedro Henrique Ruola Coiado | 47589124 | PedroCoiado |
 | Raphaela Gonçalves Neves | 47656166 | RaphaelaSeven |
 | Williams Vargas Neves Paoli dos Santos | 47336820 | WilliansVargas-Code |
+
+
+## 1. Nome do projeto
+
+Academia de Artes Marciais (Base Forte Leste)
 
 
 ## 2. Visão Geral
