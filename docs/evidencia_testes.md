@@ -115,14 +115,16 @@ Registro dos testes do site da Academia Base Forte Leste. As capturas de tela fi
 
 > A validação foi reescrita pela equipe em 09/11/2026 dentro do `script.js`, no lugar do arquivo `formularios.js` usado antes. Sem JavaScript, os formulários ainda contam com a validação nativa do HTML5 (`required`, `type`, `pattern`, `min`, `max`).
 
-## 6. Multimídia
+## 6. Multimídia (09/11/2026)
+
+**Executado por:** equipe, em 09/11/2026, no **site publicado na Vercel** (`modalidades.html` e `contato.html`).
 
 | Recurso | Cenário | Status | Evidência |
 |---|---|---|---|
-| Vídeo | Pôster antes do play | ⏳ | |
-| Vídeo | Legendas na tela | ⏳ | |
-| Áudio | Toca e abre a descrição | ⏳ | |
-| Mapa (iframe) | Carrega na página Contato | ⏳ | |
+| Vídeo (`<video>` com `poster`) | Antes do play, aparece a imagem de capa (0:00 / 0:14) | ✅ | [midia-video-poster.png](evidencias/midia-video-poster.png) |
+| Vídeo (`<track kind="captions">`) | Legendas em português aparecem sozinhas (atributo `default`), por exemplo "[Som de gongo] Sequência de treino de Muay Thai…" e "Passo 1: guarda alta." | ✅ | [midia-video-legenda.png](evidencias/midia-video-legenda.png) |
+| Áudio (`<audio>`) | O áudio do berimbau carrega (0:16) e toca até o fim; a descrição em texto (`<details>`) abre ao clicar, para quem não pode ouvir | ✅ | [midia-audio.png](evidencias/midia-audio.png) · tocado até 0:16 em [midia-video-legenda.png](evidencias/midia-video-legenda.png) |
+| Mapa (`<iframe>`) | O mapa de Itaquera carrega na página Contato; o `title` do iframe descreve o mapa para leitores de tela | ✅ | [midia-mapa.png](evidencias/midia-mapa.png) |
 
 ## 7. Deploy e GitHub
 
