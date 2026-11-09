@@ -15,6 +15,7 @@
 
   <link rel="stylesheet" href="css/style.css">
   <script src="js/script.js" defer></script>
+  <script src="js/formularios.js" defer></script>
 </head>
 <body>
   <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo principal</a>
@@ -164,8 +165,11 @@
           <p>Obrigado pelo contato! Na versão real do site, a academia responderia em até dois dias úteis. Como este é um projeto acadêmico, nenhum dado foi enviado.</p>
         </div>
 
-        <!-- Validação HTML5: required, type="email", type="tel" com pattern e <label for> em todos os campos.
-             Sem servidor (back-end), o envio é apenas uma demonstração. -->
+        <!-- Validação em duas camadas: HTML5 (required, type="email", type="tel" com pattern,
+             minlength) + JavaScript (js/formularios.js), que impede o envio com preventDefault(),
+             mostra mensagens de erro e destaca os campos. Depois de validado, o js/script.js
+             salva o contato no localStorage e mostra o resumo. Sem servidor (back-end), o envio
+             é apenas uma demonstração. -->
         <form class="formulario" action="#confirmacao-contato" method="get">
           <p class="dica">Os campos marcados com <span class="obrigatorio" aria-hidden="true">*</span> são obrigatórios.</p>
 

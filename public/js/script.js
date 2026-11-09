@@ -2,13 +2,15 @@
    script.js — RECURSOS OPCIONAIS DE ACESSIBILIDADE
    Academia Base Forte Leste
 
-   O site funciona 100% sem este arquivo (todo o conteúdo, o menu, as
-   perguntas frequentes e a validação dos formulários são HTML5 + CSS3).
-   Este script apenas:
-     1. mostra a barra de acessibilidade, que começa escondida (hidden);
-     2. diminui, aumenta ou volta ao normal o tamanho da fonte;
-     3. liga e desliga o modo de alto contraste;
-     4. lembra a escolha da pessoa ao trocar de página (localStorage).
+   Este script cuida de:
+     1. mostrar a barra de acessibilidade, que começa escondida (hidden);
+     2. diminuir, aumentar ou voltar ao normal o tamanho da fonte;
+     3. ligar e desligar o modo de alto contraste;
+     4. lembrar a escolha da pessoa ao trocar de página (localStorage);
+     6. abrir e fechar o menu hambúrguer no celular;
+     7. no Contato: preencher dados de teste e guardar o último envio
+        (localStorage).
+   A VALIDAÇÃO dos formulários fica em outro arquivo: js/formularios.js.
    ========================================================================== */
 
 // 1. Elementos que vamos usar
@@ -166,22 +168,44 @@ if (btnPreencherTeste && formContato) {
 
     const checkLgpd = document.getElementById("contato-lgpd");
     if (checkLgpd) checkLgpd.checked = true;
+
+    // Avisa o formularios.js que os campos mudaram (tira as mensagens de erro)
+    formContato.querySelectorAll("input, select, textarea").forEach((campo) => {
+      campo.dispatchEvent(new Event("change"));
+    });
   });
 }
 
-// 7.2 Função auxiliar para exibir a caixa verde de sucesso com os dados salvos
+// 7.2 Função auxiliar para exibir a caixa verde de sucesso com os dados salvos.
+//     Usamos createElement + textContent em vez de innerHTML: assim, se alguém
+//     digitar um código HTML no nome, ele aparece como texto e não é executado.
 function exibirMensagemSucesso(dados, veioDoReload = false) {
   if (!boxConfirmacao) return;
 
-  boxConfirmacao.innerHTML = `
-    <h3>${veioDoReload ? "Último envio registrado no navegador (localStorage)" : "Mensagem enviada com sucesso!"}</h3>
-    <p>
-      Obrigado pelo contato, <strong>${dados.nome}</strong>!
-      Registramos o assunto <strong>"${dados.assunto}"</strong> e responderemos via
-      <strong>${dados.retorno}</strong> (${dados.email} / ${dados.telefone}).
-    </p>
-    <p class="dica">Dados persistidos no <code>localStorage</code> em: ${dados.dataEnvio}</p>
-  `;
+  // Cria um elemento com texto (e, se pedido, em negrito)
+  const criar = (tag, texto) => {
+    const elemento = document.createElement(tag);
+    elemento.textContent = texto;
+    return elemento;
+  };
+
+  const titulo = criar(
+    "h3",
+    veioDoReload ? "Último envio registrado no navegador (localStorage)" : "Mensagem enviada com sucesso!"
+  );
+
+  const resumo = document.createElement("p");
+  resumo.append(
+    "Obrigado pelo contato, ", criar("strong", dados.nome), "! ",
+    "Registramos o assunto ", criar("strong", '"' + dados.assunto + '"'),
+    " e responderemos via ", criar("strong", dados.retorno),
+    " (" + dados.email + " / " + dados.telefone + ")."
+  );
+
+  const data = criar("p", "Dados guardados no localStorage em: " + dados.dataEnvio);
+  data.className = "dica";
+
+  boxConfirmacao.replaceChildren(titulo, resumo, data); // troca o conteúdo da caixa
   boxConfirmacao.classList.add("visivel");
 }
 
@@ -197,16 +221,9 @@ if (formContato && boxConfirmacao) {
     }
   }
 
-  // 7.4 Intercepta o envio com e.preventDefault()
-  formContato.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    // Valida os campos antes de prosseguir
-    if (!formContato.checkValidity()) {
-      formContato.reportValidity();
-      return;
-    }
-
+  // 7.4 O formularios.js valida o formulário (com preventDefault) e, se estiver
+  //     tudo certo, dispara o evento "envio-valido". Só então guardamos os dados.
+  formContato.addEventListener("envio-valido", function () {
     const retornoSelecionado = formContato.querySelector('input[name="retorno"]:checked');
 
     const dadosFormulario = {
@@ -223,11 +240,8 @@ if (formContato && boxConfirmacao) {
     // Salva no localStorage (chave: "bfl-ultimo-contato")
     salvar("bfl-ultimo-contato", JSON.stringify(dadosFormulario));
 
-    // Exibe a div verde de confirmação e rola suavemente até ela
+    // Monta a caixa verde com os dados (o formularios.js mostra a caixa,
+    // rola a tela até ela e limpa o formulário)
     exibirMensagemSucesso(dadosFormulario, false);
-    boxConfirmacao.scrollIntoView({ behavior: "smooth", block: "nearest" });
-
-    // Limpa todos os campos do formulário
-    formContato.reset();
   });
 }
