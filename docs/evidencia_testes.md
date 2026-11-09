@@ -98,15 +98,22 @@ Registro dos testes do site da Academia Base Forte Leste. As capturas de tela fi
 
 > No celular, o menu fica em uma linha que rola para o lado (`overflow-x: auto` em `.menu-lista`). Isso é intencional: assim os 10 links ficam acessíveis sem ocupar a tela inteira.
 
-## 5. Formulários (manual)
+## 5. Formulários com validação em JavaScript (09/11/2026)
+
+**Executado por:** equipe, em 09/11/2026, no **site publicado na Vercel**, em `aula-experimental.html`.
+**Código testado:** `public/js/script.js`, seção 9. No envio, `evento.preventDefault()` impede a página de recarregar. A função `validarFormulario()` confere cada campo e, quando há erro, `mostrarErroCampo()` pinta a borda de vermelho e escreve a mensagem embaixo do campo. Ao enviar com tudo certo, os dados são salvos no `localStorage`.
 
 | Cenário | Esperado | Status | Evidência |
 |---|---|---|---|
-| Enviar vazio | Bloqueia e mostra o aviso | ⏳ | |
-| Data que não é sábado | Recusa | ⏳ | |
-| Telefone sem parênteses | Recusa | ⏳ | |
-| Idade 18 nas aulas de sábado | Recusa | ⏳ | |
-| Tudo válido | Mensagem verde de confirmação | ⏳ | |
+| "Pedir aula experimental" enviado vazio | Borda vermelha e "Preencha este campo obrigatório." embaixo de cada campo; o foco vai para o 1º campo | ✅ | [form-vazio-experimental.png](evidencias/form-vazio-experimental.png) |
+| "Aulas gratuitas de sábado" enviado vazio | Mesmo comportamento no segundo formulário | ✅ | [form-vazio-sabado.png](evidencias/form-vazio-sabado.png) |
+| Data da primeira aula que não é sábado (01/11/2026, um domingo) | "Escolha uma data que caia em um sábado (ex.: 14/11/2026)." | ✅ | [form-data-invalida.png](evidencias/form-data-invalida.png) |
+| Idade 18 nas aulas de sábado (permitido de 10 a 17) | "Informe um valor entre 10 e 17." | ✅ | [form-idade-invalida.png](evidencias/form-idade-invalida.png) |
+| Telefone digitado só com números | A máscara em JavaScript formata sozinha para `(11) 91234-5678` | ✅ | [form-mascara-telefone.png](evidencias/form-mascara-telefone.png) |
+| Envio com tudo preenchido | Caixa verde "Formulário enviado com sucesso!", com o nome e a data e hora do registro no `localStorage` | ✅ | [form-sucesso.png](evidencias/form-sucesso.png) |
+| Recarregar a página (F5) depois do envio | A caixa continua, com o título "Dados mantidos pelo navegador (localStorage)", e os campos voltam preenchidos | ✅ conferido pela equipe · print pendente | |
+
+> A validação foi reescrita pela equipe em 09/11/2026 dentro do `script.js`, no lugar do arquivo `formularios.js` usado antes. Sem JavaScript, os formulários ainda contam com a validação nativa do HTML5 (`required`, `type`, `pattern`, `min`, `max`).
 
 ## 6. Multimídia
 
@@ -126,3 +133,4 @@ Registro dos testes do site da Academia Base Forte Leste. As capturas de tela fi
 | Commits de todos os integrantes | ✅ A página do repositório mostra **4 contribuidores**: Nickolashbezerra, RaphaelaSeven, WilliamsVargas-Code e PedroCoiado | [github-contribuidores.png](evidencias/github-contribuidores.png) |
 | Pull request | ✅ PR #1 "Evidência Lighthouse mobile (100/100/100)": branch `docs/lighthouse-mobile` → `main`. Houve conflito em `docs/evidencia_testes.md`, resolvido manualmente no editor do GitHub; depois o merge foi feito (08/11/2026). | [github-pull-request.png](evidencias/github-pull-request.png) |
 | Pull request #2 | ✅ "Validação dos formulários em JavaScript": branch `feat/validacao-js` → `main`, com prévia automática da Vercel antes do merge (09/11/2026) | [github-pr2-vercel.png](evidencias/github-pr2-vercel.png) |
+| Pull request #3 com revisão | ✅ "Validação W3C da versão publicada": branch `docs/w3c-09-11` → `main`. **Aprovado por outra integrante (RaphaelaSeven: "Conferido, W3C ok")** antes do merge (09/11/2026) | [github-pr3-revisao.png](evidencias/github-pr3-revisao.png) |
