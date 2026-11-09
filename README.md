@@ -94,7 +94,7 @@ O site é composto por 10 páginas interligadas, compartilhando uma identidade v
 Organização padrão contendo os arquivos HTML na raiz, pastas dedicadas para `/css`, `/js`, `/img`, `/docs` (documentação completa) e diretórios de multimídia.
 
 ```markdown
-BaseForteLeste/
+public/
 ├── index.html                 # página inicial que o usuário acessará quando clicar no link
 ├── contato.html               # usado para contatar a academia por whatsapp, email ou telefone
 ├── orcamento_hospedagem.html  # orçamento para hospedar o site em provedores de hospedagem diferentes, incluindo um comparativo verde
@@ -107,8 +107,11 @@ BaseForteLeste/
 ├── aula-experimental.html     # página de formulário onde o usuário preencherá dados para agendar uma aula
 ├── css/style.css              # css estilizado para dar vida ao site
 ├── js/script.js               # javascript para funções que o html e o css em si não conseguem atender
-├── img/                       # imagens do site
-└── docs/readme.md             # este plano de contexto
+├── img/                       # imagens do site, todas em svg
+├── assets/
+│   ├── audio/                 # arquivos de áudio, como trilhas para aulas ou descrições para acessibilidade
+│   └── video/                 # vídeos institucionais, ações do projeto social e demonstrações de exercícios
+└── docs/                      # toda a documentação do projeto
 ```
 
 Responsabilidades:<br>
