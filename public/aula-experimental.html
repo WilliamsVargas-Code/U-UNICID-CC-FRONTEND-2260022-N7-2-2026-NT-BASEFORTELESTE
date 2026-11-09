@@ -15,6 +15,7 @@
 
   <link rel="stylesheet" href="css/style.css">
   <script src="js/script.js" defer></script>
+  <script src="js/formularios.js" defer></script>
 </head>
 <body>
   <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo principal</a>
@@ -144,8 +145,12 @@
           <p>Obrigado! Na versão real do site, a academia confirmaria o horário pelo WhatsApp em até um dia útil. Como este é um projeto acadêmico, nenhum dado foi enviado.</p>
         </div>
 
-        <!-- COMO FUNCIONA A VALIDAÇÃO HTML5:
-             o navegador só deixa enviar quando todos os campos estão corretos.
+        <!-- COMO FUNCIONA A VALIDAÇÃO (duas camadas):
+             1) HTML5: os atributos abaixo dizem as regras de cada campo.
+             2) JavaScript (js/formularios.js): lê essas mesmas regras, impede o envio
+                com preventDefault(), mostra a mensagem de erro embaixo de cada campo
+                e destaca a borda em vermelho. Sem JavaScript, o navegador usa a
+                validação HTML5 sozinho, então o formulário nunca fica sem proteção.
              - required  = campo obrigatório
              - type      = tipo de dado (email, tel, date, number...)
              - pattern   = formato exigido (expressão regular)
@@ -211,7 +216,7 @@
             <div class="campo">
               <label for="exp-data">Data da aula <span class="obrigatorio" aria-hidden="true">*</span></label>
               <!-- min impede escolher uma data antiga (atualize antes de apresentar, se precisar) -->
-              <input type="date" id="exp-data" name="data" min="2026-11-09" aria-describedby="exp-data-dica" required>
+              <input type="date" id="exp-data" name="data" min="2026-11-09" data-dias="segunda-a-sabado" aria-describedby="exp-data-dica" required>
               <p class="dica" id="exp-data-dica">Atendemos de segunda a sábado. Confira os horários em <a href="turmas-horarios.html">Turmas e horários</a>.</p>
             </div>
 
@@ -354,7 +359,7 @@
               <label for="sab-data">Data da primeira aula <span class="obrigatorio" aria-hidden="true">*</span></label>
               <!-- TRUQUE DO HTML5: min é um sábado (14/11/2026) e step="7" pula de 7 em 7 dias.
                    Resultado: o navegador só aceita datas que caem no sábado. -->
-              <input type="date" id="sab-data" name="primeira_aula" min="2026-11-14" step="7" aria-describedby="sab-data-dica" required>
+              <input type="date" id="sab-data" name="primeira_aula" min="2026-11-14" step="7" data-dias="so-sabado" aria-describedby="sab-data-dica" required>
               <p class="dica" id="sab-data-dica">Escolha um sábado. O formulário não aceita outros dias da semana.</p>
             </div>
 

@@ -451,7 +451,9 @@ html.alto-contraste .whatsapp-flutuante {
 
 .logo-nome {
   font-family: var(--fonte-titulo);
-  font-size: 1.9rem;
+  /* clamp(mínimo, ideal, máximo): o nome encolhe um pouco em celulares
+     muito estreitos (320 px) para caber ao lado do botão do menu */
+  font-size: clamp(1.5rem, 8vw, 1.9rem);
   line-height: 1;
   letter-spacing: 0.02em;
   white-space: nowrap;
@@ -1499,6 +1501,74 @@ html.alto-contraste .mensagem-sucesso {
   border-color: #ffffff;
 }
 
+/* Com JavaScript (js/formularios.js), a mensagem aparece pela classe
+   .mensagem-visivel, colocada depois que o formulário passa na validação. */
+.mensagem-sucesso.mensagem-visivel {
+  display: block;
+}
+
+/* 16.4 Erros mostrados pelo JavaScript (js/formularios.js)
+   O script coloca a classe .campo-com-erro na div do campo (ou no fieldset
+   do grupo de opções) e cria um <p class="mensagem-erro"> com o texto. */
+
+/* Borda vermelha mais grossa e fundo levemente rosado no campo com erro */
+.campo-com-erro input,
+.campo-com-erro select,
+.campo-com-erro textarea {
+  border-color: var(--vermelho-ponteira);
+  border-width: 3px;
+  background-color: #fdecea;
+}
+
+/* Grupo de opções (radio) com erro: borda vermelha à esquerda */
+.formulario fieldset.campo-com-erro {
+  padding-left: 0.9rem;
+  border-left: 4px solid var(--vermelho-ponteira);
+}
+
+/* Checkbox com erro: contorno vermelho na caixinha */
+.campo-checkbox.campo-com-erro input {
+  outline: 3px solid var(--vermelho-ponteira);
+  outline-offset: 2px;
+}
+
+/* Texto do erro: vermelho, em negrito, com um símbolo de alerta antes.
+   O símbolo vem do CSS (::before), então a cor não é a única pista do erro. */
+.mensagem-erro {
+  margin: 0.35rem 0 0;
+  font-weight: 700;
+  color: var(--vermelho-ponteira);
+}
+
+.mensagem-erro::before {
+  content: "⚠ ";
+}
+
+/* Aviso do localStorage: "Você já enviou este formulário em..." */
+.aviso-ultimo-envio {
+  padding: 0.5rem 0.75rem;
+  border-left: 4px solid var(--azul-tatame);
+  background-color: var(--cor-fundo);
+}
+
+/* Alto contraste: amarelo no lugar do vermelho (vermelho some no fundo preto) */
+html.alto-contraste .campo-com-erro input,
+html.alto-contraste .campo-com-erro select,
+html.alto-contraste .campo-com-erro textarea {
+  border-color: #ffeb3b;
+  background-color: #000000;
+}
+
+html.alto-contraste .formulario fieldset.campo-com-erro,
+html.alto-contraste .campo-checkbox.campo-com-erro input {
+  border-left-color: #ffeb3b;
+  outline-color: #ffeb3b;
+}
+
+html.alto-contraste .mensagem-erro {
+  color: #ffeb3b;
+}
+
 
 /* ==========================================================================
    17. TABELAS
@@ -1903,6 +1973,7 @@ html.alto-contraste .total {
     border-radius: var(--raio);
     cursor: pointer;
     z-index: 1002;
+    flex-shrink: 0; /* o botão nunca é espremido pelo logo */
   }
 
   .hamburguer-linha {

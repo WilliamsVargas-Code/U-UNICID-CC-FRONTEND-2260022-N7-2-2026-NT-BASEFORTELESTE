@@ -1,7 +1,7 @@
 # Guia de apresentação: site da Academia Base Forte Leste
 
 Projeto Horizonte Leste, Front-End, Ciência da Computação (UNICID, 2º semestre de 2026).
-HTML5 e CSS3 puros, sem frameworks. JavaScript só na barra de acessibilidade, que é opcional.
+HTML5 e CSS3 puros, sem frameworks. JavaScript puro em dois arquivos: a barra de acessibilidade (`script.js`) e a validação dos formulários (`formularios.js`).
 
 ---
 
@@ -26,7 +26,8 @@ base_forte_leste/
 ├── contato.html               Contatos, mapa em <iframe>, formulário e créditos da equipe
 ├── orcamento_hospedagem.html  Publicação, hospedagem, domínio e papel x digital
 ├── css/style.css              Folha de estilos única, dividida em 23 seções comentadas
-├── js/script.js               Barra de acessibilidade (opcional)
+├── js/script.js               Barra de acessibilidade, menu hambúrguer e resumo do Contato (localStorage)
+├── js/formularios.js          Validação dos 3 formulários com JavaScript
 ├── img/                       Logo, textura do tatame, ícones, retratos, galeria e pôster do vídeo
 ├── assets/video/              Vídeo do treino (.mp4) e legendas (.vtt)
 ├── assets/audio/              Toque de berimbau (.mp3)
@@ -38,6 +39,7 @@ base_forte_leste/
 | Requisito do enunciado | Página | Onde olhar no código |
 | :-- | :-- | :-- |
 | Menu fixo no topo ligando as 10 páginas | Todas | `<header class="cabecalho">` e `<nav class="menu">`; CSS seção 6 (`position: sticky`) |
+| Menu hambúrguer no celular (abaixo de 768 px) | Todas | botão `#btn-hamburguer`; `js/script.js` seção 6; CSS seção 22.1 |
 | Rodapé com contatos, redes, horário, equipe, acessibilidade e sustentabilidade | Todas | `<footer class="rodape">`; CSS seção 21 |
 | Banner, essência, destaque das aulas de sábado | index.html | seções 1, 2 e 3 do `<main>` |
 | Atalhos das modalidades, depoimentos e FAQ | index.html | seções 4, 5 e 6 (`<details>` e `<summary>` no FAQ) |
@@ -47,10 +49,13 @@ base_forte_leste/
 | Perfis com `<figure>` e `<figcaption>` (foto e fonte) | professor.html | `<article class="perfil">` |
 | `<article>`, notícia principal completa, bem-estar, sono, estresse e sustentabilidade | blog.html | `id="artigo-sono"` e grade "Mais publicações" |
 | Formulários com `<label for>`, `required`, `email`, `tel`, `date`, `number` e `pattern` | aula-experimental.html | `#agendamento` e `#inscricao-sabado` |
+| Validação com JavaScript: `preventDefault()`, mensagens de erro e borda destacada | aula-experimental.html e contato.html | `js/formularios.js`; CSS seção 16.4 (`.campo-com-erro`, `.mensagem-erro`) |
+| `localStorage` | Todas | `js/script.js` (fonte e contraste) e `js/formularios.js` (data do último envio) |
+| Interação com eventos do DOM | Todas | `click` na barra de acessibilidade e no menu hambúrguer; `keydown` (Esc fecha o menu); `submit`, `input`, `change` e `blur` nos formulários; evento próprio `envio-valido` no Contato |
 | Galeria com `<figure>`/`<figcaption>` e `<table>` de impacto | acoes-sociais.html | seções "Galeria" e `id="impacto"` |
 | Grade em `<table>`, `<thead>` e `<tbody>`, com professores e vagas | turmas-horarios.html | `<table class="tabela-horarios">` |
 | Endereço, mapa em `<iframe>`, telefones, redes, formulário e créditos | contato.html | `<iframe class="mapa">` e `id="creditos"` |
-| 3 hospedagens (com gratuitas e verde), 3 domínios, justificativa, papel x digital | orcamento_hospedagem.html | tabelas e `id="papel-digital"` |
+| Comparativo Vercel × Render × Railway, 3 domínios, escolha justificada (Vercel), papel x digital | orcamento_hospedagem.html | tabelas e `id="papel-digital"` |
 
 ## 4. Pontos fortes para explicar ao professor
 
@@ -64,11 +69,20 @@ base_forte_leste/
    - telefone com `pattern="\(\d{2}\) \d{4,5}-\d{4}"`;
    - idade com `min` e `max`;
    - data das aulas de sábado com `min="2026-11-14"` (um sábado) e `step="7"`: o navegador só aceita sábados.
-8. **Confirmação de envio sem JavaScript:** o formulário envia para `#confirmacao-...` e o seletor `:target` mostra a mensagem.
+8. **Validação em duas camadas (`js/formularios.js`):**
+   - as regras ficam no HTML (`required`, `pattern`, `min`...). O JavaScript lê essas regras pela propriedade `validity` de cada campo, então não há regra repetida;
+   - no `submit`, `evento.preventDefault()` impede a página de recarregar. Cada campo errado ganha borda vermelha (`.campo-com-erro`) e uma mensagem em português embaixo (`<p class="mensagem-erro">`, criado com `createElement`);
+   - regra própria: a data de sábado diz qual dia foi escolhido ("16/11/2026 é segunda-feira") usando `getDay()`; a aula experimental recusa domingo;
+   - acessibilidade: `aria-invalid="true"`, a mensagem ligada ao campo por `aria-describedby` e o foco vai para o primeiro erro;
+   - enquanto a pessoa corrige (eventos `input`, `change`, `blur`), o erro some;
+   - envio certo: limpa o formulário, mostra a mensagem verde e salva a data no `localStorage`. Ao voltar à página, aparece "Você já enviou este formulário em...";
+   - **melhoria progressiva:** o script liga o `novalidate` sozinho. Sem JavaScript, o navegador volta a validar só com HTML5 e a mensagem verde aparece pelo `:target` do CSS.
 9. **Pseudo-elementos `::before` e `::after`:** faixa preta embaixo dos títulos, fitas adesivas do cartaz, aspas dos depoimentos e balão do botão do WhatsApp.
 10. **Especificidade:** `.cabecalho-topo .cabecalho-acao` (duas classes) vence `.botao` (uma classe). Isso está explicado em um comentário no CSS.
 11. **Acessibilidade:** link "Pular para o conteúdo", foco visível, `alt` nas imagens, `label` em todos os campos, legendas no vídeo, descrição do áudio, contraste nível AA, fonte Atkinson Hyperlegible e respeito a `prefers-reduced-motion`.
-12. **JavaScript opcional:** a barra começa com `hidden` e só aparece quando o script roda. Sem JavaScript, o site continua completo.
+12. **Barra de acessibilidade em JavaScript:** a barra começa com `hidden` e só aparece quando o script roda. Um único `addEventListener("click")` atende os 4 botões pelo atributo `data-acao` (delegação de eventos). A escolha fica salva no `localStorage`.
+13. **Menu hambúrguer acessível:** abaixo de 768 px, o menu vira uma barra lateral. O botão é um `<button>` de verdade (funciona com Enter e Espaço), tem `aria-expanded` (o leitor de tela diz se está aberto) e `aria-controls`. A tecla Esc fecha o menu e devolve o foco ao botão. Fechado, o menu usa `visibility: hidden`, então os links não recebem o Tab por engano.
+14. **Contato conversando com a validação:** quando o `formularios.js` aprova o envio, ele dispara o evento próprio `envio-valido`. O `script.js` ouve esse evento, guarda o contato no `localStorage` e monta o resumo com `textContent` (o texto digitado nunca vira HTML, o que evita injeção de código).
 
 ## 5. Roteiro de testes para a apresentação
 
@@ -76,14 +90,18 @@ base_forte_leste/
 | :-- | :-- | :-- |
 | Menu fixo | Rolar qualquer página | Cabeçalho e menu continuam no topo |
 | Teclado | Apertar Tab ao abrir a página | Aparece "Pular para o conteúdo principal" e o foco fica visível |
-| Data só aos sábados | Formulário de sábado, escolher uma segunda-feira | O navegador recusa e sugere o sábado mais próximo |
-| Telefone | Digitar `11912345678` | Recusado; `(11) 91234-5678` é aceito |
-| Idade | Digitar 9 ou 18 no formulário de sábado | Recusado (só de 10 a 17) |
-| Envio vazio | Clicar em enviar sem preencher | O navegador mostra o primeiro campo obrigatório |
-| Envio válido | Preencher tudo e enviar | Aparece a mensagem verde de confirmação |
+| Envio vazio | Clicar em enviar sem preencher | Todos os campos obrigatórios ficam com borda vermelha e mensagem; o foco vai para o primeiro |
+| Data só aos sábados | Formulário de sábado, escolher uma segunda-feira | "As aulas gratuitas são só aos sábados. 16/11/2026 é segunda-feira." |
+| Telefone | Digitar `11912345678` | "Use o formato (11) 91234-5678..."; `(11) 91234-5678` é aceito |
+| Idade | Digitar 9 ou 18 no formulário de sábado | "Digite uma idade entre 10 e 17 anos." |
+| Corrigir um campo | Arrumar o telefone depois do erro | A mensagem e a borda vermelha somem na hora |
+| Envio válido | Preencher tudo e enviar | Formulário limpo e mensagem verde de confirmação |
+| localStorage | Recarregar a página depois do envio | "Você já enviou este formulário neste navegador em ..." |
 | Alto contraste | Barra de acessibilidade, botão "Alto contraste" | Fundo preto, texto branco e links amarelos, mantidos ao trocar de página |
 | Tamanho do texto | Botões A− / A / A+ | O texto do site inteiro diminui ou aumenta |
-| Celular | F12, modo dispositivo (Ctrl+Shift+M) | Layout em uma coluna, menu rolando para o lado |
+| Celular | F12, modo dispositivo (Ctrl+Shift+M), largura 375 | Layout em uma coluna e botão ☰ no lugar do menu |
+| Menu hambúrguer | Clicar no ☰; depois apertar Esc | Abre a barra lateral; Esc fecha e o foco volta ao ☰ |
+| Contato | Botão "Preencher dados de teste" e Enviar | Resumo verde com os dados; continua lá ao recarregar (localStorage) |
 
 ## 6. O que confirmar ou trocar antes da entrega
 
@@ -99,12 +117,14 @@ base_forte_leste/
 
 - O README lista 5 modalidades (sem Capoeira) e outros nomes de arquivo (`historia.html`, `blognews.html`...). O site segue a estrutura do enunciado atual: vale atualizar a seção 9 do README.
 - O README diz que o plano Família vale "a partir de duas pessoas"; no levantamento com o CEO, foi "a partir de três". O site não cita o número.
-- O README prevê o envio do formulário para o WhatsApp por JavaScript. Nesta versão, o JavaScript ficou só na acessibilidade, e o envio é demonstrativo.
+- O README prevê o envio do formulário para o WhatsApp por JavaScript. Nesta versão, o JavaScript valida os formulários, mas o envio continua demonstrativo (nenhum dado sai do navegador).
 - No README, o usuário do Williams aparece como `WilliansVargas-Code`, mas o repositório está em `WilliamsVargas-Code`.
 
-## 8. Publicar no GitHub Pages
+## 8. Publicar na Vercel
 
-1. Copie o conteúdo da pasta `base_forte_leste` para a raiz do repositório (o `index.html` precisa ficar na raiz).
-2. No GitHub: **Settings > Pages > Build and deployment > Deploy from a branch**, escolha `main` e a pasta `/ (root)` e salve.
-3. Em alguns minutos o site fica em `https://williamsvargas-code.github.io/<nome-do-repositório>/`. Como todos os caminhos do site são relativos (`css/style.css`, `img/...`), ele funciona nesse endereço sem ajustes.
-4. Cole o link no campo "Link do BaseForteLeste na hospedagem" do README.
+1. Copie o conteúdo da pasta `base_forte_leste` para a raiz do repositório (o `index.html` precisa ficar na raiz) e envie para o GitHub.
+2. Entre em vercel.com com a conta do GitHub do dono do repositório e clique em **Add New > Project**.
+3. Importe o repositório. Em **Framework Preset**, deixe **Other** (o site é HTML, CSS e JS puros, sem etapa de build) e clique em **Deploy**.
+4. Em cerca de um minuto o site fica em um endereço `https://<nome-do-projeto>.vercel.app`, já com HTTPS. Dá para trocar o nome do projeto nas configurações para algo curto, como `baseforteleste`.
+5. A partir daí, cada push na `main` publica sozinho, e cada pull request ganha um link de prévia (bom para mostrar no slide 9).
+6. Cole o link no campo "Link do BaseForteLeste na hospedagem" do README.
