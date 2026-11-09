@@ -13,7 +13,7 @@ Briefing permanente do projeto para a equipe e para a IA. Disciplina Desenvolvim
 | Nickolas Henrique Bezerra | 47685778 | Nickolashbezerra |
 | Pedro Henrique Ruola Coiado | 47589124 | PedroCoiado |
 | Raphaela Gonçalves Neves | 47656166 | RaphaelaSeven |
-| Williams Vargas Neves Paoli dos Santos | 47336820 | WilliansVargas-Code |
+| Williams Vargas Neves Paoli dos Santos | 47336820 | WilliamsVargas-Code |
 
 
 ## 1. Nome do projeto
