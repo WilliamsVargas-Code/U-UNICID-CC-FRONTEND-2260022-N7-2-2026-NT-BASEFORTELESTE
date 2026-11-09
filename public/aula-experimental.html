@@ -15,13 +15,12 @@
 
   <link rel="stylesheet" href="css/style.css">
   <script src="js/script.js" defer></script>
-  <script src="js/formularios.js" defer></script>
 </head>
 <body>
   <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo principal</a>
 
-  <!-- Barra de acessibilidade (aparece só com JavaScript ativo) -->
-  <div class="barra-acessibilidade" hidden>
+  <!-- Barra de acessibilidade -->
+  <div class="barra-acessibilidade">
     <div class="container" role="group" aria-label="Recursos de acessibilidade">
       <span class="barra-titulo">Acessibilidade:</span>
       <button type="button" data-acao="diminuir" aria-label="Diminuir o tamanho do texto">A−</button>
@@ -145,12 +144,8 @@
           <p>Obrigado! Na versão real do site, a academia confirmaria o horário pelo WhatsApp em até um dia útil. Como este é um projeto acadêmico, nenhum dado foi enviado.</p>
         </div>
 
-        <!-- COMO FUNCIONA A VALIDAÇÃO (duas camadas):
-             1) HTML5: os atributos abaixo dizem as regras de cada campo.
-             2) JavaScript (js/formularios.js): lê essas mesmas regras, impede o envio
-                com preventDefault(), mostra a mensagem de erro embaixo de cada campo
-                e destaca a borda em vermelho. Sem JavaScript, o navegador usa a
-                validação HTML5 sozinho, então o formulário nunca fica sem proteção.
+        <!-- COMO FUNCIONA A VALIDAÇÃO HTML5:
+             o navegador só deixa enviar quando todos os campos estão corretos.
              - required  = campo obrigatório
              - type      = tipo de dado (email, tel, date, number...)
              - pattern   = formato exigido (expressão regular)
@@ -181,6 +176,7 @@
               <label for="exp-telefone">Telefone com WhatsApp <span class="obrigatorio" aria-hidden="true">*</span></label>
               <!-- pattern: (2 dígitos) espaço 4 ou 5 dígitos - 4 dígitos. Ex.: (11) 91234-5678 -->
               <input type="tel" id="exp-telefone" name="telefone" autocomplete="tel"
+                     inputmode="tel" maxlength="15"
                      placeholder="(11) 91234-5678"
                      pattern="\(\d{2}\) \d{4,5}-\d{4}"
                      title="Use o formato (11) 91234-5678"
@@ -215,8 +211,7 @@
 
             <div class="campo">
               <label for="exp-data">Data da aula <span class="obrigatorio" aria-hidden="true">*</span></label>
-              <!-- min impede escolher uma data antiga (atualize antes de apresentar, se precisar) -->
-              <input type="date" id="exp-data" name="data" min="2026-11-09" data-dias="segunda-a-sabado" aria-describedby="exp-data-dica" required>
+              <input type="date" id="exp-data" name="data" min="2025-01-01" max="2027-12-31" aria-describedby="exp-data-dica" required>
               <p class="dica" id="exp-data-dica">Atendemos de segunda a sábado. Confira os horários em <a href="turmas-horarios.html">Turmas e horários</a>.</p>
             </div>
 
@@ -275,7 +270,10 @@
             <label for="exp-lgpd">Autorizo a Base Forte Leste a usar meus dados apenas para combinar a aula experimental, conforme a LGPD. <span class="obrigatorio" aria-hidden="true">*</span></label>
           </div>
 
-          <button type="submit" class="botao botao-amarelo">Enviar pedido de aula experimental</button>
+          <div class="grupo-botoes">
+            <button type="submit" class="botao botao-amarelo">Enviar pedido de aula experimental</button>
+            <button type="button" id="btn-preencher-experimental" class="botao botao-azul">Preencher Dados de Teste</button>
+          </div>
         </form>
       </div>
     </section>
@@ -321,6 +319,7 @@
             <div class="campo">
               <label for="sab-telefone">Telefone do responsável <span class="obrigatorio" aria-hidden="true">*</span></label>
               <input type="tel" id="sab-telefone" name="telefone" autocomplete="tel"
+                     inputmode="tel" maxlength="15"
                      placeholder="(11) 91234-5678"
                      pattern="\(\d{2}\) \d{4,5}-\d{4}"
                      title="Use o formato (11) 91234-5678"
@@ -357,10 +356,8 @@
 
             <div class="campo">
               <label for="sab-data">Data da primeira aula <span class="obrigatorio" aria-hidden="true">*</span></label>
-              <!-- TRUQUE DO HTML5: min é um sábado (14/11/2026) e step="7" pula de 7 em 7 dias.
-                   Resultado: o navegador só aceita datas que caem no sábado. -->
-              <input type="date" id="sab-data" name="primeira_aula" min="2026-11-14" step="7" data-dias="so-sabado" aria-describedby="sab-data-dica" required>
-              <p class="dica" id="sab-data-dica">Escolha um sábado. O formulário não aceita outros dias da semana.</p>
+              <input type="date" id="sab-data" name="primeira_aula" min="2025-01-01" max="2027-12-31" aria-describedby="sab-data-dica" required>
+              <p class="dica" id="sab-data-dica">Escolha um sábado no calendário (as aulas gratuitas acontecem aos sábados).</p>
             </div>
 
             <div class="campo">
@@ -374,7 +371,10 @@
             <label for="sab-autorizacao">Sou o responsável legal e autorizo a participação do jovem nas aulas gratuitas, e o uso destes dados apenas para contato da academia, conforme a LGPD. <span class="obrigatorio" aria-hidden="true">*</span></label>
           </div>
 
-          <button type="submit" class="botao botao-amarelo">Enviar inscrição gratuita</button>
+          <div class="grupo-botoes">
+            <button type="submit" class="botao botao-amarelo">Enviar inscrição gratuita</button>
+            <button type="button" id="btn-preencher-sabado" class="botao botao-azul">Preencher Dados de Teste</button>
+          </div>
         </form>
       </div>
     </section>

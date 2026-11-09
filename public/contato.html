@@ -15,13 +15,12 @@
 
   <link rel="stylesheet" href="css/style.css">
   <script src="js/script.js" defer></script>
-  <script src="js/formularios.js" defer></script>
 </head>
 <body>
   <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo principal</a>
 
-  <!-- Barra de acessibilidade (aparece só com JavaScript ativo) -->
-  <div class="barra-acessibilidade" hidden>
+  <!-- Barra de acessibilidade -->
+  <div class="barra-acessibilidade">
     <div class="container" role="group" aria-label="Recursos de acessibilidade">
       <span class="barra-titulo">Acessibilidade:</span>
       <button type="button" data-acao="diminuir" aria-label="Diminuir o tamanho do texto">A−</button>
@@ -165,11 +164,8 @@
           <p>Obrigado pelo contato! Na versão real do site, a academia responderia em até dois dias úteis. Como este é um projeto acadêmico, nenhum dado foi enviado.</p>
         </div>
 
-        <!-- Validação em duas camadas: HTML5 (required, type="email", type="tel" com pattern,
-             minlength) + JavaScript (js/formularios.js), que impede o envio com preventDefault(),
-             mostra mensagens de erro e destaca os campos. Depois de validado, o js/script.js
-             salva o contato no localStorage e mostra o resumo. Sem servidor (back-end), o envio
-             é apenas uma demonstração. -->
+        <!-- Validação HTML5: required, type="email", type="tel" com pattern e <label for> em todos os campos.
+             Sem servidor (back-end), o envio é apenas uma demonstração. -->
         <form class="formulario" action="#confirmacao-contato" method="get">
           <p class="dica">Os campos marcados com <span class="obrigatorio" aria-hidden="true">*</span> são obrigatórios.</p>
 
@@ -186,6 +182,7 @@
           <div class="campo">
             <label for="contato-telefone">Telefone <span class="obrigatorio" aria-hidden="true">*</span></label>
             <input type="tel" id="contato-telefone" name="telefone" autocomplete="tel"
+                   inputmode="tel" maxlength="15"
                    placeholder="(11) 91234-5678"
                    pattern="\(\d{2}\) \d{4,5}-\d{4}"
                    title="Use o formato (11) 91234-5678"
@@ -263,30 +260,30 @@
             <tbody>
               <tr>
                 <th scope="row">Nickolas Henrique Bezerra</th>
-                <td>47685778</td>
-                <td><a href="https://github.com/Nickolashbezerra">Nickolashbezerra</a></td>
+                <td data-label="RGM">47685778</td>
+                <td data-label="GitHub"><a href="https://github.com/Nickolashbezerra">Nickolashbezerra</a></td>
               </tr>
               <tr>
                 <th scope="row">Pedro Henrique Ruola Coiado</th>
-                <td>47589124</td>
-                <td><a href="https://github.com/PedroCoiado">PedroCoiado</a></td>
+                <td data-label="RGM">47589124</td>
+                <td data-label="GitHub"><a href="https://github.com/PedroCoiado">PedroCoiado</a></td>
               </tr>
               <tr>
                 <th scope="row">Raphaela Gonçalves Neves</th>
-                <td>47656166</td>
-                <td><a href="https://github.com/RaphaelaSeven">RaphaelaSeven</a></td>
+                <td data-label="RGM">47656166</td>
+                <td data-label="GitHub"><a href="https://github.com/RaphaelaSeven">RaphaelaSeven</a></td>
               </tr>
               <tr>
                 <th scope="row">Williams Vargas Neves Paoli dos Santos</th>
-                <td>47336820</td>
-                <td><a href="https://github.com/WilliamsVargas-Code">WilliamsVargas-Code</a></td>
+                <td data-label="RGM">47336820</td>
+                <td data-label="GitHub"><a href="https://github.com/WilliamsVargas-Code">WilliamsVargas-Code</a></td>
               </tr>
             </tbody>
           </table>
         </div>
 
         <p>Código-fonte: <a href="https://github.com/WilliamsVargas-Code/U-UNICID-CC-FRONTEND-2260022-N7-2-2026-NT-BASEFORTELESTE">repositório do projeto no GitHub</a>.</p>
-        <p>Tecnologias: HTML5 e CSS3, sem frameworks. JavaScript usado só na barra de acessibilidade, que é opcional.</p>
+        <p>Tecnologias: HTML5, CSS3 e JavaScript puro (ES6+), sem frameworks.</p>
       </div>
     </section>
   </main>

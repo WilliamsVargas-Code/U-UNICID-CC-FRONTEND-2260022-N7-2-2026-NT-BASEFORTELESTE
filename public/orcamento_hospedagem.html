@@ -19,8 +19,8 @@
 <body>
   <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo principal</a>
  
-  <!-- Barra de acessibilidade (aparece só com JavaScript ativo) -->
-  <div class="barra-acessibilidade" hidden>
+  <!-- Barra de acessibilidade -->
+  <div class="barra-acessibilidade">
     <div class="container" role="group" aria-label="Recursos de acessibilidade">
       <span class="barra-titulo">Acessibilidade:</span>
       <button type="button" data-acao="diminuir" aria-label="Diminuir o tamanho do texto">A−</button>
@@ -120,45 +120,45 @@
             <tbody>
               <tr>
                 <th scope="row">Custo do plano gratuito</th>
-                <td>Grátis, sem prazo</td>
-                <td>Grátis, sem prazo (sites estáticos)</td>
-                <td>Teste de 30 dias com US$ 5 de crédito; depois, plano Free com US$ 1 de crédito por mês</td>
+                <td data-label="Vercel (plano Hobby)">Grátis, sem prazo</td>
+                <td data-label="Render (workspace Hobby)">Grátis, sem prazo (sites estáticos)</td>
+                <td data-label="Railway">Teste de 30 dias com US$ 5 de crédito; depois, plano Free com US$ 1 de crédito por mês</td>
               </tr>
               <tr>
                 <th scope="row">Tráfego incluído por mês</th>
-                <td>100 GB</td>
-                <td>5 GB (acima disso, US$ 0,15 por GB)</td>
-                <td>Descontado do crédito de uso</td>
+                <td data-label="Vercel (plano Hobby)">100 GB</td>
+                <td data-label="Render (workspace Hobby)">5 GB (acima disso, US$ 0,15 por GB)</td>
+                <td data-label="Railway">Descontado do crédito de uso</td>
               </tr>
               <tr>
                 <th scope="row">Primeiro plano pago</th>
-                <td>Pro: US$ 20 por usuário/mês</td>
-                <td>Pro: US$ 25 por mês</td>
-                <td>Hobby: US$ 5 por mês (com US$ 5 de uso incluído)</td>
+                <td data-label="Vercel (plano Hobby)">Pro: US$ 20 por usuário/mês</td>
+                <td data-label="Render (workspace Hobby)">Pro: US$ 25 por mês</td>
+                <td data-label="Railway">Hobby: US$ 5 por mês (com US$ 5 de uso incluído)</td>
               </tr>
               <tr>
                 <th scope="row">Feito para</th>
-                <td>Sites estáticos e front-end</td>
-                <td>Sites estáticos e aplicações com back-end</td>
-                <td>Aplicações com servidor e banco de dados</td>
+                <td data-label="Vercel (plano Hobby)">Sites estáticos e front-end</td>
+                <td data-label="Render (workspace Hobby)">Sites estáticos e aplicações com back-end</td>
+                <td data-label="Railway">Aplicações com servidor e banco de dados</td>
               </tr>
               <tr>
                 <th scope="row">Deploy pelo GitHub e HTTPS</th>
-                <td>Sim, com prévia de cada pull request</td>
-                <td>Sim</td>
-                <td>Sim</td>
+                <td data-label="Vercel (plano Hobby)">Sim, com prévia de cada pull request</td>
+                <td data-label="Render (workspace Hobby)">Sim</td>
+                <td data-label="Railway">Sim</td>
               </tr>
               <tr>
                 <th scope="row">Pontos de atenção</th>
-                <td>Plano gratuito só para uso pessoal e não comercial; se um limite acabar, o recurso para até o próximo ciclo de 30 dias</td>
-                <td>Franquia de tráfego pequena: caiu de 100 GB para 5 GB em 2026</td>
-                <td>Sem plano gratuito de verdade para manter um site no ar; cobrança por uso, menos previsível</td>
+                <td data-label="Vercel (plano Hobby)">Plano gratuito só para uso pessoal e não comercial; se um limite acabar, o recurso para até o próximo ciclo de 30 dias</td>
+                <td data-label="Render (workspace Hobby)">Franquia de tráfego pequena: caiu de 100 GB para 5 GB em 2026</td>
+                <td data-label="Railway">Sem plano gratuito de verdade para manter um site no ar; cobrança por uso, menos previsível</td>
               </tr>
               <tr>
                 <th scope="row">Sustentabilidade</th>
-                <td>Usa vários provedores de nuvem com metas de redução de carbono, mas não consegue medir a própria pegada</td>
-                <td>Não encontramos informações públicas sobre energia renovável</td>
-                <td>Não encontramos informações públicas sobre energia renovável</td>
+                <td data-label="Vercel (plano Hobby)">Usa vários provedores de nuvem com metas de redução de carbono, mas não consegue medir a própria pegada</td>
+                <td data-label="Render (workspace Hobby)">Não encontramos informações públicas sobre energia renovável</td>
+                <td data-label="Railway">Não encontramos informações públicas sobre energia renovável</td>
               </tr>
             </tbody>
           </table>
@@ -188,24 +188,24 @@
             <tbody>
               <tr>
                 <th scope="row">Subdomínio gratuito da Vercel</th>
-                <td>baseforteleste.vercel.app</td>
-                <td>Grátis</td>
-                <td>Já vem pronto, com HTTPS, e é curto o bastante para divulgar.</td>
-                <td>Leva o nome da Vercel no endereço e não passa a imagem de empresa.</td>
+                <td data-label="Exemplo de endereço">baseforteleste.vercel.app</td>
+                <td data-label="Custo por ano">Grátis</td>
+                <td data-label="Vantagens">Já vem pronto, com HTTPS, e é curto o bastante para divulgar.</td>
+                <td data-label="Desvantagens">Leva o nome da Vercel no endereço e não passa a imagem de empresa.</td>
               </tr>
               <tr>
                 <th scope="row">.com.br no Registro.br</th>
-                <td>baseforteleste.com.br</td>
-                <td>R$ 40,00, o mesmo valor na renovação</td>
-                <td>Extensão brasileira, registrada direto na entidade oficial, com preço mantido desde 2017.</td>
-                <td>Renovação anual obrigatória e exige CPF ou CNPJ do titular.</td>
+                <td data-label="Exemplo de endereço">baseforteleste.com.br</td>
+                <td data-label="Custo por ano">R$ 40,00, o mesmo valor na renovação</td>
+                <td data-label="Vantagens">Extensão brasileira, registrada direto na entidade oficial, com preço mantido desde 2017.</td>
+                <td data-label="Desvantagens">Renovação anual obrigatória e exige CPF ou CNPJ do titular.</td>
               </tr>
               <tr>
                 <th scope="row">.com na Hostinger</th>
-                <td>baseforteleste.com</td>
-                <td>R$ 0,01 no 1º ano (promoção) mais taxa ICANN de R$ 1,09; renovação a R$ 94,99</td>
-                <td>Extensão internacional e promoção forte no primeiro ano.</td>
-                <td>Renovação mais que o dobro do .com.br e menos associada a um negócio local.</td>
+                <td data-label="Exemplo de endereço">baseforteleste.com</td>
+                <td data-label="Custo por ano">R$ 0,01 no 1º ano (promoção) mais taxa ICANN de R$ 1,09; renovação a R$ 94,99</td>
+                <td data-label="Vantagens">Extensão internacional e promoção forte no primeiro ano.</td>
+                <td data-label="Desvantagens">Renovação mais que o dobro do .com.br e menos associada a um negócio local.</td>
               </tr>
             </tbody>
           </table>
@@ -266,33 +266,33 @@
             <tbody>
               <tr>
                 <th scope="row">Custo por ano</th>
-                <td>R$ 1.503,72 (12 lotes de 1.000 panfletos a R$ 125,31)</td>
-                <td>R$ 40,00 (domínio)</td>
+                <td data-label="Panfletos de papel">R$ 1.503,72 (12 lotes de 1.000 panfletos a R$ 125,31)</td>
+                <td data-label="Site da academia">R$ 40,00 (domínio)</td>
               </tr>
               <tr>
                 <th scope="row">Papel consumido por ano</th>
-                <td>Cerca de 20 kg (12.000 panfletos de 10 × 14 cm em papel de 120 g/m²)</td>
-                <td>Nenhum</td>
+                <td data-label="Panfletos de papel">Cerca de 20 kg (12.000 panfletos de 10 × 14 cm em papel de 120 g/m²)</td>
+                <td data-label="Site da academia">Nenhum</td>
               </tr>
               <tr>
                 <th scope="row">Atualizar horários e eventos</th>
-                <td>Exige imprimir tudo de novo</td>
-                <td>Na hora e sem custo</td>
+                <td data-label="Panfletos de papel">Exige imprimir tudo de novo</td>
+                <td data-label="Site da academia">Na hora e sem custo</td>
               </tr>
               <tr>
                 <th scope="row">Alcance</th>
-                <td>Só quem recebe o panfleto na mão</td>
-                <td>Qualquer pessoa, 24 horas por dia, pelo celular</td>
+                <td data-label="Panfletos de papel">Só quem recebe o panfleto na mão</td>
+                <td data-label="Site da academia">Qualquer pessoa, 24 horas por dia, pelo celular</td>
               </tr>
               <tr>
                 <th scope="row">Acessibilidade</th>
-                <td>Não amplia o texto nem funciona com leitor de tela</td>
-                <td>Leitor de tela, ampliação do texto e alto contraste</td>
+                <td data-label="Panfletos de papel">Não amplia o texto nem funciona com leitor de tela</td>
+                <td data-label="Site da academia">Leitor de tela, ampliação do texto e alto contraste</td>
               </tr>
               <tr>
                 <th scope="row">Resíduo</th>
-                <td>Vira lixo depois de lido</td>
-                <td>Nenhum resíduo físico</td>
+                <td data-label="Panfletos de papel">Vira lixo depois de lido</td>
+                <td data-label="Site da academia">Nenhum resíduo físico</td>
               </tr>
             </tbody>
           </table>
