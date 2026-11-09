@@ -258,6 +258,7 @@ strong {
 
 .barra-acessibilidade button {
   min-width: 2.75rem;
+  min-height: 2.25rem;
   padding: 0.25rem 0.65rem;
   font: inherit;
   font-weight: 700;
@@ -451,9 +452,7 @@ html.alto-contraste .whatsapp-flutuante {
 
 .logo-nome {
   font-family: var(--fonte-titulo);
-  /* clamp(mínimo, ideal, máximo): o nome encolhe um pouco em celulares
-     muito estreitos (320 px) para caber ao lado do botão do menu */
-  font-size: clamp(1.5rem, 8vw, 1.9rem);
+  font-size: 1.9rem;
   line-height: 1;
   letter-spacing: 0.02em;
   white-space: nowrap;
@@ -1361,12 +1360,17 @@ html.alto-contraste .lista-eventos time {
 .formulario {
   display: grid;
   gap: 1.5rem;
+  width: 100%;
   max-width: 46rem;
+  min-width: 0;
 }
 
 .formulario fieldset {
   display: grid;
   gap: 1.25rem;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   margin: 0;
   padding: 1.25rem 1.5rem 1.5rem;
   border: 2px solid var(--cor-borda);
@@ -1374,6 +1378,7 @@ html.alto-contraste .lista-eventos time {
 }
 
 .formulario legend {
+  max-width: 100%;
   padding: 0 0.5rem;
   font-size: 1.125rem;
   font-weight: 700;
@@ -1395,6 +1400,9 @@ html.alto-contraste .lista-eventos time {
 .campo {
   display: grid;
   gap: 0.4rem;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .campo label {
@@ -1413,13 +1421,49 @@ html.alto-contraste .obrigatorio {
 .formulario input,
 .formulario select,
 .formulario textarea {
+  display: block;
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   padding: 0.75rem 0.9rem;
   font: inherit;
   color: var(--cor-texto);
   background-color: var(--cor-fundo);
   border: 2px solid var(--cor-borda-campo);
   border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Ajuste específico para data, telefone e seletores ficarem alinhados e responsivos */
+.formulario input[type="date"],
+.formulario input[type="tel"],
+.formulario input[type="number"],
+.formulario select {
+  min-height: 3.125rem;
+  line-height: 1.4;
+}
+
+.formulario input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  font-variant-numeric: tabular-nums;
+}
+
+.formulario input[type="date"]::-webkit-date-and-time-value {
+  text-align: left;
+  min-height: 1.4em;
+}
+
+.formulario input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  padding: 0.25rem;
+  margin-left: auto;
+  opacity: 0.85;
+}
+
+html.alto-contraste .formulario input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
 }
 
 .formulario textarea {
@@ -1428,12 +1472,49 @@ html.alto-contraste .obrigatorio {
 }
 
 /* :user-invalid = campo inválido DEPOIS que a pessoa interagiu com ele
-   (assim o formulário não começa todo vermelho) */
+   (assim o formulário não começa todo vermelho).
+   .campo-invalido / [aria-invalid="true"] = classes aplicadas via JavaScript */
 .formulario input:user-invalid,
 .formulario select:user-invalid,
-.formulario textarea:user-invalid {
+.formulario textarea:user-invalid,
+.formulario input.campo-invalido,
+.formulario select.campo-invalido,
+.formulario textarea.campo-invalido,
+.formulario input[aria-invalid="true"],
+.formulario select[aria-invalid="true"],
+.formulario textarea[aria-invalid="true"] {
   border-color: var(--vermelho-ponteira);
   border-width: 3px;
+}
+
+html.alto-contraste .formulario input.campo-invalido,
+html.alto-contraste .formulario select.campo-invalido,
+html.alto-contraste .formulario textarea.campo-invalido,
+html.alto-contraste .formulario input[aria-invalid="true"],
+html.alto-contraste .formulario select[aria-invalid="true"],
+html.alto-contraste .formulario textarea[aria-invalid="true"] {
+  border-color: #ffeb3b;
+}
+
+.formulario fieldset.campo-invalido {
+  padding: 0.75rem 1rem;
+  border: 3px solid var(--vermelho-ponteira);
+  border-radius: var(--raio);
+}
+
+html.alto-contraste .formulario fieldset.campo-invalido {
+  border-color: #ffeb3b;
+}
+
+.mensagem-erro {
+  margin: 0.2rem 0 0;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--vermelho-ponteira);
+}
+
+html.alto-contraste .mensagem-erro {
+  color: #ffeb3b;
 }
 
 /* Texto de ajuda abaixo do campo */
@@ -1499,74 +1580,6 @@ html.alto-contraste .obrigatorio {
 
 html.alto-contraste .mensagem-sucesso {
   border-color: #ffffff;
-}
-
-/* Com JavaScript (js/formularios.js), a mensagem aparece pela classe
-   .mensagem-visivel, colocada depois que o formulário passa na validação. */
-.mensagem-sucesso.mensagem-visivel {
-  display: block;
-}
-
-/* 16.4 Erros mostrados pelo JavaScript (js/formularios.js)
-   O script coloca a classe .campo-com-erro na div do campo (ou no fieldset
-   do grupo de opções) e cria um <p class="mensagem-erro"> com o texto. */
-
-/* Borda vermelha mais grossa e fundo levemente rosado no campo com erro */
-.campo-com-erro input,
-.campo-com-erro select,
-.campo-com-erro textarea {
-  border-color: var(--vermelho-ponteira);
-  border-width: 3px;
-  background-color: #fdecea;
-}
-
-/* Grupo de opções (radio) com erro: borda vermelha à esquerda */
-.formulario fieldset.campo-com-erro {
-  padding-left: 0.9rem;
-  border-left: 4px solid var(--vermelho-ponteira);
-}
-
-/* Checkbox com erro: contorno vermelho na caixinha */
-.campo-checkbox.campo-com-erro input {
-  outline: 3px solid var(--vermelho-ponteira);
-  outline-offset: 2px;
-}
-
-/* Texto do erro: vermelho, em negrito, com um símbolo de alerta antes.
-   O símbolo vem do CSS (::before), então a cor não é a única pista do erro. */
-.mensagem-erro {
-  margin: 0.35rem 0 0;
-  font-weight: 700;
-  color: var(--vermelho-ponteira);
-}
-
-.mensagem-erro::before {
-  content: "⚠ ";
-}
-
-/* Aviso do localStorage: "Você já enviou este formulário em..." */
-.aviso-ultimo-envio {
-  padding: 0.5rem 0.75rem;
-  border-left: 4px solid var(--azul-tatame);
-  background-color: var(--cor-fundo);
-}
-
-/* Alto contraste: amarelo no lugar do vermelho (vermelho some no fundo preto) */
-html.alto-contraste .campo-com-erro input,
-html.alto-contraste .campo-com-erro select,
-html.alto-contraste .campo-com-erro textarea {
-  border-color: #ffeb3b;
-  background-color: #000000;
-}
-
-html.alto-contraste .formulario fieldset.campo-com-erro,
-html.alto-contraste .campo-checkbox.campo-com-erro input {
-  border-left-color: #ffeb3b;
-  outline-color: #ffeb3b;
-}
-
-html.alto-contraste .mensagem-erro {
-  color: #ffeb3b;
 }
 
 
@@ -1973,7 +1986,6 @@ html.alto-contraste .total {
     border-radius: var(--raio);
     cursor: pointer;
     z-index: 1002;
-    flex-shrink: 0; /* o botão nunca é espremido pelo logo */
   }
 
   .hamburguer-linha {
@@ -2042,8 +2054,8 @@ html.alto-contraste .total {
     color: var(--branco-kimono);
     font-size: 1.5rem;
     line-height: 1;
-    width: 2.25rem;
-    height: 2.25rem;
+    width: 2.75rem;
+    height: 2.75rem;
     cursor: pointer;
   }
 
@@ -2073,6 +2085,134 @@ html.alto-contraste .total {
 
   .menu-overlay.aberto {
     opacity: 1;
+  }
+
+  /* ========================================================================
+     TABELAS RESPONSIVAS NO CELULAR (FORMATO DE CARTÕES SEM ROLAGEM LATERAL)
+     ======================================================================== */
+  .tabela-rolagem {
+    overflow-x: visible;
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+  }
+
+  table,
+  .tabela-horarios {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    border: 0;
+    background-color: transparent;
+  }
+
+  caption {
+    display: block;
+    padding: 0 0 0.75rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-align: left;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody,
+  tfoot {
+    display: block;
+    width: 100%;
+  }
+
+  tbody tr {
+    display: block;
+    margin-bottom: 1rem;
+    background-color: var(--cor-fundo);
+    border: 2px solid var(--cor-borda);
+    border-radius: var(--raio);
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: var(--cor-fundo);
+  }
+
+  /* O cabeçalho da linha (<th scope="row">) vira o topo colorido de cada cartão */
+  tbody th[scope="row"] {
+    display: block;
+    width: 100%;
+    padding: 0.7rem 1rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--branco-kimono);
+    background-color: var(--azul-tatame);
+    border-bottom: 2px solid var(--cor-borda);
+    text-align: left;
+  }
+
+  html.alto-contraste tbody th[scope="row"] {
+    color: #ffeb3b;
+    background-color: #000000;
+    border-bottom: 2px solid #ffffff;
+  }
+
+  /* Cada célula mostra o nome da coluna (via data-label) antes do conteúdo */
+  tbody td,
+  .tabela-horarios td,
+  tbody td.numero {
+    display: block;
+    width: 100%;
+    padding: 0.65rem 1rem;
+    text-align: left;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    border-bottom: 1px solid var(--cor-borda);
+  }
+
+  tbody tr td:last-child {
+    border-bottom: 0;
+  }
+
+  tbody td::before {
+    content: attr(data-label) ": ";
+    font-weight: 700;
+    color: var(--azul-tatame);
+  }
+
+  html.alto-contraste tbody td::before {
+    color: #ffeb3b;
+  }
+
+  tfoot tr {
+    display: block;
+    padding: 0.85rem 1rem;
+    background-color: var(--cor-fundo-alternativo);
+    border: 2px solid var(--cor-borda);
+    border-radius: var(--raio);
+  }
+
+  tfoot td {
+    display: block;
+    padding: 0;
+    border: 0;
+    white-space: normal;
+  }
+
+  /* Ajustes responsivos para formulários, telefone, calendário e botões no celular */
+  .formulario fieldset {
+    padding: 1rem;
+  }
+
+  .formulario .grupo-botoes {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .formulario .grupo-botoes .botao,
+  .formulario > .botao {
+    width: 100%;
+    justify-self: stretch;
   }
 }
 
