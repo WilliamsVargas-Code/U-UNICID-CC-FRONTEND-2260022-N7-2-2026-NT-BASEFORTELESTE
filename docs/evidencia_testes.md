@@ -6,27 +6,27 @@ Registro dos testes do site da Academia Base Forte Leste. As capturas de tela fi
 
 ---
 
-## 1. Validação W3C do HTML (07/11/2026)
+## 1. Validação W3C (09/11/2026, versão publicada)
 
-**Ferramenta:** Nu Html Checker (https://validator.w3.org/nu/), opção *Check by file upload*, com "errors & warnings only" marcado.
-**Executado por:** equipe. As capturas mostram o nome do arquivo validado no título "Showing results for…".
+**Ferramenta:** Nu Html Checker (https://validator.w3.org/nu/), opção *Check by address*, com "errors & warnings only" marcado.
+**Executado por:** equipe, em 09/11/2026, validando **o endereço do site publicado na Vercel** (`https://u-unicid-cc-frontend-2260022-n7-2-2.vercel.app/...`). Assim, as capturas provam que foi validada exatamente a versão que está no ar.
 
 | Página | Versão do validador | Erros | Avisos | Status | Evidência |
 |---|---|---|---|---|---|
-| index.html | vnu 26.11.5 | 0 | 0 | ✅ | [w3c-index.png](evidencias/w3c-index.png) |
-| sobre.html | vnu 26.11.4 | 0 | 0 | ✅ | [w3c-sobre.png](evidencias/w3c-sobre.png) |
-| modalidades.html | vnu 26.11.4 | 0 | 0 | ✅ | [w3c-modalidades.png](evidencias/w3c-modalidades.png) |
-| professor.html | vnu 26.11.5 | 0 | 0 | ✅ | [w3c-professor.png](evidencias/w3c-professor.png) |
-| blog.html | vnu 26.11.4 | 0 | 0 | ✅ | [w3c-blog.png](evidencias/w3c-blog.png) |
-| aula-experimental.html | vnu 26.11.4 | 0 | 0 | ✅ | [w3c-aula-experimental.png](evidencias/w3c-aula-experimental.png) |
-| acoes-sociais.html | vnu 26.11.4 | 0 | 0 | ✅ | [w3c-acoes-sociais.png](evidencias/w3c-acoes-sociais.png) |
-| turmas-horarios.html | vnu 26.11.5 | 0 | 0 | ✅ | [w3c-turmas-horarios.png](evidencias/w3c-turmas-horarios.png) |
-| contato.html | vnu 26.11.5 | 0 | 0 | ✅ | [w3c-contato.png](evidencias/w3c-contato.png) |
-| orcamento_hospedagem.html | vnu 26.11.4 | 0 | 0 | ✅ | [w3c-orcamento.png](evidencias/w3c-orcamento.png) |
-| css/style.css | vnu 26.11.4 (Nu Html Checker, que também valida CSS) | 0 | 0 | ✅ | [w3c-css.png](evidencias/w3c-css.png) |
+| index.html | vnu 26.11.9 | 0 | 0 | ✅ | [w3c-index.png](evidencias/w3c-index.png) |
+| sobre.html | vnu 26.11.9 | 0 | 0 | ✅ | [w3c-sobre.png](evidencias/w3c-sobre.png) |
+| modalidades.html | vnu 26.11.9 | 0 | 0 | ✅ | [w3c-modalidades.png](evidencias/w3c-modalidades.png) |
+| professor.html | vnu 26.11.9 | 0 | 0 | ✅ | [w3c-professor.png](evidencias/w3c-professor.png) |
+| blog.html | vnu 26.11.9 | 0 | 0 | ✅ | [w3c-blog.png](evidencias/w3c-blog.png) |
+| aula-experimental.html | vnu 26.11.9 | 0 | 0 | ✅ | [w3c-aula-experimental.png](evidencias/w3c-aula-experimental.png) |
+| acoes-sociais.html | vnu 26.11.9 | 0 | 0 | ✅ | [w3c-acoes-sociais.png](evidencias/w3c-acoes-sociais.png) |
+| turmas-horarios.html | vnu 26.11.9 | 0 | 0 | ✅ | [w3c-turmas-horarios.png](evidencias/w3c-turmas-horarios.png) |
+| contato.html | vnu 26.11.9 | 0 | 0 | ✅ | [w3c-contato.png](evidencias/w3c-contato.png) |
+| orcamento_hospedagem.html | vnu 26.11.9 | 0 | 0 | ✅ | [w3c-orcamento-hospedagem.png](evidencias/w3c-orcamento-hospedagem.png) |
+| css/style.css | vnu 26.11.9 (o Nu Html Checker também valida CSS) | 0 | 0 | ✅ | [w3c-css.png](evidencias/w3c-css.png) |
 
-> **Observação:** a versão do validador varia entre 26.11.4 e 26.11.5 porque o site do W3C usa mais de um servidor. Isso não muda o resultado.
-> **Processo:** durante a validação, duas capturas foram descartadas. O arquivo novo tinha sido escolhido, mas o botão *Check* não foi clicado, e a tela ainda mostrava o resultado da página anterior. A acoes-sociais.html foi validada de novo corretamente.
+> **Histórico:** a primeira validação foi feita em 07/11/2026 por envio de arquivo (também com 0 erros). Como as 10 páginas e o CSS mudaram em 08 e 09/11 (menu hambúrguer, validação dos formulários em JavaScript e tabelas em formato de cartão no celular), a validação foi refeita sobre a versão publicada, e os prints antigos foram substituídos por estes.
+> **Processo:** na primeira rodada, duas capturas foram descartadas porque mostravam o resultado da página anterior (o botão *Check* não tinha sido clicado). Nesta rodada, a captura do `blog.html` foi refeita porque tinha sido cortada antes da faixa do resultado.
 
 ---
 
@@ -82,6 +82,7 @@ Registro dos testes do site da Academia Base Forte Leste. As capturas de tela fi
 | WAVE (index, aula-experimental, contato) | https://wave.webaim.org/ (precisa do site publicado) | ⏳ | |
 | Lighthouse – index.html, desktop (07/11/2026, 17:41, via Live Server `127.0.0.1:5500`) | Chrome F12 → Lighthouse (Navigation) | ✅ Accessibility 100 · Best Practices 100 · SEO 100 | [print](evidencias/lighthouse-index-desktop.png) · [relatório HTML](evidencias/lighthouse-index-desktop.html) |
 | Lighthouse – index.html, celular (07/11/2026, 17:58, via Live Server `127.0.0.1:5500`; rodapé do relatório: *Emulated Moto G Power*, *Slow 4G throttling*) | Chrome F12 → Lighthouse (Navigation), Device: Mobile | ✅ Accessibility 100 · Best Practices 100 · SEO 100 | [print das notas](evidencias/lighthouse-index-mobile.png) · [print do rodapé](evidencias/lighthouse-index-mobile-rodape.png) |
+| Lighthouse – site publicado na Vercel (09/11/2026, 14:24, com a categoria Performance) | Chrome F12 → Lighthouse | ✅ Performance 94 · Accessibility 100 · Best Practices 100 · SEO 100 | [lighthouse-site-publicado.png](evidencias/lighthouse-site-publicado.png) |
 
 ## 4. Responsividade
 
@@ -120,7 +121,8 @@ Registro dos testes do site da Academia Base Forte Leste. As capturas de tela fi
 
 | Evidência | Status | Evidência |
 |---|---|---|
-| Deploy na Vercel com status *Ready* | ⏳ | |
-| Site aberto pela URL com HTTPS | ⏳ | |
-| Commits de todos os integrantes | ⏳ | |
+| Deploy na Vercel com status *Ready* | ✅ Deploy automático a cada merge na `main`; o PR #2 mostra o robô da Vercel com *Ready* e *2 checks passed* (09/11/2026) | [github-pr2-vercel.png](evidencias/github-pr2-vercel.png) |
+| Site aberto pela URL com HTTPS | ✅ `https://u-unicid-cc-frontend-2260022-n7-2-2.vercel.app`. Todas as validações W3C da seção 1 foram feitas por esse endereço HTTPS | [w3c-index.png](evidencias/w3c-index.png) |
+| Commits de todos os integrantes | ✅ A página do repositório mostra **4 contribuidores**: Nickolashbezerra, RaphaelaSeven, WilliamsVargas-Code e PedroCoiado | [github-contribuidores.png](evidencias/github-contribuidores.png) |
 | Pull request | ✅ PR #1 "Evidência Lighthouse mobile (100/100/100)": branch `docs/lighthouse-mobile` → `main`. Houve conflito em `docs/evidencia_testes.md`, resolvido manualmente no editor do GitHub; depois o merge foi feito (08/11/2026). | [github-pull-request.png](evidencias/github-pull-request.png) |
+| Pull request #2 | ✅ "Validação dos formulários em JavaScript": branch `feat/validacao-js` → `main`, com prévia automática da Vercel antes do merge (09/11/2026) | [github-pr2-vercel.png](evidencias/github-pr2-vercel.png) |
