@@ -114,6 +114,19 @@ public/
 └── docs/                      # toda a documentação do projeto
 ```
 
+Na raiz do repositório ficam o plano de contexto (este `README.md`), a documentação de entrega (`docs/`) e as regras do Claude, ferramenta de IA usada no desenvolvimento do site:
+
+```markdown
+.claude/rules/
+├── projeto-baseforteleste.md  # visão do projeto, stack e o que não inventar
+├── html-semantico.md          # estrutura HTML5 das páginas de public/
+├── css-estilo.md              # variáveis, mobile first e classes em português
+├── acessibilidade.md          # WCAG AA: teclado, leitor de tela, contraste e mídia
+├── git-commits.md             # padrão de commits, branches e Pull Request
+├── claude-rules.md            # como criar ou editar uma regra
+└── self-improvement.md        # quando atualizar as regras
+```
+
 Responsabilidades:<br>
 • **Interface**: HTML semântico e css em `style.css`. Sem estilo inline.<br>
 • **Comportamento**: JavaScript em arquivo próprio, progressivo (a página funciona sem ele, exceto o envio de informações do formulário que depende de sua validação).
