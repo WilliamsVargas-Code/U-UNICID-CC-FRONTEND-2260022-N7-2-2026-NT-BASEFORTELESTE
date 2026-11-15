@@ -79,7 +79,7 @@ O site é composto por 10 páginas interligadas, compartilhando uma identidade v
 
 * **HTML5 Semântico:** Utilização rigorosa de tags estruturais e descritivas, com atributo global `lang="pt-BR"` e validação estrita em conformidade com o W3C Validator (zero erros).
 * **CSS3 Responsivo:** Layout adaptativo construído com abordagens modernas (Flexbox e Grid Layout), garantindo consistência visual em múltiplos dispositivos, foco visível customizado e transições fluidas.
-* **JavaScript Interativo:** Implementação de lógica de controle comportamental contendo validação robusta de formulários com interceptação de submissão (`preventDefault`), feedback textual de erros, destaque visual em bordas, persistência de dados e preferências via `localStorage`, além de eventos dinâmicos de DOM aplicados a menus de navegação mobile e máscara de telefone, que existe de verdade.
+* **JavaScript Interativo:** Implementação de lógica de controle comportamental contendo validação robusta de formulários com interceptação de submissão (`preventDefault`), feedback textual de erros, destaque visual em bordas, persistência de dados e preferências via `localStorage`, aplicados a menus de navegação mobile e máscara de telefone.
 * **Versionamento e Controle de Código:** Repositório centralizado no GitHub estruturado com histórico de commits colaborativos da equipe, mensagens descritivas e adoção de fluxo de ramificações (*branches*) com revisão por *Pull Request*.
 * **Deploy e Infraestrutura:** Aplicação publicada em ambiente de produção acessível via URL pública com protocolo de segurança HTTPS ativo.
 
@@ -147,6 +147,6 @@ Responsabilidades:<br>
 * Formulários com validação nativa (`required`, `email`, `tel` etc.) e erro mostrado junto ao campo.
 * Vídeo, áudio e iframe funcionando corretamente.
 * Atributos `alt`, contraste adequado e `lang="pt-BR"` em todas as páginas.
-* Pasta docs/ com Diário de Bordo, Uso de IA e Evidências de Teste. O orçamento fica na página orcamento_hospedagem.html.ias de Teste.
+* Pasta docs/ com Diário de Bordo, Uso de IA e Evidências de Teste. O orçamento fica na página orcamento_hospedagem.html.
 
 
