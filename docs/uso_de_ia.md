@@ -1,6 +1,5 @@
 ## Uso de Inteligência Artificial no Projeto 
 
-Este documento registra só os usos de IA que mudaram o projeto: criação do site, regras para a IA e atualização das regras com a leitura em voz. Para cada caso há o prompt usado, o contexto entregue à IA, o que foi aceito e o que foi corrigido.
  
 ## Como a IA recebeu contexto
  
