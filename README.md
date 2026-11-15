@@ -88,8 +88,15 @@ O site é composto por 10 páginas interligadas, compartilhando uma identidade v
 * **Acessibilidade Digital (WCAG):** Conformidade estrita com os critérios de acessibilidade de nível AA, assegurando contraste cromático adequado, hierarquia semântica de cabeçalhos e suporte completo à navegação sequencial por teclado.
 * **Desempenho e Otimização:** Tempo de carregamento otimizado dos ativos estáticos (imagens, folhas de estilo e scripts) para garantir fluidez tanto em computadores quanto em dispositivos móveis.
 * **Manutenibilidade:** Código-fonte limpo, modularizado e devidamente documentado, facilitando futuras manutenções corretivas ou evolutivas por novos desenvolvedores.
-
+* **Navegação por teclado:** link “Pular para o conteúdo principal” nas 10 páginas e foco sempre visível (anel preto e amarelo).
+* **Mobile first:** o CSS é escrito primeiro para o celular, com ajustes a partir de 640px, 768px e 960px. Abaixo de 768px, o menu vira hambúrguer e as tabelas viram cartões.
+* **Movimento reduzido:** o site respeita a preferência `prefers-reduced-motion: reduce` do sistema e desliga animações e transições.
+* **Leitura confortável:** fonte Atkinson Hyperlegible, criada para pessoas com baixa visão, e textos medidos em `rem` para o aumento de fonte da barra funcionar.
+* **Imagens leves:** ilustrações em SVG, com `width` e `height` definidos em todas as `<img>`, para a página não “pular” enquanto carrega.
+* **Privacidade (LGPD):** nenhum dado pessoal real no código. Endereço, telefones e e-mails são exemplos, e os formulários não enviam dados para nenhum servidor (ficam só no `localStorage` do navegador).
+* **Leitura em voz:** botão “Ouvir página” na barra de acessibilidade, que lê o conteúdo com a voz do próprio navegador (Web Speech API), sem serviço externo.
 ## 9. Estrutura de pastas
+
 
 O site fica em public/ (10 páginas, css/, js/, img/ e assets/). A documentação fica em docs/, na raiz.
 
