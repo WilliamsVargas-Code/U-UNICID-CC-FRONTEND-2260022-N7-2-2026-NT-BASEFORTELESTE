@@ -107,10 +107,10 @@ public/
 ├── aula-experimental.html     # página de formulário onde o usuário preencherá dados para agendar uma aula
 ├── css/style.css              # css estilizado para dar vida ao site
 ├── js/script.js               # javascript para funções que o html e o css em si não conseguem atender
-├── img/                       # imagens do site, todas em svg
+├── img/                       # imagens do site em svg, exceto o pôster do vídeo (jpg)
 └── assets/
     ├── audio/                 # toque de berimbau (berimbau-angola.mp3), com transcrição na página
-    └── video/                 # vídeos institucionais, ações do projeto social e demonstrações de exercícios
+    └── video/                 # vídeo do treino de Muay Thai (treino-muay-thai.mp4) e legendas (.vtt)
 ```
 
 Na raiz do repositório ficam o plano de contexto (este `README.md`), a documentação de entrega (`docs/`) e as regras do Claude, ferramenta de IA usada no desenvolvimento do site:
@@ -143,7 +143,7 @@ Responsabilidades:<br>
 
 * As 10 páginas interligadas, com o mesmo cabeçalho, menu e rodapé.
 * Zero erros no validador de HTML do W3C.
-* Formulários com validação nativa (`required`, `email`, `tel` etc.) e erro mostrado junto ao campo.
+* Formulários com regras do HTML5 (required, email, tel etc.) validadas pelo JavaScript, com o erro mostrado junto ao campo.
 * Vídeo, áudio e iframe funcionando corretamente.
 * Atributos `alt`, contraste adequado e `lang="pt-BR"` em todas as páginas.
 * Pasta docs/ com Diário de Bordo, Uso de IA e Evidências de Teste. O orçamento fica na página orcamento_hospedagem.html.
