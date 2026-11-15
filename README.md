@@ -95,6 +95,7 @@ O site é composto por 10 páginas interligadas, compartilhando uma identidade v
 * **Imagens leves:** ilustrações em SVG, com `width` e `height` definidos em todas as `<img>`, para a página não “pular” enquanto carrega.
 * **Privacidade (LGPD):** nenhum dado pessoal real no código. Endereço, telefones e e-mails são exemplos, e os formulários não enviam dados para nenhum servidor (ficam só no `localStorage` do navegador).
 * **Leitura em voz:** botão “Ouvir página” na barra de acessibilidade, que lê o conteúdo com a voz do próprio navegador (Web Speech API), sem serviço externo.
+  
 ## 9. Estrutura de pastas
 
 
