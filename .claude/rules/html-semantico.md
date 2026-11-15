@@ -16,7 +16,8 @@ HTML5 puro, `lang="pt-BR"`. Estilo só por `css/style.css` e comportamento só p
 
 ## 3. Regras
 
-- Copie de `index.html` o `<head>`, o link “Pular para o conteúdo principal”, a barra de acessibilidade, o cabeçalho, o menu com os 10 links e o rodapé.
+- Copie de `index.html` o `<head>`, o link “Pular para o conteúdo principal”, a barra de acessibilidade com os 5 botões (A−, A, A+, Alto contraste e Ouvir página), o cabeçalho, o menu com os 10 links e o rodapé.
+- O “Ouvir página” lê o `innerText` do `main#conteudo`: conteúdo importante fica dentro do `<main>`. Só o que está escondido (`hidden` ou `display: none`) fica de fora; textos em `.visualmente-oculto` e com `aria-hidden` são lidos.
 - Ajuste `aria-current="page"` para a página aberta e o `<title>` no formato `Nome da página | Academia Base Forte Leste`.
 - Um único `<h1>` por página. Cada `<section>` tem `aria-labelledby` apontando para o `id` do seu `<h2>`.
 - Use `header`, `nav`, `main`, `section`, `article`, `aside`, `figure`, `address` e `footer`. Não troque esses elementos por `div`.
@@ -39,7 +40,7 @@ HTML5 puro, `lang="pt-BR"`. Estilo só por `css/style.css` e comportamento só p
 - Segundo `<h1>`, título só com estilo ou seção sem nome acessível.
 - `alt=""` em imagem que traz conteúdo, ou `alt` genérico (“imagem”, “foto”).
 - `style=""`, `onclick=""` ou `<script>` dentro da página. Segundo arquivo CSS ou JS.
-- Menu diferente do da home ou link para página que não está entre as 10.
+- Menu ou barra de acessibilidade diferente da home (por exemplo, página sem o botão `data-acao="leitura"`), ou link para página que não está entre as 10.
 - `&` solto em URL dentro do HTML (use `&amp;`, como no link das fontes do Google).
 
 ## 6. Perguntas

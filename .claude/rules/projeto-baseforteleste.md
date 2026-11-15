@@ -20,7 +20,7 @@ O site fica em `public/`: 10 páginas HTML5, `css/style.css`, `js/script.js`, `i
 - Mantenha a barra de acessibilidade, o cabeçalho, o menu e o rodapé iguais aos de `public/index.html`.
 - Textos em português do Brasil. Endereço, telefones, depoimentos, premiações e métricas são ilustrativos e ficam marcados com comentário `<!-- -->` para a equipe trocar pelos dados reais.
 - Modalidades oficiais: Muay Thai, Kickboxing, Boxe, Jiu-Jitsu, Capoeira e No-Gi.
-- Não adicione React, Bootstrap, Tailwind, jQuery nem biblioteca de CSS ou JS.
+- Não adicione React, Bootstrap, Tailwind, jQuery nem biblioteca de CSS ou JS. Recursos novos usam APIs do próprio navegador, como a leitura em voz com `speechSynthesis`.
 - Não crie página fora da lista das 10 do plano sem perguntar.
 - Os valores dos planos não aparecem no site; o interessado consulta pelo WhatsApp.
 - Dado pessoal real (de aluno, responsável ou jovem) não entra no código nem no Git.
