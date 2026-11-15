@@ -79,7 +79,7 @@ O site é composto por 10 páginas interligadas, compartilhando uma identidade v
 
 * **HTML5 Semântico:** Utilização rigorosa de tags estruturais e descritivas, com atributo global `lang="pt-BR"` e validação estrita em conformidade com o W3C Validator (zero erros).
 * **CSS3 Responsivo:** Layout adaptativo construído com abordagens modernas (Flexbox e Grid Layout), garantindo consistência visual em múltiplos dispositivos, foco visível customizado e transições fluidas.
-* **JavaScript Interativo:** Implementação de lógica de controle comportamental contendo validação robusta de formulários com interceptação de submissão (`preventDefault`), feedback textual de erros, destaque visual em bordas, persistência de dados e preferências via `localStorage`, aplicados a menus de navegação mobile e máscara de telefone.
+* **JavaScript Interativo:** Implementação de lógica de controle comportamental contendo validação robusta de formulários com interceptação de submissão (`preventDefault`), feedback textual de erros, destaque visual em bordas, persistência de dados e preferências via `localStorage`, além de eventos dinâmicos de DOM aplicados ao menu de navegação mobile e à máscara de telefone.
 * **Versionamento e Controle de Código:** Repositório centralizado no GitHub estruturado com histórico de commits colaborativos da equipe, mensagens descritivas e adoção de fluxo de ramificações (*branches*) com revisão por *Pull Request*.
 * **Deploy e Infraestrutura:** Aplicação publicada em ambiente de produção acessível via URL pública com protocolo de segurança HTTPS ativo.
 
@@ -108,10 +108,9 @@ public/
 ├── css/style.css              # css estilizado para dar vida ao site
 ├── js/script.js               # javascript para funções que o html e o css em si não conseguem atender
 ├── img/                       # imagens do site, todas em svg
-├── assets/
-│   ├── audio/                 # toque de berimbau (berimbau-angola.mp3), com transcrição na página
-│   └── video/                 # vídeos institucionais, ações do projeto social e demonstrações de exercícios
-└── docs/                      # toda a documentação do projeto
+└── assets/
+    ├── audio/                 # toque de berimbau (berimbau-angola.mp3), com transcrição na página
+    └── video/                 # vídeos institucionais, ações do projeto social e demonstrações de exercícios
 ```
 
 Na raiz do repositório ficam o plano de contexto (este `README.md`), a documentação de entrega (`docs/`) e as regras do Claude, ferramenta de IA usada no desenvolvimento do site:
