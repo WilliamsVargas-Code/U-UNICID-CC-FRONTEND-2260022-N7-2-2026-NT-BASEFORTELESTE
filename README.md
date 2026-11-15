@@ -54,7 +54,7 @@ O site é composto por 10 páginas interligadas, compartilhando uma identidade v
 
 | Página | Arquivo | Função principal |
 | :--- | :--- | :--- |
-| **Início** | `index.html` | Apresentação da causa, métricas de impacto, projetos e visão geral da academia |
+| **Início** | `index.html` | Apresentação da academia, aulas gratuitas de sábado, atalhos para as modalidades, depoimentos e perguntas frequentes |
 | **Quem somos** | `sobre.html` | Histórico institucional, missão, visão e valores voltados à inclusão, esporte e educação |
 | **Modalidades** | `modalidades.html` | Informações detalhadas sobre Muay Thai, Kickboxing, Boxe, Jiu-Jitsu, Capoeira e No-Gi |
 | **Professores** | `professor.html` | Apresentação do corpo docente, qualificações e especialidades dos mestres |
@@ -70,16 +70,16 @@ O site é composto por 10 páginas interligadas, compartilhando uma identidade v
 * **Turma Inclusiva:** Oficinas adaptadas para garantir a prática esportiva segura e integrada de pessoas com deficiência.
 
 **Indicadores de Impacto Institucional (Métricas Fictícias):**
-* 150 jovens atendidos mensalmente nas iniciativas comunitárias.
+* 85 jovens atendidos nas aulas gratuitas de sábado em 2026 (até outubro).
 * 6 modalidades de luta ativas na grade horária.
-* Limite operacional de 30 vagas por turma para assegurar excelência pedagógica e segurança.
-* 100% de digitalização da comunicação institucional, eliminando a dependência de impressos gráficos.
+* 25 vagas por turma na aula gratuita de sábado.
+* Panfletos impressos caindo de 12.000 (2024) para 4.000 (2026), com meta de nenhum em 2027.
   
 ## 7. Requisitos técnicos
 
 * **HTML5 Semântico:** Utilização rigorosa de tags estruturais e descritivas, com atributo global `lang="pt-BR"` e validação estrita em conformidade com o W3C Validator (zero erros).
 * **CSS3 Responsivo:** Layout adaptativo construído com abordagens modernas (Flexbox e Grid Layout), garantindo consistência visual em múltiplos dispositivos, foco visível customizado e transições fluidas.
-* **JavaScript Interativo:** Implementação de lógica de controle comportamental contendo validação robusta de formulários com interceptação de submissão (`preventDefault`), feedback textual de erros, destaque visual em bordas, persistência de dados e preferências via `localStorage`, além de eventos dinâmicos de DOM aplicados a menus de navegação mobile e filtros.
+* **JavaScript Interativo:** Implementação de lógica de controle comportamental contendo validação robusta de formulários com interceptação de submissão (`preventDefault`), feedback textual de erros, destaque visual em bordas, persistência de dados e preferências via `localStorage`, além de eventos dinâmicos de DOM aplicados a menus de navegação mobile e máscara de telefone, que existe de verdade.
 * **Versionamento e Controle de Código:** Repositório centralizado no GitHub estruturado com histórico de commits colaborativos da equipe, mensagens descritivas e adoção de fluxo de ramificações (*branches*) com revisão por *Pull Request*.
 * **Deploy e Infraestrutura:** Aplicação publicada em ambiente de produção acessível via URL pública com protocolo de segurança HTTPS ativo.
 
@@ -91,7 +91,7 @@ O site é composto por 10 páginas interligadas, compartilhando uma identidade v
 
 ## 9. Estrutura de pastas
 
-Organização padrão contendo os arquivos HTML na raiz, pastas dedicadas para `/css`, `/js`, `/img`, `/docs` (documentação completa) e diretórios de multimídia.
+O site fica em public/ (10 páginas, css/, js/, img/ e assets/). A documentação fica em docs/, na raiz.
 
 ```markdown
 public/
@@ -109,7 +109,7 @@ public/
 ├── js/script.js               # javascript para funções que o html e o css em si não conseguem atender
 ├── img/                       # imagens do site, todas em svg
 ├── assets/
-│   ├── audio/                 # arquivos de áudio, como trilhas para aulas ou descrições para acessibilidade
+│   ├── audio/                 # toque de berimbau (berimbau-angola.mp3), com transcrição na página
 │   └── video/                 # vídeos institucionais, ações do projeto social e demonstrações de exercícios
 └── docs/                      # toda a documentação do projeto
 ```
@@ -129,7 +129,7 @@ Na raiz do repositório ficam o plano de contexto (este `README.md`), a document
 
 Responsabilidades:<br>
 • **Interface**: HTML semântico e css em `style.css`. Sem estilo inline.<br>
-• **Comportamento**: JavaScript em arquivo próprio, progressivo (a página funciona sem ele, exceto o envio de informações do formulário que depende de sua validação).
+• **Comportamento**: JavaScript em arquivo próprio, progressivo: sem ele, os formulários são validados pelo HTML5 do navegador.
 
 ## 10. Pendências
 
@@ -138,7 +138,7 @@ Responsabilidades:<br>
 * Notícias reais sobre as modalidades, com data e fonte.
 * Vídeos e áudios oficiais de treinamento (os atuais são demonstrativos).
 * Canais oficiais de contato e redes sociais da academia.
-* Link definitivo do site publicado em produção.
+
 
 ## 11. Critérios de sucesso
 
@@ -147,6 +147,6 @@ Responsabilidades:<br>
 * Formulários com validação nativa (`required`, `email`, `tel` etc.) e erro mostrado junto ao campo.
 * Vídeo, áudio e iframe funcionando corretamente.
 * Atributos `alt`, contraste adequado e `lang="pt-BR"` em todas as páginas.
-* Pasta `/docs` com README, Diário de Bordo, Orçamento de Hospedagem e Evidências de Teste.
+* Pasta docs/ com Diário de Bordo, Uso de IA e Evidências de Teste. O orçamento fica na página orcamento_hospedagem.html.ias de Teste.
 
 
