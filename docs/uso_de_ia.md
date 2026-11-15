@@ -96,7 +96,7 @@ Junto com o prompt foi enviado o site novo (zip) com o botão “Ouvir página�
 - **Erro da IA, pego antes da entrega:** a primeira versão da regra dizia que texto com `aria-hidden` não é lido em voz. Ao conferir o código, a IA viu que a leitura usa `innerText`, que só ignora o que está escondido (`hidden` ou `display: none`), e corrigiu a regra.
 - **Ordem de publicação:** ao revisar o repositório, a IA mostrou que as regras já falavam do botão, mas o site no GitHub ainda não tinha a leitura em voz. A equipe combinou subir o site antes de atualizar o restante da documentação.
 
-## 4° Caso do uso de IA
+## 4º Caso do uso de IA
 
 
 ### Ferramenta utilizada
