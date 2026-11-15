@@ -1,37 +1,103 @@
 ## Uso de Inteligência Artificial no Projeto 
 
-## 1° Caso do uso de IA
+Este documento registra só os usos de IA que mudaram o projeto: criação do site, regras para a IA e atualização das regras com a leitura em voz. Para cada caso há o prompt usado, o contexto entregue à IA, o que foi aceito e o que foi corrigido.
+ 
+## Como a IA recebeu contexto
+ 
+| Tipo | O que foi entregue à IA | Onde está no repositório |
+| :-- | :-- | :-- |
+| **Contexto** | Plano de Contexto e Escopo (visão geral, público-alvo, objetivos, páginas) e o levantamento de requisitos feito com o CEO Adalberto | `README.md` |
+| **Plano** | Antes de gerar algo, a IA montava uma lista de tarefas (pesquisar, gerar, conferir, entregar), e a equipe acompanhava cada etapa | Lista de tarefas da conversa |
+| **Regras** | Combinados da equipe para a IA: stack, HTML semântico, CSS, acessibilidade, commits | `.claude/rules/` (7 regras) |
+ 
+Ferramenta: **Claude** (Anthropic). Responsável pelos prompts: Nickolas Henrique Bezerra.
+ 
+---
+ 
+## 1º Caso: primeira versão do site (07/11/2026)
+ 
+### Prompt utilizado
+```
+Contexto:
+Crie um site acadêmico BaseForteLeste (Academia de artes maciais que visa sustetablidade, acessibilidade e impacto social),
+em HTML5 e CSS3 puros, sem frameworks e sem JavaScript.
+ 
+O site deve ter 10 paginas
+index.html Pagina inicial Super importante, porquê as pessoas devem acessar nosso site,
+contato.html
+orçamento_hospedagem.html descrição do que iremos gastar para hospedar o site
+ 
+* História
+* Modalidades: Muay Thai, Kickboxing, Boxe, Jiu-Jitsu e No-Gi
+* Turmas e Horários
+* Blog de Notícias
+* Ações Sociais: divulgação das aulas gratuitas aos sábados voltadas ao público juvenil
+* Formulário de Interesse: pedido de aula experimental ou inscrição na aula gratuita de sábado, enviado ao WhatsApp da academia
+ 
+link do git hub https://github.com/WilliamsVargas-Code/U-UNICID-CC-FRONTEND-2260022-N7-2-2026-NT-BASEFORTELESTE
+```
+ 
+### Contexto, plano e regras
+- **Contexto:** a IA leu o `README.md` do repositório (pilares, estrutura de pastas, equipe) e usou decisões já tomadas pela equipe: formulário vai para o WhatsApp, valores dos planos não aparecem no site, aluno novo não precisa de equipamento, plano Família a partir de duas pessoas.
+- **Plano:** (1) pesquisar custos de hospedagem; (2) criar o CSS e as 10 páginas; (3) validar links, HTML e a ausência de JavaScript; (4) entregar.
+- **Regra principal do prompt:** HTML5 e CSS3 puros, sem framework e sem JavaScript.
+### O que foi aceito
+- A organização em 10 páginas com cabeçalho, menu e rodapé iguais.
+- A home com o bloco “Por que acessar este site” e perguntas frequentes em `<details>`.
+- A ideia da página de orçamento comparando hospedagem gratuita e paga, com fontes citadas.
+- Marcar em destaque todo dado que a academia ainda precisava confirmar, em vez de inventar.
+### O que foi corrigido ou mudado pela equipe
+- **JavaScript:** a primeira versão fez a barra de acessibilidade e o envio ao WhatsApp só com HTML e CSS, para cumprir o “sem JavaScript”. Depois a equipe decidiu usar JavaScript simples para validar os formulários com mensagens de erro, o que o enunciado da disciplina pedia.
+- **Hospedagem:** a IA recomendou o GitHub Pages. A equipe escolheu a **Vercel** e passou a comparar Vercel, Render e Railway, como o professor pediu.
+- **Modalidades:** entrou a **Capoeira**, totalizando 6 modalidades.
+- **Páginas:** os nomes e o conteúdo seguiram o enunciado atual (`professor.html`, `blog.html`, `aula-experimental.html`, `acoes-sociais.html`, `turmas-horarios.html`) em vez de `historia.html`, `blognews.html` e `formulario.html`.
+- **Dados:** os campos marcados “a confirmar” (horários, endereço, telefone) foram preenchidos pela equipe com exemplos identificados como ilustrativos.
+---
+ 
+## 2º Caso: regras da IA no modelo do professor (14/11/2026)
+ 
+### Prompts utilizados
+```
+Claude o professor pediu para fazer um rules da criação do site para colocar no repositorio do github, siga o exemplo do professor https://github.com/PauloFratta/PauloFratta-U-UNICID-ADS-CC-ENG-FRONTEND-2260028-N4-2-2026-M-Econectan4
+```
+Correção feita pela equipe depois da primeira resposta:
+```
+use somente os exemplos do professor, nosso site foi desenvolvido com o claude
+```
+ 
+### Contexto, plano e regras
+- **Contexto:** o repositório do professor (7 regras em `.cursor/rules/`, cada uma com objetivo, contexto, regras, exemplo, erros a evitar e perguntas) e o código atual do site em `public/`.
+- **Plano:** (1) ler as regras do professor; (2) ler o código real do site; (3) escrever cada regra com exemplos copiados do nosso código; (4) conferir se cada classe, `id` e trecho citado existe.
+- **Regra do próprio modelo:** menos de 80 linhas por regra, um assunto por arquivo.
+### O que foi aceito
+- As 7 regras com as 6 seções do professor e exemplos reais do nosso site (variáveis de cor, `.grade`, `aria-current`, padrão de commits).
+- A atualização da seção 9 do `README.md` mostrando a pasta das regras.
+### O que foi corrigido
+- **Ferramenta:** a primeira versão foi feita para o **Cursor** (`.cursor/rules/`, arquivos `.mdc`), copiando o professor. Como o site foi feito com o Claude, a equipe pediu a troca para o formato do **Claude** (`.claude/rules/`, arquivos `.md`, com o campo `paths` no lugar de `globs`).
+- **Quantidade:** a IA tinha criado uma 8ª regra (`javascript`). A equipe pediu para manter só os 7 arquivos do modelo do professor.
+- **Envio:** o envio direto pela IA não tinha permissão no GitHub. A equipe subiu os arquivos manualmente, em uma branch e um Pull Request (#6).
+---
+ 
+## 3º Caso: regras atualizadas para a leitura em voz (15/11/2026)
+ 
+### Prompt utilizado
+```
+claude ouve uma adição no jaScript, uma opção d escutar o site, o que deve ser mudados no rules para seguir esse novo arquivo do site ?
+```
+Junto com o prompt foi enviado o site novo (zip) com o botão “Ouvir página”.
+ 
+### Contexto, plano e regras
+- **Contexto:** o site novo e as 7 regras já publicadas.
+- **Plano:** (1) comparar o site novo com o que estava no GitHub; (2) listar o que mudou; (3) decidir quais regras precisavam mudar; (4) entregar só as regras alteradas.
+- **Regra usada:** `self-improvement.md`, que manda atualizar as regras quando entra algo novo na stack.
+### O que foi aceito
+- A comparação mostrou que mudaram as 10 páginas (botão novo), o `script.js` (seção 11, Web Speech API) e o `sobre.html`. O CSS não mudou.
+- Foram atualizadas só 3 regras: `acessibilidade.md`, `html-semantico.md` e `projeto-baseforteleste.md`. As outras 4 continuaram iguais (PR #7).
+### O que foi corrigido
+- **Erro da IA, pego antes da entrega:** a primeira versão da regra dizia que texto com `aria-hidden` não é lido em voz. Ao conferir o código, a IA viu que a leitura usa `innerText`, que só ignora o que está escondido (`hidden` ou `display: none`), e corrigiu a regra.
+- **Ordem de publicação:** ao revisar o repositório, a IA mostrou que as regras já falavam do botão, mas o site no GitHub ainda não tinha a leitura em voz. A equipe combinou subir o site antes de atualizar o restante da documentação.
 
-### Ferramenta utilizada
-- **Claude** (Anthropic), usado em 07/11/2026 como assistente de desenvolvimento Front-End.
-
-### Para que a IA foi usada
-| Etapa | O que a IA fez |
-| :-- | :-- |
-| Estrutura do site | Gerou a primeira versão das 10 páginas HTML5 na estrutura de pastas definida pela equipe, com comentários explicativos (`<!-- -->`) |
-| Estilização | Gerou o `css/style.css` (CSS3 puro, sem frameworks), organizado em seções comentadas, com layout responsivo (mobile first) |
-| JavaScript | Gerou o `js/script.js`, opcional, usado só na barra de acessibilidade (tamanho da fonte e alto contraste) |
-| Imagens e mídias | Criou as ilustrações em SVG (logo, ícones, professores e galeria), o vídeo demonstrativo de Muay Thai com legendas (`.vtt`) e o áudio de berimbau. Todo esse material é demonstrativo |
-| Pesquisa | Pesquisou os preços de hospedagem (GitHub Pages, Netlify e GreenGeeks), de domínio (Registro.br e Hostinger) e de impressão de panfletos, usados na página `orcamento_hospedagem.html`, com as fontes citadas na própria página |
-| Testes | Fez verificações automáticas de links, `label for`/`id`, textos alternativos e contraste de cores (nível AA da WCAG), além de testar a validação dos formulários no navegador |
-| Documentação | Escreveu o `docs/guia-de-apresentacao.md`, que liga cada requisito ao trecho de código e traz um roteiro de testes |
-
-### Como as respostas da IA foram usadas
-- Os requisitos, o tema, a estrutura de pastas e as regras de negócio vieram da equipe: do enunciado da disciplina e do levantamento de requisitos feito com a academia.
-- O código gerado foi revisado e testado pela equipe no VS Code (Live Server) antes da entrega.
-- Partes do conteúdo gerado pela IA são **ilustrativas** e foram marcadas no código para conferência: endereço e telefones, professores (exceto o professor Adalberto), premiações, depoimentos, linha do tempo e números da tabela de impacto.
-- Os preços pesquisados valem para a data da consulta (novembro de 2026) e podem mudar.
-
-### O que a equipe fez
-<!-- Completem com o que cada integrante realmente fez -->
-- [Ex.: revisão do conteúdo e correção dos dados reais da academia — Nome]
-- [Ex.: testes no navegador e no celular — Nome]
-- [Ex.: publicação no GitHub Pages — Nome]
-
-### Responsabilidade
-A IA foi usada como ferramenta de apoio. A equipe é responsável pelo conteúdo final, entende o código entregue e consegue explicar cada parte dele na apresentação.
-
-## 2° Caso do uso de IA
+## 4° Caso do uso de IA
 
 
 ### Ferramenta utilizada
