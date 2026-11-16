@@ -1,5 +1,14 @@
 ## Link do BaseForteLeste na hospedagem: https://u-unicid-cc-frontend-2260022-n7-2-2.vercel.app
 
+## Publicar (GitHub → Vercel)
+
+1. O site é estático (HTML, CSS e JavaScript puros), então não precisa de servidor, `package.json` nem etapa de build.
+2. Na Vercel, o projeto está ligado a este repositório e publica o conteúdo da pasta `public/`.
+3. Cada merge na `main` publica o site automaticamente. Cada Pull Request ganha um link de prévia antes do merge.
+4. Para testar no computador: abra a pasta `public/` no VS Code e use o **Live Server** (`http://127.0.0.1:5500`).
+
+O site usa só arquivos do repositório (`public/*.html`, `css/`, `js/`, `img/` e `assets/`). As únicas chamadas externas são as fontes do Google e o mapa do Google em `contato.html`. Nenhuma chave de API ou senha fica no código.
+
 # U-UNICID-CC-FRONTEND-2260022-N7-2-2026-NT-BASEFORTELESTE
 Projeto Front-End Unicid 2-BaseForteLeste
 
@@ -98,7 +107,6 @@ O site é composto por 10 páginas interligadas, compartilhando uma identidade v
   
 ## 9. Estrutura de pastas
 
-
 O site fica em public/ (10 páginas, css/, js/, img/ e assets/). A documentação fica em docs/, na raiz.
 
 ```markdown
@@ -134,7 +142,48 @@ Na raiz do repositório ficam o plano de contexto (este `README.md`), a document
 └── self-improvement.md        # quando atualizar as regras
 ```
 
+### Mapa do site
+
+O menu, igual em todas as páginas, sai de `index.html` e chega às dez páginas do plano. O rodapé traz os contatos (telefone, WhatsApp, e-mail e Instagram) e três links internos: Acessibilidade, economia de papel e créditos da equipe.
+
+```mermaid
+flowchart TD
+  inicio["Início · index.html"]
+  inicio --> sobre["Quem somos · sobre.html"]
+  inicio --> modalidades["Modalidades · modalidades.html"]
+  inicio --> professor["Professores · professor.html"]
+  inicio --> blog["Blog · blog.html"]
+  inicio --> aula["Aula experimental · aula-experimental.html"]
+  inicio --> acoes["Ações sociais · acoes-sociais.html"]
+  inicio --> turmas["Turmas e horários · turmas-horarios.html"]
+  inicio --> contato["Contato · contato.html"]
+  inicio --> orc["Orçamento · orcamento_hospedagem.html"]
+  aula --> ag["Pedir aula experimental · #agendamento"]
+  aula --> sab["Aulas de sábado · #inscricao-sabado"]
+  acoes --> imp["Tabela de impacto · #impacto"]
+  sobre --> a11y["Acessibilidade · #acessibilidade"]
+  orc --> papel["Papel x digital · #papel-digital"]
+  contato --> msg["Formulário de contato · #mensagem"]
+  contato --> cred["Créditos da equipe · #creditos"]
+```
+
+| Página | Arquivo | No repositório |
+| --- | --- | --- |
+| Início | `public/index.html` | sim |
+| Quem somos | `public/sobre.html` | sim |
+| Modalidades | `public/modalidades.html` | sim |
+| Professores | `public/professor.html` | sim |
+| Blog | `public/blog.html` | sim |
+| Aula experimental | `public/aula-experimental.html` | sim |
+| Ações sociais | `public/acoes-sociais.html` | sim |
+| Turmas e horários | `public/turmas-horarios.html` | sim |
+| Contato | `public/contato.html` | sim |
+| Orçamento | `public/orcamento_hospedagem.html` | sim |
+
+As âncoras `#agendamento` e `#inscricao-sabado` ficam em `aula-experimental.html`; a `#inscricao-sabado` é o destino dos botões da home e de `acoes-sociais.html`. As âncoras `#acessibilidade`, `#papel-digital` e `#creditos` são o destino dos links do rodapé.
+
 Responsabilidades:<br>
+
 • **Interface**: HTML semântico e css em `style.css`. Sem estilo inline.<br>
 • **Comportamento**: JavaScript em arquivo próprio, progressivo: sem ele, os formulários são validados pelo HTML5 do navegador.
 
@@ -146,14 +195,18 @@ Responsabilidades:<br>
 * Vídeos e áudios oficiais de treinamento (os atuais são demonstrativos).
 * Canais oficiais de contato e redes sociais da academia.
 
-
 ## 11. Critérios de sucesso
 
 * As 10 páginas interligadas, com o mesmo cabeçalho, menu e rodapé.
 * Zero erros no validador de HTML do W3C.
-* Formulários com regras do HTML5 (required, email, tel etc.) validadas pelo JavaScript, com o erro mostrado junto ao campo.
+* Formulários com regras do HTML5 (`required`, `email`, `tel` etc.) validadas pelo JavaScript, com o erro mostrado junto ao campo.
 * Vídeo, áudio e iframe funcionando corretamente.
 * Atributos `alt`, contraste adequado e `lang="pt-BR"` em todas as páginas.
-* Pasta docs/ com Diário de Bordo, Uso de IA e Evidências de Teste. O orçamento fica na página orcamento_hospedagem.html.
+* Acessibilidade no Lighthouse igual ou acima de 90. Resultado: 100 no computador e no celular, e Performance 94 no site publicado (ver `docs/evidencia_testes.md`).
+* Site no ar na Vercel, com HTTPS, publicado automaticamente a cada merge na `main`.
+* Histórico no GitHub com commits de todos os integrantes e mudanças entrando por Pull Request revisado.
+* Nenhuma chave, senha ou dado pessoal real no repositório.
+* Regras da IA versionadas em `.claude/rules/`, seguindo o modelo do professor.
+* Pasta `docs/` com o plano (`readme_docs.md`), Diário de Bordo, Uso de IA, Orçamento e Hospedagem e Evidências de Teste.
 
 
