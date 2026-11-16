@@ -32,7 +32,7 @@ Academia de Artes Marciais (Base Forte Leste)
 
 Desenvolvimento do portal web oficial da Academia Base Forte Leste, localizada em Itaquera (Zona Leste de São Paulo). O ecossistema digital centraliza informações institucionais sobre modalidades (Muay Thai, Kickboxing, Boxe, Jiu-Jitsu, Capoeira e No-Gi), divulgação de aulas gratuitas aos sábados voltadas ao público juvenil e atendimento a turmas inclusivas para pessoas com deficiência. O projeto alinha-se diretamente aos Objetivos de Desenvolvimento Sustentável (ODS) da ONU: ODS 3 (Saúde e Bem-Estar), ODS 4 (Educação de Qualidade), ODS 10 (Redução das Desigualdades) e ODS 12 (Consumo e Produção Responsáveis).
 
-A arquitetura é composta por 10 páginas interligadas estruturadas com HTML5 semântico, estilização responsiva em CSS3 e recursos avançados de interatividade via JavaScript — incluindo barra de acessibilidade com ajuste dinâmico de fontes, modo de alto contraste e persistência de preferências de usuário via localStorage.
+A arquitetura é composta por 10 páginas interligadas estruturadas com HTML5 semântico, estilização responsiva em CSS3 e recursos avançados de interatividade via JavaScript — incluindo barra de acessibilidade com ajuste dinâmico de fontes, modo de alto contraste, leitura em voz da página (botão "Ouvir página") e persistência de preferências de usuário via localStorage.
 
 Nota acadêmica: Todos os indicadores operacionais (métricas de alunos atendidos, volume de recicláveis arrecadados, resultados em eventos), bem como depoimentos e dados cadastrais, são estritamente fictícios e concebidos exclusivamente para fins acadêmicos.
 
@@ -88,7 +88,7 @@ O site é composto por 10 páginas interligadas, compartilhando uma identidade v
 
 * **HTML5 Semântico:** Utilização rigorosa de tags estruturais e descritivas, com atributo global `lang="pt-BR"` e validação estrita em conformidade com o W3C Validator (zero erros).
 * **CSS3 Responsivo:** Layout adaptativo construído com abordagens modernas (Flexbox e Grid Layout), garantindo consistência visual em múltiplos dispositivos, foco visível customizado e transições fluidas.
-* **JavaScript Interativo:** Implementação de lógica de controle comportamental contendo validação robusta de formulários com interceptação de submissão (`preventDefault`), feedback textual de erros, destaque visual em bordas, persistência de dados e preferências via `localStorage`, além de eventos dinâmicos de DOM aplicados ao menu de navegação mobile e à máscara de telefone.
+* **JavaScript Interativo:** Implementação de lógica de controle comportamental contendo validação robusta de formulários com interceptação de submissão (`preventDefault`), feedback textual de erros, destaque visual em bordas, persistência de dados e preferências via `localStorage`, além de eventos dinâmicos de DOM aplicados ao menu de navegação mobile e à máscara de telefone, e leitura em voz com a Web Speech API (`speechSynthesis`) do próprio navegador.
 * **Versionamento e Controle de Código:** Repositório centralizado no GitHub estruturado com histórico de commits colaborativos da equipe, mensagens descritivas e adoção de fluxo de ramificações (*branches*) com revisão por *Pull Request*.
 * **Deploy e Infraestrutura:** Aplicação publicada em ambiente de produção acessível via URL pública com protocolo de segurança HTTPS ativo.
 
