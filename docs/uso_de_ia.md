@@ -81,7 +81,7 @@ use somente os exemplos do professor, nosso site foi desenvolvido com o claude
  
 ### Prompt utilizado
 ```
-claude ouve uma adição no jaScript, uma opção d escutar o site, o que deve ser mudados no rules para seguir esse novo arquivo do site ?
+Claude, houve uma adição de código no JavaScript, a opção de escutar o site, o que deve ser mudado no rules, para que possa seguir o novo arquivo do site?
 ```
 Junto com o prompt foi enviado o site novo (zip) com o botão “Ouvir página”.
  
