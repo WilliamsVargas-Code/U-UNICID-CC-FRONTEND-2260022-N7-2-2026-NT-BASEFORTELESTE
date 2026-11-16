@@ -107,7 +107,6 @@ O site é composto por 10 páginas interligadas, compartilhando uma identidade v
   
 ## 9. Estrutura de pastas
 
-
 O site fica em public/ (10 páginas, css/, js/, img/ e assets/). A documentação fica em docs/, na raiz.
 
 ```markdown
@@ -182,6 +181,7 @@ flowchart TD
 | Orçamento | `public/orcamento_hospedagem.html` | sim |
 
 As âncoras `#agendamento` e `#inscricao-sabado` ficam em `aula-experimental.html`; a `#inscricao-sabado` é o destino dos botões da home e de `acoes-sociais.html`. As âncoras `#acessibilidade`, `#papel-digital` e `#creditos` são o destino dos links do rodapé.
+
 Responsabilidades:<br>
 
 • **Interface**: HTML semântico e css em `style.css`. Sem estilo inline.<br>
@@ -194,9 +194,6 @@ Responsabilidades:<br>
 * Notícias reais sobre as modalidades, com data e fonte.
 * Vídeos e áudios oficiais de treinamento (os atuais são demonstrativos).
 * Canais oficiais de contato e redes sociais da academia.
-
-
-## 11. Critérios de sucesso
 
 ## 11. Critérios de sucesso
 
