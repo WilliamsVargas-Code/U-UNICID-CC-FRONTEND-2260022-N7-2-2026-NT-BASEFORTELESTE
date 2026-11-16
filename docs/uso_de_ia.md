@@ -9,7 +9,9 @@
 | **Plano** | Antes de gerar algo, a IA montava uma lista de tarefas (pesquisar, gerar, conferir, entregar), e a equipe acompanhava cada etapa | Lista de tarefas da conversa |
 | **Regras** | Combinados da equipe para a IA: stack, HTML semântico, CSS, acessibilidade, commits | `.claude/rules/` (7 regras) |
  
-Ferramenta: **Claude** (Anthropic). Responsável pelos prompts: Nickolas Henrique Bezerra.
+Ferramentas: **Claude** (Anthropic).: Nickolas Henrique Bezerra (Desenvolvimento da estrutura do site, Regras da IA, Regras atualizadas para a leitura em voz).
+             **Gemini** (Alphabet Inc. Google).: Pedro Henrique Ruola Coiado (Desenvolveu com o prompt de comando Caso: Hospedagem, Menu Responsivo e Mock de Formulário)
+
  
 ---
  
@@ -21,21 +23,47 @@ Contexto:
 Crie um site acadêmico BaseForteLeste (Academia de artes maciais que visa sustetablidade, acessibilidade e impacto social),
 em HTML5 e CSS3 puros, sem frameworks e sem JavaScript.
  
-O site deve ter 10 paginas
+ O site deve ter 10 paginas
 index.html Pagina inicial Super importante, porquê as pessoas devem acessar nosso site,
 contato.html
-orçamento_hospedagem.html descrição do que iremos gastar para hospedar o site
- 
-* História
-* Modalidades: Muay Thai, Kickboxing, Boxe, Jiu-Jitsu e No-Gi
-* Turmas e Horários
-* Blog de Notícias
-* Ações Sociais: divulgação das aulas gratuitas aos sábados voltadas ao público juvenil
-* Formulário de Interesse: pedido de aula experimental ou inscrição na aula gratuita de sábado, enviado ao WhatsApp da academia
+orçamento_hospedagem.html descrição do que iremos gastar para hospedar o site 
+- História
+- Modalidades: Muay Thai, Kickboxing, Boxe, Jiu-Jitsu e No-Gi
+- Turmas e Horários
+- Blog de Notícias
+- Ações Sociais: divulgação das aulas gratuitas aos sábados voltadas ao público juvenil
+- Formulário de Interesse: pedido de aula experimental ou inscrição na aula gratuita de sábado, enviado ao WhatsApp da academia
  
 link do git hub https://github.com/WilliamsVargas-Code/U-UNICID-CC-FRONTEND-2260022-N7-2-2026-NT-BASEFORTELESTE
 ```
- 
+
+## 2º Caso: Hospedagem, Menu Responsivo e Mock de Formulário (12/11/2026)
+
+Durante o desenvolvimento do portal da Base Forte Leste, a IA foi utilizada como ferramenta de apoio e mentoria. Abaixo está o registro dos prompts e das decisões tomadas, conforme exigido na rubrica de avaliação do projeto.
+
+### Prompt para "sanduiche" utilizado (12/11/2026)
+
+> na parte do site em versão web, a construção do site não fica responsiva, teria de por as "três barrinhas" para abrir uma aba lateral contendo a logo e as informações para que tenha escalonado as paginas para melhor navegação do usuário. E outra na parte de formulario ela não vai funcionar poderia por informações de um pessoa irreal para ser nosso molde nas partes do formulario e com isso mostramos ao professor que o site tem um "envio" porem sem conexão ao javascript ou a uma chave api;
+
+
+### Interação 1: Escolha da Hospedagem e Orçamento
+- **Prompt Usado:** "Quero que compare três sites: Railway, Vercel e Render para hospedar um site estático. Crie um Readme justificando a escolha e os custos."
+- **O que foi aceito:** A estrutura da tabela comparativa e a recomendação técnica de utilizar a Vercel, justificando a escolha devido à franquia de 100GB gratuitos mensais perfeitos para o nosso front-end.
+- **O que foi corrigido:** O texto foi adaptado manualmente para refletir o nome do projeto (Base Forte Leste) e formatado para incluir dados de tráfego específicos levantados pela nossa própria pesquisa da equipe.
+
+### Interação 2: Criação de Menu Responsivo e Mock de Formulário
+- **Prompt Usado:** "Crie o código HTML, CSS e JS para um menu hambúrguer responsivo e simule o envio do formulário salvando os dados no LocalStorage para apresentação."
+- **O que foi aceito:** A lógica do JavaScript utilizando `e.preventDefault()` para impedir o recarregamento da página e a utilização da API do `localStorage` para simular o comportamento de um usuário real enviando dados.
+- **O que foi corrigido:** As classes CSS foram ajustadas manualmente e integradas ao nosso arquivo `style.css` para que as cores, tamanhos e tipografias correspondessem à identidade visual original da ONG no projeto.
+
+### Evidências Visuais (Menu Responsivo Implementado)
+
+**Menu fechado (ícone hambúrguer):**
+![Cabeçalho com menu hambúrguer fechado] 
+
+**Menu aberto (navegação responsiva com todas as 10 páginas):**
+![Menu lateral aberto com todas as páginas] 
+
 ### Contexto, plano e regras
 - **Contexto:** a IA leu o `README.md` do repositório (pilares, estrutura de pastas, equipe) e usou decisões já tomadas pela equipe: formulário vai para o WhatsApp, valores dos planos não aparecem no site, aluno novo não precisa de equipamento, plano Família a partir de duas pessoas.
 - **Plano:** (1) pesquisar custos de hospedagem; (2) criar o CSS e as 10 páginas; (3) validar links, HTML e a ausência de JavaScript; (4) entregar.
@@ -53,16 +81,16 @@ link do git hub https://github.com/WilliamsVargas-Code/U-UNICID-CC-FRONTEND-2260
 - **Dados:** os campos marcados “a confirmar” (horários, endereço, telefone) foram preenchidos pela equipe com exemplos identificados como ilustrativos.
 ---
  
-## 2º Caso: regras da IA no modelo do professor (14/11/2026)
+## 3º Caso: regras da IA no modelo do professor (14/11/2026)
  
 ### Prompts utilizados
-```
-Claude o professor pediu para fazer um rules da criação do site para colocar no repositorio do github, siga o exemplo do professor https://github.com/PauloFratta/PauloFratta-U-UNICID-ADS-CC-ENG-FRONTEND-2260028-N4-2-2026-M-Econectan4
-```
+
+> Claude o professor pediu para fazer um rules da criação do site para colocar no repositorio do github, siga o exemplo do professor https://github.com/PauloFratta/PauloFratta-U-UNICID-ADS-CC-ENG-FRONTEND-2260028-N4-2-2026-M-Econectan4
+
 Correção feita pela equipe depois da primeira resposta:
-```
-use somente os exemplos do professor, nosso site foi desenvolvido com o claude
-```
+
+> Quero que use somente os exemplos do professor, nosso site foi desenvolvido com a geração de Inteligência Artificial da Anthropic (Claude) 
+
  
 ### Contexto, plano e regras
 - **Contexto:** o repositório do professor (7 regras em `.cursor/rules/`, cada uma com objetivo, contexto, regras, exemplo, erros a evitar e perguntas) e o código atual do site em `public/`.
@@ -77,12 +105,12 @@ use somente os exemplos do professor, nosso site foi desenvolvido com o claude
 - **Envio:** o envio direto pela IA não tinha permissão no GitHub. A equipe subiu os arquivos manualmente, em uma branch e um Pull Request (#6).
 ---
  
-## 3º Caso: regras atualizadas para a leitura em voz (15/11/2026)
+## 4º Caso: regras atualizadas para a leitura em voz (15/11/2026)
  
 ### Prompt utilizado
-```
-Claude, houve uma adição de código no JavaScript, a opção de escutar o site, o que deve ser mudado no rules, para que possa seguir o novo arquivo do site?
-```
+
+> Claude, houve uma adição de código no JavaScript, a opção de escutar o site, o que deve ser mudado no rules, para que possa seguir o novo arquivo do site?
+
 Junto com o prompt foi enviado o site novo (zip) com o botão “Ouvir página”.
  
 ### Contexto, plano e regras
@@ -96,11 +124,13 @@ Junto com o prompt foi enviado o site novo (zip) com o botão “Ouvir página�
 - **Erro da IA, pego antes da entrega:** a primeira versão da regra dizia que texto com `aria-hidden` não é lido em voz. Ao conferir o código, a IA viu que a leitura usa `innerText`, que só ignora o que está escondido (`hidden` ou `display: none`), e corrigiu a regra.
 - **Ordem de publicação:** ao revisar o repositório, a IA mostrou que as regras já falavam do botão, mas o site no GitHub ainda não tinha a leitura em voz. A equipe combinou subir o site antes de atualizar o restante da documentação.
 
-## 4º Caso do uso de IA
+---
+
+## 5º Caso do uso de IA
 
 
 ### Ferramenta utilizada
-* **Gemini (Google)**, usado em novembro de 2026 como mentor técnico especialista em Front-End, acessibilidade e documentação.
+- **Gemini (Google)**, usado em novembro de 2026 como mentor técnico especialista em Front-End, acessibilidade e documentação.
 
 ### Para que a IA foi usada
 
@@ -112,9 +142,12 @@ Junto com o prompt foi enviado o site novo (zip) com o botão “Ouvir página�
 | **Documentação e Padrões** | Revisou o tom dos textos institucionais para garantir uma linguagem madura, técnica e adequada à apresentação acadêmica perante a banca. |
 
 ### Como as respostas da IA foram usadas
-* A estrutura base e os dados reais da academia foram definidos pela equipe; a IA atuou refinando o texto técnico, corrigindo inconsistências de páginas e estruturando o formato em Markdown.
-* Os blocos de texto gerados foram criticamente analisados, corrigidos (como a adequação das páginas reais do menu) e validados pela equipe antes de serem integrados ao GitHub.
-* Os dados institucionais, nomes da equipe e a identidade do projeto foram preservados exatamente conforme a solicitação dos alunos.
+- A estrutura base e os dados reais da academia foram definidos pela equipe; a IA atuou refinando o texto técnico, corrigindo inconsistências de páginas e estruturando o formato em Markdown.
+- Os blocos de texto gerados foram criticamente analisados, corrigidos (como a adequação das páginas reais do menu) e validados pela equipe antes de serem integrados ao GitHub.
+- Os dados institucionais, nomes da equipe e a identidade do projeto foram preservados exatamente conforme a solicitação dos alunos.
 
 ### Responsabilidade
 A IA foi utilizada como uma ferramenta de mentoria e apoio técnico. A equipe é integralmente responsável pelo conteúdo final entregue, compreende a arquitetura do site desenvolvido e tem total domínio para explicar cada decisão técnica durante a arguição da banca.
+
+---
+
