@@ -1,0 +1,22 @@
+# Lixo do sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Configurações pessoais do editor
+.vscode/
+.idea/
+
+# Senhas e chaves: nunca vão para o Git
+.env
+.env.*
+
+# Bibliotecas e builds (caso entrem no futuro)
+node_modules/
+dist/
+
+# Pasta criada pela ferramenta de linha de comando da Vercel
+.vercel/
+
+# Logs
+*.log
