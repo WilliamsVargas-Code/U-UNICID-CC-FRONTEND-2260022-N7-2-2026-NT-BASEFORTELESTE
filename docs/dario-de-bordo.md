@@ -45,8 +45,10 @@ Registro cronológico e transparente do desenvolvimento do projeto, detalhando a
   * Implementação dos scripts em JavaScript para validação de formulários (`preventDefault()`, mensagens de erro em destaque, bordas customizadas e persistência de dados via `localStorage`) e novos PRs integrados (PR #6).
 * **15 de Novembro de 2026:**
   * Realização dos testes finais de validação W3C, consolidação da documentação na pasta `/docs`, fechamento do último Pull Request (PR #7)[cite: 39] e consolidação da branch `main` para o deploy final online.
+* **16 de Novembro de 2026:**
+  * Realizado alteração e atualização dos slides, README e Site, acrescentado uso de AI, criação do .gitignore, leitura de Voz para deficientes visuais; 
 
 ---
 
 ## Conclusão da Equipe
-O diário de bordo reflete o esforço colaborativo e iterativo do grupo (**Nickolas, Pedro, Raphaela e Williams**). Cada reunião, *call*, mensagem de alinhamento e commit representou um passo importante para transformar uma ideia inicial em um portal web funcional, sustentável, interativo e totalmente acessível.
+O diário de bordo reflete o esforço colaborativo e iterativo do grupo (**Nickolas, Pedro, Raphaela e Williams**). Cada reunião (*call*), mensagem de alinhamento e commit representou um passo importante para transformar uma ideia inicial em um portal web funcional, sustentável, interativo e totalmente acessível.
