@@ -59,10 +59,12 @@ Durante o desenvolvimento do portal da Base Forte Leste, a IA foi utilizada como
 ### Evidências Visuais (Menu Responsivo Implementado)
 
 **Menu fechado (ícone hambúrguer):**
-![Cabeçalho com menu hambúrguer fechado] 
+![Cabeçalho com menu hambúrguer fechado] <img width="513" height="82" alt="image" src="https://github.com/user-attachments/assets/c36c01d6-bae8-41c5-8ebc-c698b2c3110b" />
+
 
 **Menu aberto (navegação responsiva com todas as 10 páginas):**
-![Menu lateral aberto com todas as páginas] 
+![Menu lateral aberto com todas as páginas] <img width="512" height="840" alt="image" src="https://github.com/user-attachments/assets/edb4530f-5009-4538-aaaa-5e79c5919b61" />
+
 
 ### Contexto, plano e regras
 - **Contexto:** a IA leu o `README.md` do repositório (pilares, estrutura de pastas, equipe) e usou decisões já tomadas pela equipe: formulário vai para o WhatsApp, valores dos planos não aparecem no site, aluno novo não precisa de equipamento, plano Família a partir de duas pessoas.
