@@ -19,6 +19,8 @@
         último envio mantidos ao recarregar a página).
      6. Botões "Preencher Dados de Teste" nos formulários de Contato e de
         Aula Experimental para agilizar a demonstração ao vivo na banca.
+     7. Leitura em voz (botão "Ouvir página"): lê o conteúdo da página ou o
+        trecho selecionado com a voz do navegador (Web Speech API).
    ========================================================================== */
 
 // 1. Elementos principais da barra de acessibilidade
@@ -637,4 +639,125 @@ if (btnPreencherSabado && formSabado) {
       JSON.stringify(coletarDadosFormulario(formSabado))
     );
   });
+}
+
+/* ==========================================================================
+   11. LEITURA EM VOZ (TEXT-TO-SPEECH) — BOTÃO "OUVIR PÁGINA"
+   Usa a Web Speech API (window.speechSynthesis), que já vem no navegador:
+   não precisa de biblioteca nem de internet.
+     - Clique em "Ouvir página": lê todo o conteúdo do <main>.
+     - Se a pessoa selecionar um trecho com o mouse antes, lê só o trecho.
+     - Clique de novo ("Parar leitura") ou aperte Esc para parar.
+   O botão usa o mesmo estilo da barra (aria-pressed="true" = ligado),
+   então nenhuma regra nova de CSS foi necessária.
+   ========================================================================== */
+const botaoLeitura = document.querySelector('[data-acao="leitura"]');
+const temVoz = "speechSynthesis" in window && "SpeechSynthesisUtterance" in window;
+let textoSelecionado = "";
+
+// Se o navegador não tiver suporte à voz, o botão fica escondido
+if (botaoLeitura && !temVoz) {
+  botaoLeitura.hidden = true;
+}
+
+// Escolhe uma voz em português do Brasil (se existir no computador/celular)
+function escolherVozPortugues() {
+  const vozes = window.speechSynthesis.getVoices();
+  return (
+    vozes.find((voz) => voz.lang === "pt-BR") ||
+    vozes.find((voz) => voz.lang.toLowerCase().startsWith("pt")) ||
+    null
+  );
+}
+
+// Divide o texto em partes curtas (frases), porque alguns navegadores
+// cortam a fala quando o texto é muito longo
+function dividirEmPartes(texto) {
+  const partes = [];
+  texto
+    .split(/\n+/)
+    .map((linha) => linha.trim())
+    .filter((linha) => linha.length > 0)
+    .forEach((linha) => {
+      const frases = linha.match(/[^.!?]+[.!?]*/g) || [linha];
+      frases.forEach((frase) => {
+        if (frase.trim()) partes.push(frase.trim());
+      });
+    });
+  return partes;
+}
+
+// Atualiza o visual e o texto do botão (ligado/desligado)
+function atualizarBotaoLeitura(lendo) {
+  if (!botaoLeitura) return;
+  botaoLeitura.setAttribute("aria-pressed", lendo ? "true" : "false");
+  botaoLeitura.textContent = lendo ? "Parar leitura" : "Ouvir página";
+  botaoLeitura.setAttribute(
+    "aria-label",
+    lendo ? "Parar a leitura em voz alta" : "Ouvir o conteúdo da página em voz alta"
+  );
+}
+
+// Para qualquer leitura em andamento
+function pararLeitura() {
+  window.speechSynthesis.cancel();
+  atualizarBotaoLeitura(false);
+}
+
+// Começa a ler o texto informado, uma frase de cada vez
+function iniciarLeitura(texto) {
+  const partes = dividirEmPartes(texto);
+  if (partes.length === 0) return;
+
+  window.speechSynthesis.cancel();
+  const voz = escolherVozPortugues();
+
+  partes.forEach((parte, indice) => {
+    const fala = new SpeechSynthesisUtterance(parte);
+    fala.lang = "pt-BR";
+    fala.rate = 1; // velocidade normal
+    if (voz) fala.voice = voz;
+
+    // Quando a última frase terminar, o botão volta ao estado inicial
+    if (indice === partes.length - 1) {
+      fala.onend = () => atualizarBotaoLeitura(false);
+    }
+    fala.onerror = () => atualizarBotaoLeitura(false);
+
+    window.speechSynthesis.speak(fala);
+  });
+
+  atualizarBotaoLeitura(true);
+}
+
+if (botaoLeitura && temVoz) {
+  // Algumas vozes carregam depois da página; isto garante que a lista fique pronta
+  window.speechSynthesis.getVoices();
+
+  // Guarda o trecho selecionado ANTES do clique (o clique pode desfazer a seleção)
+  botaoLeitura.addEventListener("pointerdown", () => {
+    textoSelecionado = String(window.getSelection() || "").trim();
+  });
+
+  botaoLeitura.addEventListener("click", () => {
+    if (window.speechSynthesis.speaking) {
+      pararLeitura();
+      return;
+    }
+    const conteudo = document.getElementById("conteudo");
+    // innerText respeita o que está visível (ignora o que está escondido)
+    const texto = textoSelecionado || (conteudo ? conteudo.innerText : "");
+    textoSelecionado = "";
+    iniciarLeitura(texto);
+  });
+
+  // Tecla Esc também interrompe a leitura (acessibilidade por teclado)
+  document.addEventListener("keydown", (evento) => {
+    if (evento.key === "Escape" && window.speechSynthesis.speaking) {
+      pararLeitura();
+    }
+  });
+
+  // Ao sair da página, a voz para (senão continuaria lendo a página anterior)
+  window.addEventListener("pagehide", () => window.speechSynthesis.cancel());
 }
