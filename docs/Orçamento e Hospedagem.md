@@ -13,7 +13,7 @@ O site foi publicado utilizando a plataforma Vercel, que é otimizada para o eco
 
 ## 2. Comparativo de Hospedagem
 
-Antes da definição da infraestrutura, foram analisadas três das principales plataformas de mercado para a hospedagem de código estático (HTML5 e CSS3).
+Antes da definição da infraestrutura, foram analisadas três das principais plataformas de mercado para a hospedagem de site estático (HTML5, CSS3 e JavaScript).
 
 | Critério | Vercel (Plano Hobby) | Render (Workspace Hobby) | Railway |
 | :--- | :--- | :--- | :--- |
