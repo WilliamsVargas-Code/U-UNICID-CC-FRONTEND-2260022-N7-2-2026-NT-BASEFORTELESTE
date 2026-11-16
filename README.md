@@ -149,11 +149,18 @@ Responsabilidades:<br>
 
 ## 11. Critérios de sucesso
 
+## 11. Critérios de sucesso
+
 * As 10 páginas interligadas, com o mesmo cabeçalho, menu e rodapé.
 * Zero erros no validador de HTML do W3C.
-* Formulários com regras do HTML5 (required, email, tel etc.) validadas pelo JavaScript, com o erro mostrado junto ao campo.
+* Formulários com regras do HTML5 (`required`, `email`, `tel` etc.) validadas pelo JavaScript, com o erro mostrado junto ao campo.
 * Vídeo, áudio e iframe funcionando corretamente.
 * Atributos `alt`, contraste adequado e `lang="pt-BR"` em todas as páginas.
-* Pasta docs/ com Diário de Bordo, Uso de IA e Evidências de Teste. O orçamento fica na página orcamento_hospedagem.html.
+* Acessibilidade no Lighthouse igual ou acima de 90. Resultado: 100 no computador e no celular, e Performance 94 no site publicado (ver `docs/evidencia_testes.md`).
+* Site no ar na Vercel, com HTTPS, publicado automaticamente a cada merge na `main`.
+* Histórico no GitHub com commits de todos os integrantes e mudanças entrando por Pull Request revisado.
+* Nenhuma chave, senha ou dado pessoal real no repositório.
+* Regras da IA versionadas em `.claude/rules/`, seguindo o modelo do professor.
+* Pasta `docs/` com o plano (`readme_docs.md`), Diário de Bordo, Uso de IA, Orçamento e Hospedagem e Evidências de Teste.
 
 
